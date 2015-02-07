@@ -1,6 +1,5 @@
 # FBLA2015
 
-## A few quick notes
 I don't know much about these technologies. As far as I know, if we do things this way, it's cleaner and _way_ more 2015.
 ### Site structure (eventually)
 - HTML generated either at build time (Mustache) or serverside (PHP, Node, etc)  
