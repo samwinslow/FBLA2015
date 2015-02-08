@@ -1,0 +1,108 @@
+body {
+	-webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Tungsten-Medium', sans-serif;
+}
+
+p {
+	font-family: 'Exo2-Light', sans-serif;
+}
+
+.btn-ghost {
+	font-size: 11px;
+	letter-spacing: 2px;
+	color: #fff;
+	font-family: 'Exo2-Medium', sans-serif;
+	text-transform: uppercase;
+	border: 1px solid rgba(255, 255, 255, 0.5);
+	padding-top: 15px;
+	padding-bottom: 16px;
+	padding-left: 25px;
+	padding-right: 100px;
+	-webkit-border-radius: 2px 2px 2px 2px;
+	border-radius: 2px 2px 2px 2px;
+	-webkit-transition: all 0.15s ease-in-out;
+	-moz-transition: all 0.15s ease-in-out;
+	-ms-transition: all 0.15s ease-in-out;
+	-o-transition: all 0.15s ease-in-out;
+	transition: all 0.15s ease-in-out;
+}
+
+.btn-ghost:hover {
+	background-color: #fff;
+	color: #000;
+}
+
+.navbar-inverse {
+	background-color: transparent;
+	border-color: #252525;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+	padding-top: 20px;
+	padding-bottom: 20px;
+	color: #9d9d9d;
+	font-family: 'Tungsten-Medium', sans-serif;
+	font-size: 18px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	-webkit-transition: all 0.1s ease-in-out;
+	-moz-transition: all 0.1s ease-in-out;
+	-ms-transition: all 0.1s ease-in-out;
+	-o-transition: all 0.1s ease-in-out;
+	transition: all 0.1s ease-in-out;
+}
+
+.cart-money {
+	font-family: 'Tungsten-Medium', sans-serif;
+	font-size: 20px;
+	padding-left: 15px;
+}
+
+.badge {
+	background-color: #ff9400;
+}
+
+.logo-nav {
+	margin-top: 9px;
+}
+
+.navbar-inverse .container {
+	width: 100%;
+}
+
+.bike-feature {
+	background: url(../img/header/3series.png) 420px 50px;
+	background-repeat: no-repeat;
+}
+
+.jumbotron {
+	margin-top: -53px;
+	padding-top: 170px;
+	padding-bottom: 130px;
+	background: url(../img/header/header-bg.png) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.jumbotron h1 {
+	font-size: 130px;
+	line-height: 120px;
+	color: #fff;
+	text-transform: uppercase;
+}
+
+.jumbotron p {
+	padding-top: 10px;
+	padding-bottom: 20px;
+	font-size: 16px;
+	color: #959595;
+}
+
+.jumbotron span {
+	display: block;
+}
