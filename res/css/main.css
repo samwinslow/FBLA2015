@@ -112,11 +112,6 @@ p {
 	text-transform: uppercase;
 }
 
-.half-section {
-	padding: 75px 65px;
-	width: 50%;
-}
-
 .half-section .btn-ghost {
 	margin-top: 50px;
 }
@@ -146,6 +141,20 @@ p {
 
 womens-section {
 	background-color: #fff;
+}
+
+.womens-section h2 {
+	color: #292b2d;
+	text-transform: uppercase;
+}
+
+.womens-section ul {
+	padding-top: 15px;
+	padding-left: 0px;
+	list-style-type: none;
+	color: #292b2d;
+	font-family: 'Tungsten-Medium', sans-serif;
+	font-size: 18px;
 }
 
 .jumbotron p {
