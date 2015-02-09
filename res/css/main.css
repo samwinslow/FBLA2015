@@ -3,18 +3,21 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-	font-family: 'Tungsten-Medium', sans-serif;
+	font-family: 'Tungsten', sans-serif;
+	font-weight: 500;
 }
 
 p {
-	font-family: 'Exo2-Light', sans-serif;
+	font-family: 'Exo 2', sans-serif;
+	font-weight: 300;
 }
 
 .btn-ghost {
 	font-size: 11px;
 	letter-spacing: 2px;
 	color: #fff;
-	font-family: 'Exo2-Medium', sans-serif;
+	font-family: 'Exo 2', sans-serif;
+	font-weight: 500;
 	text-transform: uppercase;
 	border: 1px solid rgba(255, 255, 255, 0.5);
 	padding-top: 15px;
@@ -44,7 +47,8 @@ p {
 	padding-top: 20px;
 	padding-bottom: 20px;
 	color: #9d9d9d;
-	font-family: 'Tungsten-Medium', sans-serif;
+	font-family: 'Tungsten', sans-serif;
+	font-weight: 500;
 	font-size: 18px;
 	letter-spacing: 1px;
 	text-transform: uppercase;
@@ -56,7 +60,8 @@ p {
 }
 
 .cart-money {
-	font-family: 'Tungsten-Medium', sans-serif;
+	font-family: 'Tungsten', sans-serif;
+	font-weight: 500;
 	font-size: 20px;
 	padding-left: 15px;
 }
