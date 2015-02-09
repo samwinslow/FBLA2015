@@ -7,6 +7,14 @@ h1, h2, h3, h4, h5, h6 {
 	font-weight: 500;
 }
 
+h1 {
+	font-size: 90px;	
+}
+
+h2 {
+	font-size: 42px;
+}
+
 p {
 	font-family: 'Exo 2', sans-serif;
 	font-weight: 300;
@@ -87,6 +95,7 @@ p {
 
 .jumbotron {
 	margin-top: -53px;
+	margin-bottom: 0px;
 	padding-top: 73px;
 	padding-bottom: 30px;
 	background: url(../img/header/header-bg.png) no-repeat center center fixed; 
@@ -101,6 +110,42 @@ p {
 	line-height: 120px;
 	color: #fff;
 	text-transform: uppercase;
+}
+
+.half-section {
+	padding: 75px 65px;
+	width: 50%;
+}
+
+.half-section .btn-ghost {
+	margin-top: 50px;
+}
+
+.ul-left {
+	float: left;
+	width: 20%;
+}
+
+.mens-section {
+	background-color: #334653;
+}
+
+.mens-section h2 {
+	color: #fff;
+	text-transform: uppercase;
+}
+
+.mens-section ul {
+	padding-top: 15px;
+	padding-left: 0px;
+	list-style-type: none;
+	color: #fff;
+	font-family: 'Tungsten-Medium', sans-serif;
+	font-size: 18px;
+}
+
+womens-section {
+	background-color: #fff;
 }
 
 .jumbotron p {
