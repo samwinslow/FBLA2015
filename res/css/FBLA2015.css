@@ -6619,7 +6619,7 @@ p {
   width: 20%;
 }
 .half-section {
-  padding: 100px 66px;
+  padding: 100px 66px 80px 66px;
 }
 .half-section .btn-ghost {
   margin-top: 50px;
