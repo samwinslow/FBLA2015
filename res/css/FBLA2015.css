@@ -6612,44 +6612,41 @@ p {
   color: #fff;
   text-transform: uppercase;
 }
-.half-section .btn-ghost {
-  margin-top: 50px;
-}
 .ul-left {
   float: left;
   width: 20%;
+}
+.half-section .btn-ghost {
+  margin-top: 50px;
+}
+.half-section h2 {
+  text-transform: uppercase;
+}
+.half-section ul {
+  padding-top: 15px;
+  padding-left: 0px;
+  list-style-type: none;
+  font-family: "Tungsten", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  font-size: 18px;
 }
 .mens-section {
   background-color: #334653;
 }
 .mens-section h2 {
   color: #fff;
-  text-transform: uppercase;
 }
 .mens-section ul {
-  padding-top: 15px;
-  padding-left: 0px;
-  list-style-type: none;
   color: #fff;
-  font-family: "Tungsten", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 500;
-  font-size: 18px;
 }
 .womens-section {
   background-color: #fff;
 }
 .womens-section h2 {
   color: #292b2d;
-  text-transform: uppercase;
 }
 .womens-section ul {
-  padding-top: 15px;
-  padding-left: 0px;
-  list-style-type: none;
   color: #292b2d;
-  font-family: "Tungsten", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 500;
-  font-size: 18px;
 }
 .jumbotron p {
   padding-top: 10px;
