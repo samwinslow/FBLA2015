@@ -6625,6 +6625,7 @@ p {
   margin-top: 50px;
 }
 .half-section h2 {
+  margin-top: 0;
   text-transform: uppercase;
 }
 .half-section ul {
