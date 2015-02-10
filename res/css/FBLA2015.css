@@ -6591,14 +6591,14 @@ p {
 .bike-feature {
   background: url(../img/header/3series.png);
   padding-top: 100px;
-  padding-bottom: 100px;
+  padding-bottom: 200px;
   background-repeat: no-repeat;
   background-position: 53% 150px;
 }
 .jumbotron {
-  margin-top: 0;
-  margin-bottom: 0;
+  margin: 0;
   padding-top: 73px;
+  padding-bottom: 0;
   background: url(../img/header/header-bg.png) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
