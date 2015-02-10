@@ -45,6 +45,9 @@ p {
 		-o-transition: all 0.1s ease-in-out;
 		transition: all 0.1s ease-in-out;
 	}
+	.container {
+	  width: 100%;
+  }
 }
 
 .cart-money {
@@ -62,35 +65,35 @@ p {
 	margin-top: 9px;
 }
 
-.navbar-inverse .container {
-	width: 100%;
-}
-
 .bike-feature {
 	background: url(../img/header/3series.png);
 	padding-top: 100px;
 	padding-bottom: 100px;
 	background-repeat: no-repeat;
-	background-position: 50% 150px;
+	background-position: 53% 150px;
 }
 
 .jumbotron {
-	margin-top: -53px;
-	margin-bottom: 0px;
+	margin-top: 0;
+	margin-bottom: 0;
 	padding-top: 73px;
-	padding-bottom: 30px;
 	background: url(../img/header/header-bg.png) no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-}
-
-.jumbotron h1 {
-	font-size: 130px;
-	line-height: 120px;
-	color: #fff;
-	text-transform: uppercase;
+  h1 {
+	  font-size: 130px;
+	  line-height: 120px;
+	  color: #fff;
+	  text-transform: uppercase;
+  }
+  p {
+	  padding-top: 10px;
+	  padding-bottom: 20px;
+	  font-size: 16px;
+	  color: #959595;
+  }
 }
 
 .ul-left {
@@ -107,7 +110,7 @@ p {
   }
   ul {
     padding-top: 15px;
-	  padding-left: 0px;
+	  padding-left: 0;
 	  list-style-type: none;
 	  font-family: @headings-font-family;
 	  font-weight: @headings-font-weight;
@@ -133,15 +136,4 @@ p {
   ul {
 	  color: #292b2d;
   }
-}
-
-.jumbotron p {
-	padding-top: 10px;
-	padding-bottom: 20px;
-	font-size: 16px;
-	color: #959595;
-}
-
-.jumbotron span {
-	display: block;
 }

@@ -6573,6 +6573,9 @@ p {
   -o-transition: all 0.1s ease-in-out;
   transition: all 0.1s ease-in-out;
 }
+.navbar-inverse .container {
+  width: 100%;
+}
 .cart-money {
   font-family: "Tungsten", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 500;
@@ -6585,21 +6588,17 @@ p {
 .navbar-brand img {
   margin-top: 9px;
 }
-.navbar-inverse .container {
-  width: 100%;
-}
 .bike-feature {
   background: url(../img/header/3series.png);
   padding-top: 100px;
   padding-bottom: 100px;
   background-repeat: no-repeat;
-  background-position: 50% 150px;
+  background-position: 53% 150px;
 }
 .jumbotron {
-  margin-top: -53px;
-  margin-bottom: 0px;
+  margin-top: 0;
+  margin-bottom: 0;
   padding-top: 73px;
-  padding-bottom: 30px;
   background: url(../img/header/header-bg.png) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -6611,6 +6610,12 @@ p {
   line-height: 120px;
   color: #fff;
   text-transform: uppercase;
+}
+.jumbotron p {
+  padding-top: 10px;
+  padding-bottom: 20px;
+  font-size: 16px;
+  color: #959595;
 }
 .ul-left {
   float: left;
@@ -6624,7 +6629,7 @@ p {
 }
 .half-section ul {
   padding-top: 15px;
-  padding-left: 0px;
+  padding-left: 0;
   list-style-type: none;
   font-family: "Tungsten", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 500;
@@ -6647,13 +6652,4 @@ p {
 }
 .womens-section ul {
   color: #292b2d;
-}
-.jumbotron p {
-  padding-top: 10px;
-  padding-bottom: 20px;
-  font-size: 16px;
-  color: #959595;
-}
-.jumbotron span {
-  display: block;
 }
