@@ -4,7 +4,7 @@ body {
 p {
   font-weight: 300;
 }
-h1, h2, h3, h4, h5, h6 {
+h1, h2, .caps {
   text-transform: uppercase;
 }
 
@@ -30,6 +30,10 @@ h1, h2, h3, h4, h5, h6 {
   }
   &.btn-default:hover {
     color: @btn-default-bg;
+    background-color: transparent;
+  }
+  &.btn-success:hover {
+    color: @btn-success-bg;
     background-color: transparent;
   }
   &.btn-ghost {
@@ -137,12 +141,16 @@ p.navbar-text {
   float: left;
   width: 20%;
 }
+.fullwidth-wrapper {
+  width: 100%;
+  .clearfix();
+}
 .half-section {
   padding: 100px 66px 80px 66px;
   .btn {
     margin-top: 50px;
   }
-  h2 {
+  h2, h3 {
     margin-top: 0;
   }
   ul {
@@ -169,5 +177,15 @@ p.navbar-text {
   padding: 136px 66px 114px 66px;
   h1 {
     margin: 0 0 40px 0;
+  }
+}
+.promo-section {
+  background-color: #f7f2e7;
+  h1 {
+    font-size: 100px;
+  }
+  p {
+    font-size: @font-size-large;
+    color: @gray-light;
   }
 }
