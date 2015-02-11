@@ -23,6 +23,10 @@ h1, h2, h3, h4, h5, h6 {
     color: @btn-primary-bg;
     background-color: transparent;
   }
+  &.btn-default:hover {
+    color: @btn-default-bg;
+    background-color: transparent;
+  }
   &.btn-ghost {
     color: #fff;
     border: 1px solid rgba(255, 255, 255, 0.5);
@@ -48,11 +52,14 @@ h1, h2, h3, h4, h5, h6 {
     &.chevron-orange {
       background-image: url("../img/icons/chevron-thin-right-orange.png");
     }
+    &.chevron-lightblue {
+      background-image: url("../img/icons/chevron-thin-right-lightblue.png");
+    }
   }
   &:hover {
     & span.chevron-right {
-      &.chevron-black {
-        background: url("../img/icons/chevron-thin-right-white.png");
+      &.chevron-black, &.chevron-lightblue {
+        background-image: url("../img/icons/chevron-thin-right-white.png");
       }
       &.chevron-white, &.chevron-orange {
         background-image: url("../img/icons/chevron-thin-right-black.png");
@@ -154,7 +161,7 @@ p.navbar-text {
   width: (100% - 132px);
   background-color: @brand-lightblue;
   color: #fff;
-  padding: 136px 66px 124px 66px;
+  padding: 136px 66px 114px 66px;
   h1 {
     margin: 0 0 40px 0;
   }

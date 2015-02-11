@@ -2981,7 +2981,7 @@ select[multiple].form-group-lg .form-control {
 .btn:hover,
 .btn:focus,
 .btn.focus {
-  color: #333333;
+  color: #4babcf;
   text-decoration: none;
 }
 .btn:active,
@@ -3002,9 +3002,9 @@ fieldset[disabled] .btn {
   box-shadow: none;
 }
 .btn-default {
-  color: #333333;
+  color: #4babcf;
   background-color: #ffffff;
-  border-color: #cccccc;
+  border-color: #ffffff;
 }
 .btn-default:hover,
 .btn-default:focus,
@@ -3012,9 +3012,9 @@ fieldset[disabled] .btn {
 .btn-default:active,
 .btn-default.active,
 .open > .dropdown-toggle.btn-default {
-  color: #333333;
+  color: #4babcf;
   background-color: #e6e6e6;
-  border-color: #adadad;
+  border-color: #e0e0e0;
 }
 .btn-default:active,
 .btn-default.active,
@@ -3040,11 +3040,11 @@ fieldset[disabled] .btn-default:active,
 .btn-default[disabled].active,
 fieldset[disabled] .btn-default.active {
   background-color: #ffffff;
-  border-color: #cccccc;
+  border-color: #ffffff;
 }
 .btn-default .badge {
   color: #ffffff;
-  background-color: #333333;
+  background-color: #4babcf;
 }
 .btn-primary {
   color: #ffffff;
@@ -6560,6 +6560,10 @@ h6 {
   color: #292b2d;
   background-color: transparent;
 }
+.btn.btn-default:hover {
+  color: #ffffff;
+  background-color: transparent;
+}
 .btn.btn-ghost {
   color: #fff;
   border: 1px solid rgba(255, 255, 255, 0.5);
@@ -6586,8 +6590,12 @@ h6 {
 .btn span.chevron-right.chevron-orange {
   background-image: url("../img/icons/chevron-thin-right-orange.png");
 }
-.btn:hover span.chevron-right.chevron-black {
-  background: url("../img/icons/chevron-thin-right-white.png");
+.btn span.chevron-right.chevron-lightblue {
+  background-image: url("../img/icons/chevron-thin-right-lightblue.png");
+}
+.btn:hover span.chevron-right.chevron-black,
+.btn:hover span.chevron-right.chevron-lightblue {
+  background-image: url("../img/icons/chevron-thin-right-white.png");
 }
 .btn:hover span.chevron-right.chevron-white,
 .btn:hover span.chevron-right.chevron-orange {
@@ -6687,7 +6695,7 @@ p.navbar-text {
   width: -32%;
   background-color: #4babcf;
   color: #fff;
-  padding: 136px 66px 124px 66px;
+  padding: 136px 66px 114px 66px;
 }
 .road-trip h1 {
   margin: 0 0 40px 0;
