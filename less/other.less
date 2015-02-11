@@ -4,13 +4,16 @@ body {
 p {
   font-weight: 300;
 }
+h1, h2, h3, h4, h5, h6 {
+  text-transform: uppercase;
+}
 .btn {
   font-size: 11px;
   letter-spacing: 2px;
   font-family: @font-family-sans-serif;
   font-weight: @btn-font-weight;
   text-transform: uppercase;
-  padding: 14px 25px 16px 25px;
+  padding: 13px 25px 16px 25px;
   -webkit-transition: all 0.15s ease-in-out;
   -moz-transition: all 0.15s ease-in-out;
   -ms-transition: all 0.15s ease-in-out;
@@ -25,7 +28,7 @@ p {
     border: 1px solid rgba(255, 255, 255, 0.5);
     &:hover {
       background-color: #fff;
-      color: #000;
+      color: @brand-bluegray;
     }
   }
   span.chevron-right {
@@ -110,7 +113,6 @@ p.navbar-text {
     font-size: 130px;
     line-height: 120px;
     color: #fff;
-    text-transform: uppercase;
   }
   p {
     padding-top: 10px;
@@ -130,7 +132,6 @@ p.navbar-text {
   }
   h2 {
     margin-top: 0;
-    text-transform: uppercase;
   }
   ul {
     padding-top: 15px;
@@ -140,22 +141,21 @@ p.navbar-text {
     font-weight: @headings-font-weight;
     font-size: 18px;
   }
+  &.mens-section {
+    background-color: @brand-darkblue;
+    color: #fff;
+  }
+  &.womens-section {
+    background-color: #fff;
+    color: @brand-bluegray;
+  }
 }
-.mens-section {
-  background-color: @brand-darkblue;
-  h2 {
+.road-trip {
+  width: (100% - 132px);
+  background-color: @brand-lightblue;
   color: #fff;
-  }
-  ul {
-  color: #fff;
-  }
-}
-.womens-section {
-  background-color: #fff;
-  h2 {
-  color: @brand-bluegray;
-  }
-  ul {
-  color: @brand-bluegray;
+  padding: 136px 66px 124px 66px;
+  h1 {
+    margin: 0 0 40px 0;
   }
 }
