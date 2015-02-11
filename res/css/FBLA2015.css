@@ -6724,7 +6724,34 @@ p.navbar-text {
 .road-trip h1 {
   margin: 0 0 40px 0;
 }
+.seminar-section {
+  padding: 66px;
+}
+.seminar-section h2 {
+  margin-bottom: 50px;
+}
+.seminar-section .col-md-4 {
+  padding: 0 4%;
+}
+@media (min-width: 992px) {
+  .seminar-section .col-md-4 img {
+    width: 75%;
+  }
+  .seminar-section .col-md-4 p {
+    min-height: 80px;
+  }
+}
+@media (max-width: 991px) {
+  .seminar-section .col-md-4 img {
+    width: 150px;
+    margin-top: 50px;
+  }
+}
+.seminar-section .col-md-4 h3 {
+  margin-top: 40px;
+}
 .promo-section {
+  padding: 150px 66px 66px 66px;
   background-color: #f7f2e7;
 }
 .promo-section h1 {
@@ -6733,4 +6760,7 @@ p.navbar-text {
 .promo-section p {
   font-size: 18px;
   color: #777777;
+}
+.promo-section .btn {
+  margin-top: 25px;
 }

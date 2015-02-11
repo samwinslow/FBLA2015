@@ -60,21 +60,9 @@
 	<div class="jumbotron">
 		<div class="bike-feature">
 	    <div class="container">
-        <div class="row">
-          <div class="col-md-5">
-		        <h1>New Trek 3 Series</h1>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-4">
-            <p>3 Series gives you upright confidence, control, and road-to-trail versatility, wherever you ride.</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-3">
-            <a class="btn btn-ghost btn-lg btn-block" href="#" role="button">See Collection <span class="chevron-right chevron-orange"></span></a>
-          </div>
-        </div>
+		    <h1>New Trek <br> 3 Series</h1>
+        <p>3 Series gives you upright confidence, <br> control, and road-to-trail versatility, <br> wherever you ride.</p>
+        <a class="btn btn-ghost btn-lg" href="#" role="button">See Collection <span class="chevron-right chevron-orange"></span></a>
 		  </div>
 	  </div>
 	</div><!--/Jumbotron -->
@@ -120,31 +108,31 @@
   	<p><a class="btn btn-default btn-lg" href="#" role="button">Join Event <span class="chevron-right chevron-lightblue"></span></a></p>
   </div>
 
-  <div class="fullwidth-wrapper">
-    <div class="col-md-6 half-section">
+  <div class="fullwidth-wrapper" id="promos">
+    <div class="col-md-6 col-sm-12 half-section seminar-section">
       <div class="col-md-12">
         <h2>Latest Seminars:</h2>
       </div>
-      <div class="col-md-4">
-        <img class="circle" src="image.jpg" />
+      <div class="col-md-4 col-sm-12">
+        <img class="img-circle" src="res/img/seminar-1.png">
         <h3>Staying safe on the road: Bike Safety 101</h3>
         <p>This intro seminar goes over the basics of staying safe on the road.</p>
         <a class="caps" href="#">Watch Seminar</a>
       </div>
-      <div class="col-md-4">
-        <img class="circle" src="image.jpg" />
+      <div class="col-md-4 col-sm-12">
+        <img class="img-circle" src="res/img/seminar-2.png">
         <h3>Bicycle Types: How to Pick the Best Bike for You</h3>
         <p>This seminar goes over the functions of different types of bikes.</p>
-          <a class="caps" href="#">Watch Seminar</a>
+        <a class="caps" href="#">Watch Seminar</a>
       </div>
-      <div class="col-md-4">
-        <img class="circle" src="image.jpg" />
-       <h3>Cycling for fitness: Bike &amp; Cycling Exercises</h3>
+      <div class="col-md-4 col-sm-12">
+        <img class="img-circle" src="res/img/seminar-3.png">
+        <h3>Cycling for fitness: Bike &amp; Cycling Exercises</h3>
         <p>This seminar helps get you started with cycling for fitness.</p>
         <a class="caps" href="#">Watch Seminar</a>
       </div>
     </div>
-    <div class="col-md-6 half-section promo-section">
+    <div class="col-md-6 col-sm-12 half-section promo-section">
       <h3 class="caps">Become a Cycle Fitness member and</h3>
       <h1>Get $20</h1>
       <p>Off your first purchase.</p>
@@ -160,9 +148,6 @@
   <script>window.jQuery || document.write('<script src="res/js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
   <script src="res/js/vendor/bootstrap.min.js"></script>
   <script src="res/js/vendor/jquery.easing.min.js"></script>
-  <!-- Navbar Scroll -->
-  <script>
-    $(window).scroll(function(){if($(".navbar").offset().top>50){$(".navbar-fixed-top").addClass("top-nav-collapse");}else{$(".navbar-fixed-top").removeClass("top-nav-collapse");}});$(function(){$('.page-scroll a').bind('click',function(event){var $anchor=$(this);$('html, body').stop().animate({scrollTop:$($anchor.attr('href')).offset().top},1500,'jswing');event.preventDefault();});})
-  </script>
+  <script src="res/js/main.js"></script>
 </body>
 </html>

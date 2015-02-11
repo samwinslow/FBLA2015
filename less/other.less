@@ -179,7 +179,34 @@ p.navbar-text {
     margin: 0 0 40px 0;
   }
 }
+.seminar-section {
+  padding: 66px;
+  h2 {
+    margin-bottom: 50px;
+  }
+  .col-md-4 {
+    padding: 0 4%;
+    @media (min-width: @screen-md-min){
+      img {
+        width: 75%;
+      }
+      p {
+        min-height: 80px;
+      }
+    }
+    @media (max-width: @screen-sm-max){
+      img {
+        width: 150px;
+        margin-top: 50px;
+      }
+    }
+    h3 {
+      margin-top: 40px;
+    }
+  }
+}
 .promo-section {
+  padding: 150px 66px 66px 66px;
   background-color: #f7f2e7;
   h1 {
     font-size: 100px;
@@ -187,5 +214,8 @@ p.navbar-text {
   p {
     font-size: @font-size-large;
     color: @gray-light;
+  }
+  .btn {
+    margin-top: 25px;
   }
 }
