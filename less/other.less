@@ -10,7 +10,7 @@ p {
   font-family: @font-family-sans-serif;
   font-weight: @btn-font-weight;
   text-transform: uppercase;
-  padding: 15px 100px 16px 25px;
+  padding: 14px 25px 16px 25px;
   -webkit-transition: all 0.15s ease-in-out;
   -moz-transition: all 0.15s ease-in-out;
   -ms-transition: all 0.15s ease-in-out;
@@ -26,6 +26,34 @@ p {
     &:hover {
       background-color: #fff;
       color: #000;
+    }
+  }
+  span.chevron-right {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-left: 76px;
+    background-size: 100% 100%;
+    position: relative;
+    top: 3.5px;
+    &.chevron-black {
+      background: url("../img/icons/chevron-thin-right-black.png");
+    }
+    &.chevron-white {
+      background-image: url("../img/icons/chevron-thin-right-white.png");
+    }
+    &.chevron-orange {
+      background-image: url("../img/icons/chevron-thin-right-orange.png");
+    }
+  }
+  &:hover {
+    & span.chevron-right {
+      &.chevron-black {
+        background: url("../img/icons/chevron-thin-right-white.png");
+      }
+      &.chevron-white, &.chevron-orange {
+        background-image: url("../img/icons/chevron-thin-right-black.png");
+      }
     }
   }
 }

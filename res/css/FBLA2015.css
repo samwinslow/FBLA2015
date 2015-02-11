@@ -6541,7 +6541,7 @@ p {
   font-family: "Exo 2", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 500;
   text-transform: uppercase;
-  padding: 15px 100px 16px 25px;
+  padding: 14px 25px 16px 25px;
   -webkit-transition: all 0.15s ease-in-out;
   -moz-transition: all 0.15s ease-in-out;
   -ms-transition: all 0.15s ease-in-out;
@@ -6559,6 +6559,31 @@ p {
 .btn.btn-ghost:hover {
   background-color: #fff;
   color: #000;
+}
+.btn span.chevron-right {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin-left: 76px;
+  background-size: 100% 100%;
+  position: relative;
+  top: 3.5px;
+}
+.btn span.chevron-right.chevron-black {
+  background: url("../img/icons/chevron-thin-right-black.png");
+}
+.btn span.chevron-right.chevron-white {
+  background-image: url("../img/icons/chevron-thin-right-white.png");
+}
+.btn span.chevron-right.chevron-orange {
+  background-image: url("../img/icons/chevron-thin-right-orange.png");
+}
+.btn:hover span.chevron-right.chevron-black {
+  background: url("../img/icons/chevron-thin-right-white.png");
+}
+.btn:hover span.chevron-right.chevron-white,
+.btn:hover span.chevron-right.chevron-orange {
+  background-image: url("../img/icons/chevron-thin-right-black.png");
 }
 .navbar-inverse {
   padding-right: 57px;
