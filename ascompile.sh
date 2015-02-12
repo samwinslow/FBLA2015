@@ -2,13 +2,18 @@
 # FBLA2015 build script
 #
 # Compiles Less
+
+cd ~/Documents/FBLA/FBLA2015/
+
 echo "Starting build at $(date)"
-lessc --verbose             /Users/ashen/Documents/FBLA/FBLA2015/less/main.less > /Users/ashen/Documents/FBLA/FBLA2015/res/css/FBLA2015.css
+lessc --verbose             less/main.less > res/css/FBLA2015.css
+lessc --verbose --clean-css less/main.less > res/css/FBLA2015.min.css
 echo "Finished build at $(date). Starting to copy directory."
+
 #
 # Copies to server location all files except those mentioned in .gitignore.
 # Warning: clears directory first.
-# Change /var/www/ to your LAMP server's directory
+
 sudo rm -R /Library/WebServer/Documents/*
-sudo rsync -r --exclude-from=/Users/ashen/Documents/FBLA/FBLA2015/.gitignore * /Library/WebServer/Documents/
+sudo rsync -r --exclude-from=.gitignore * /Library/WebServer/Documents/
 echo "Finished copying at $(date)"
