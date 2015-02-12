@@ -222,6 +222,7 @@ img.logo{
 }
 .seminar-section {
   padding: 66px;
+  min-height: 563px;
   h2 {
     margin-bottom: 50px;
   }
@@ -254,6 +255,9 @@ img.logo{
 .promo-section {
   padding: 150px 66px 66px 66px;
   background-color: #f7f2e7;
+  background-image: url("../img/promo-bike.png");
+  background-repeat: no-repeat;
+  background-position: 350px center;
   h1 {
     font-size: 100px;
   }
@@ -267,7 +271,7 @@ img.logo{
 }
 footer {
   .clearfix();
-  padding: 66px;
+  padding: 66px 66px 33px 66px;
   border-top: 1px solid #ebebeb;
 }
 .credit-card {
@@ -288,4 +292,14 @@ ul.icon-creditcard {
 img.social {
   height: 16px;
   margin-right: 16px;
+}
+.footer-text {
+  color: @gray;
+  margin-top: 33px;
+  a {
+    text-decoration: underline;
+    &:hover {
+      text-decoration: none;
+    }
+  }
 }
