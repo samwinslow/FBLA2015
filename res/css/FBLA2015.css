@@ -6774,3 +6774,19 @@ p.navbar-text {
 .promo-section .btn {
   margin-top: 25px;
 }
+footer:before,
+footer:after {
+  content: " ";
+  display: table;
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  display: table;
+}
+footer:after {
+  clear: both;
+}
