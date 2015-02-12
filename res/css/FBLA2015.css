@@ -6806,3 +6806,7 @@ footer:after {
 footer:after {
   clear: both;
 }
+.credit-card {
+  width: 25px;
+  margin-right: 4px;
+}
