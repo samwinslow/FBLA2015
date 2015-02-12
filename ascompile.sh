@@ -10,5 +10,5 @@ echo "Finished build at $(date). Starting to copy directory."
 # Warning: clears directory first.
 # Change /var/www/ to your LAMP server's directory
 sudo rm -R /Library/WebServer/Documents/*
-sudo rsync -r --exclude-from=.gitignore * /Library/WebServer/Documents/
+sudo rsync -r --exclude-from=/Users/ashen/Documents/FBLA/FBLA2015/.gitignore * /Library/WebServer/Documents/
 echo "Finished copying at $(date)"
