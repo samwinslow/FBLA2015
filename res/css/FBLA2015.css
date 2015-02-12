@@ -6787,6 +6787,9 @@ img.logo {
 .promo-section .btn {
   margin-top: 25px;
 }
+footer {
+  padding: 66px;
+}
 footer:before,
 footer:after {
   content: " ";
