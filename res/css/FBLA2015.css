@@ -2514,7 +2514,7 @@ output {
 .form-control {
   display: block;
   width: 100%;
-  height: 34px;
+  height: 46px;
   padding: 6px 12px;
   font-size: 14px;
   line-height: 1.42857143;
@@ -2530,10 +2530,10 @@ output {
   transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
 }
 .form-control:focus {
-  border-color: #66afe9;
+  border-color: #292b2d;
   outline: 0;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
-  box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(41, 43, 45, 0.6);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(41, 43, 45, 0.6);
 }
 .form-control::-moz-placeholder {
   color: #999999;
@@ -2563,7 +2563,7 @@ input[type="search"] {
   input[type="time"],
   input[type="datetime-local"],
   input[type="month"] {
-    line-height: 34px;
+    line-height: 46px;
   }
   input[type="date"].input-sm,
   input[type="time"].input-sm,
@@ -2736,7 +2736,7 @@ select[multiple].form-group-lg .form-control {
   position: relative;
 }
 .has-feedback .form-control {
-  padding-right: 42.5px;
+  padding-right: 57.5px;
 }
 .form-control-feedback {
   position: absolute;
@@ -2744,9 +2744,9 @@ select[multiple].form-group-lg .form-control {
   right: 0;
   z-index: 2;
   display: block;
-  width: 34px;
-  height: 34px;
-  line-height: 34px;
+  width: 46px;
+  height: 46px;
+  line-height: 46px;
   text-align: center;
   pointer-events: none;
 }
@@ -4234,8 +4234,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   border-bottom: 1px solid transparent;
   -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(255, 255, 255, 0.1);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(255, 255, 255, 0.1);
-  margin-top: 8px;
-  margin-bottom: 8px;
+  margin-top: 2px;
+  margin-bottom: 2px;
 }
 @media (min-width: 768px) {
   .navbar-form .form-group {
@@ -4320,8 +4320,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   border-bottom-left-radius: 0;
 }
 .navbar-btn {
-  margin-top: 8px;
-  margin-bottom: 8px;
+  margin-top: 2px;
+  margin-bottom: 2px;
 }
 .navbar-btn.btn-sm {
   margin-top: 10px;
@@ -6582,6 +6582,10 @@ h2,
   background-color: #fff;
   color: #292b2d;
 }
+.btn.btn-form {
+  background-color: #ebebeb;
+  color: #292b2d;
+}
 .btn span.chevron-right {
   display: inline-block;
   width: 16px;
@@ -6713,7 +6717,7 @@ img.logo {
   list-style-type: none;
   font-family: "Tungsten", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 500;
-  font-size: 18px;
+  font-size: 21px;
 }
 .half-section.mens-section {
   background-color: #334653;
@@ -6809,4 +6813,9 @@ footer:after {
 .credit-card {
   width: 25px;
   margin-right: 4px;
+}
+input {
+  font-size: 11px;
+  padding: 13px 25px 16px 25px;
+  box-shadow: none !important;
 }
