@@ -6540,6 +6540,11 @@ h2,
 .caps {
   text-transform: uppercase;
 }
+input {
+  font-size: 11px;
+  padding: 13px 25px 16px 25px;
+  box-shadow: none !important;
+}
 .top-nav-collapse {
   background-color: #000;
 }
@@ -6548,6 +6553,46 @@ h2,
   border-right: 1px solid #222;
   padding: 0px 20px;
   padding-bottom: 2px;
+}
+.navbar-inverse {
+  padding-right: 57px;
+}
+.navbar-inverse .navbar-nav > li > a {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-family: "Tungsten", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
+  -ms-transition: all 0.1s ease-in-out;
+  -o-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+}
+.navbar-inverse .navbar-nav > li > a:focus {
+  outline: none;
+  -webkit-outline: none;
+  -moz-outline: none;
+  -ms-outline: none;
+}
+p.navbar-text {
+  margin-left: 0;
+  margin-right: 0;
+}
+p.navbar-text .badge {
+  background-color: #ff9400;
+}
+.cart-money {
+  font-family: "Tungsten", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  padding-left: 15px;
+}
+img.logo {
+  height: 12px;
+  margin-top: 9px;
 }
 .btn {
   font-size: 11px;
@@ -6570,10 +6615,6 @@ h2,
   color: #ffffff;
   background-color: transparent;
 }
-.btn.btn-success:hover {
-  color: #ff9400;
-  background-color: transparent;
-}
 .btn.btn-ghost {
   color: #fff;
   border: 1px solid rgba(255, 255, 255, 0.5);
@@ -6581,6 +6622,22 @@ h2,
 .btn.btn-ghost:hover {
   background-color: #fff;
   color: #292b2d;
+}
+.btn.btn-success.btn-ghost {
+  background-color: transparent;
+  color: #ff9400;
+  border: 1px solid #ff9400;
+}
+.btn.btn-success.btn-ghost:hover {
+  background-color: #ff9400;
+  color: #fff;
+}
+.btn.btn-success.btn-ghost:hover .chevron-orange {
+  background-image: url("../img/icons/chevron-thin-right-white.png");
+}
+.btn.btn-success:hover {
+  color: #ff9400;
+  background-color: transparent;
 }
 .btn.btn-form {
   background-color: #ebebeb;
@@ -6634,45 +6691,11 @@ h2,
 .btn:hover span.chevron-right.chevron-orange {
   background-image: url("../img/icons/chevron-thin-right-black.png");
 }
-.navbar-inverse {
-  padding-right: 57px;
+.btn.small-chevron {
+  padding-right: 17px;
 }
-.navbar-inverse .navbar-nav > li > a {
-  padding-top: 20px;
-  padding-bottom: 20px;
-  font-family: "Tungsten", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 500;
-  font-size: 18px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  -webkit-transition: all 0.1s ease-in-out;
-  -moz-transition: all 0.1s ease-in-out;
-  -ms-transition: all 0.1s ease-in-out;
-  -o-transition: all 0.1s ease-in-out;
-  transition: all 0.1s ease-in-out;
-}
-.navbar-inverse .navbar-nav > li > a:focus {
-  outline: none;
-  -webkit-outline: none;
-  -moz-outline: none;
-  -ms-outline: none;
-}
-p.navbar-text {
-  margin-left: 0;
-  margin-right: 0;
-}
-p.navbar-text .badge {
-  background-color: #ff9400;
-}
-.cart-money {
-  font-family: "Tungsten", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 500;
-  font-size: 20px;
-  padding-left: 15px;
-}
-img.logo {
-  height: 12px;
-  margin-top: 9px;
+.btn.small-chevron span.chevron-right {
+  margin-left: 40px;
 }
 .bike-feature {
   background: url("../img/header/3series.png");
@@ -6844,11 +6867,6 @@ footer:after {
   width: 25px;
   margin-right: 4px;
 }
-input {
-  font-size: 11px;
-  padding: 13px 25px 16px 25px;
-  box-shadow: none !important;
-}
 ul.icon-truck {
   list-style-image: url("../img/icons/truck.png");
 }
@@ -6888,9 +6906,11 @@ img.social {
 .modal .modal-body h2 {
   margin: 0 0 40px 0;
 }
-.modal .modal-body .btn.btn-success {
-  padding-left: 46px;
-  padding-right: 46px;
+.modal .modal-body .btn:focus {
+  outline: none;
+  -webkit-outline: none;
+  -moz-outline: none;
+  -ms-outline: none;
 }
 .modal .modal-body > div input {
   margin-bottom: 20px;
@@ -6898,6 +6918,10 @@ img.social {
 .modal .modal-body > div .col-md-6:first-of-type {
   padding-left: 0;
   padding-right: 10px;
+}
+.modal .modal-body > div .col-md-6:first-of-type .btn.btn-success {
+  padding-left: 46px;
+  padding-right: 46px;
 }
 .modal .modal-body > div .col-md-6:last-of-type {
   padding-left: 10px;

@@ -1,3 +1,12 @@
+// Mixins
+.disable-outline() {
+  outline: none;
+  -webkit-outline: none;
+  -moz-outline: none;
+  -ms-outline: none;
+}
+
+// Typography & Basic styling
 body {
   -webkit-font-smoothing: antialiased;
 }
@@ -7,18 +16,61 @@ p {
 h1, h2, .caps {
   text-transform: uppercase;
 }
+input {
+  font-size: 11px;
+  padding: 13px 25px 16px 25px;
+  box-shadow: none !important;
+}
 
+// Nav
 .top-nav-collapse {
   background-color: #000;
 }
-
 .cart-li {
   border-left: 1px solid #222;
   border-right: 1px solid #222;
   padding: 0px 20px;
   padding-bottom: 2px;
 }
+.navbar-inverse {
+  padding-right: 57px;
+  .navbar-nav>li>a {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-family: @headings-font-family;
+    font-weight: @headings-font-weight;
+    font-size: 18px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    -ms-transition: all 0.1s ease-in-out;
+    -o-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out;
+    &:focus {
+      .disable-outline();
+    }
+  }
+}
+p.navbar-text {
+  margin-left: 0;
+  margin-right: 0;
+  .badge {
+    background-color: @brand-orange;
+  }
+}
+.cart-money {
+  font-family: @headings-font-family;
+  font-weight: @headings-font-weight;
+  font-size: 20px;
+  padding-left: 15px;
+}
+img.logo{
+  height: 12px;
+  margin-top: 9px;
+}
 
+// Buttons
 .btn {
   font-size: 11px;
   letter-spacing: 2px;
@@ -39,16 +91,30 @@ h1, h2, .caps {
     color: @btn-default-bg;
     background-color: transparent;
   }
-  &.btn-success:hover {
-    color: @btn-success-bg;
-    background-color: transparent;
-  }
   &.btn-ghost {
     color: #fff;
     border: 1px solid rgba(255, 255, 255, 0.5);
     &:hover {
       background-color: #fff;
       color: @brand-bluegray;
+    }
+  }
+  &.btn-success {
+    &.btn-ghost {
+      background-color: transparent;
+      color: @brand-success;
+      border: 1px solid @brand-success;
+      &:hover {
+        background-color: @brand-success;
+        color: #fff;
+        .chevron-orange {
+          background-image: url("../img/icons/chevron-thin-right-white.png");
+        }
+      }
+    }
+    &:hover {
+      color: @btn-success-bg;
+      background-color: transparent;
     }
   }
   &.btn-form {
@@ -104,47 +170,15 @@ h1, h2, .caps {
       }
     }
   }
-}
-.navbar-inverse {
-  padding-right: 57px;
-  .navbar-nav>li>a {
-    padding-top: 20px;
-    padding-bottom: 20px;
-    font-family: @headings-font-family;
-    font-weight: @headings-font-weight;
-    font-size: 18px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    -webkit-transition: all 0.1s ease-in-out;
-    -moz-transition: all 0.1s ease-in-out;
-    -ms-transition: all 0.1s ease-in-out;
-    -o-transition: all 0.1s ease-in-out;
-    transition: all 0.1s ease-in-out;
-    &:focus {
-      outline: none;
-      -webkit-outline: none;
-      -moz-outline: none;
-      -ms-outline: none;
+  &.small-chevron {
+    padding-right: 17px;
+    span.chevron-right {
+      margin-left: 40px;
     }
   }
 }
-p.navbar-text {
-  margin-left: 0;
-  margin-right: 0;
-  .badge {
-    background-color: @brand-orange;
-  }
-}
-.cart-money {
-  font-family: @headings-font-family;
-  font-weight: @headings-font-weight;
-  font-size: 20px;
-  padding-left: 15px;
-}
-img.logo{
-  height: 12px;
-  margin-top: 9px;
-}
+
+// Jumbotron
 .bike-feature {
   background: url("../img/header/3series.png");
   padding-top: 100px;
@@ -173,6 +207,8 @@ img.logo{
     color: #959595;
   }
 }
+
+// Full-width Sections
 .ul-left {
   font-size: 21px;
   float: left;
@@ -275,6 +311,8 @@ img.logo{
     margin-top: 25px;
   }
 }
+
+// Footer
 footer {
   .clearfix();
   padding: 66px 66px 33px 66px;
@@ -283,11 +321,6 @@ footer {
 .credit-card {
   width: 25px;
   margin-right: 4px;
-}
-input {
-  font-size: 11px;
-  padding: 13px 25px 16px 25px;
-  box-shadow: none !important;
 }
 ul.icon-truck {
   list-style-image: url("../img/icons/truck.png");
@@ -309,15 +342,16 @@ img.social {
     }
   }
 }
+
+// Modal
 .modal {
   .modal-body {
     .clearfix();
     h2 {
       margin: 0 0 40px 0;
     }
-    .btn.btn-success {
-      padding-left: 46px;
-      padding-right: 46px;
+    .btn:focus {
+      .disable-outline();
     }
     &>div {
       input {
@@ -326,6 +360,10 @@ img.social {
       .col-md-6:first-of-type {
         padding-left: 0;
         padding-right: 10px;
+        .btn.btn-success {
+          padding-left: 46px;
+          padding-right: 46px;
+        }
       }
       .col-md-6:last-of-type {
         padding-left: 10px;
