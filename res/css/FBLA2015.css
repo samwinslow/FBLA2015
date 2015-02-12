@@ -6639,7 +6639,7 @@ p.navbar-text {
   margin-top: 9px;
 }
 .bike-feature {
-  background: url(../img/header/3series.png);
+  background: url("../img/header/3series.png");
   padding-top: 100px;
   padding-bottom: 200px;
   background-repeat: no-repeat;
@@ -6649,7 +6649,7 @@ p.navbar-text {
   margin: 0;
   padding-top: 73px;
   padding-bottom: 0;
-  background: url(../img/header/header-bg.png) no-repeat center center fixed;
+  background: url("../img/header/header-bg.png") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -6709,15 +6709,25 @@ p.navbar-text {
 }
 .half-section.mens-section {
   background-color: #334653;
+  background-image: url("../img/mens-bikes.png");
+  background-repeat: no-repeat;
+  background-position: right bottom;
   color: #fff;
 }
 .half-section.womens-section {
   background-color: #fff;
   color: #292b2d;
+  background-image: url("../img/womens-bikes.png");
+  background-repeat: no-repeat;
+  background-position: right bottom;
 }
 .road-trip {
   width: -32%;
   background-color: #4babcf;
+  background-image: url("../img/trip.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center -100px;
   color: #fff;
   padding: 136px 66px 114px 66px;
 }
