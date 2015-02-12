@@ -51,10 +51,36 @@
             <li><a href="#">FAQ</a></li>
             <li><a href="#">Contact</a></li>
             <li class="cart-li"><p class="navbar-text"><span class="badge">3</span> <a href="#" class="navbar-link cart-money">$200</a></p></li>
-            <li><a href="#" style="color:#fff;">Log In / Sign Up</a></li>
+            <li><a href="#" style="color:#fff;" data-toggle="modal" data-target="#signinModal">Log In / Sign Up</a></li>
           </ul>
         </div><!--/.navbar-collapse -->
   </nav>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="signinModal" tabindex="-1" role="dialog" aria-labelledby="signinModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="col-md-7 gray-section">
+            <h2>Register</h2>
+            <div class="col-md-6">
+              <input type="text" class="form-control" id="registerFirstName" placeholder="FIRST NAME">
+            </div>
+            <div class="col-md-6">
+              <input type="text" class="form-control" id="registerLastName" placeholder="LAST NAME">
+            </div>
+            <input type="email" class="form-control" id="registerEmail" placeholder="EMAIL ADDRESS">
+            <input type="password" class="form-control" id="registerPassword" placeholder="PASSWORD">
+            <p class="text-right"><a class="btn btn-success btn-lg" href="#" role="button">Sign Up</a></p>
+          </div>
+          <div class="col-md-5">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h2>Login</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- Jumbotron -->
 	<div class="jumbotron">

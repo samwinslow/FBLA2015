@@ -120,6 +120,12 @@ h1, h2, .caps {
     -ms-transition: all 0.1s ease-in-out;
     -o-transition: all 0.1s ease-in-out;
     transition: all 0.1s ease-in-out;
+    &:focus {
+      outline: none;
+      -webkit-outline: none;
+      -moz-outline: none;
+      -ms-outline: none;
+    }
   }
 }
 p.navbar-text {
@@ -300,6 +306,41 @@ img.social {
     text-decoration: underline;
     &:hover {
       text-decoration: none;
+    }
+  }
+}
+.modal {
+  .modal-body {
+    .clearfix();
+    h2 {
+      margin: 0 0 40px 0;
+    }
+    .btn.btn-success {
+      padding-left: 46px;
+      padding-right: 46px;
+    }
+    &>div {
+      input {
+        margin-bottom: 20px;
+      }
+      .col-md-6:first-of-type {
+        padding-left: 0;
+        padding-right: 10px;
+      }
+      .col-md-6:last-of-type {
+        padding-left: 10px;
+        padding-right: 0;
+      }
+      &:nth-child(1) {
+        padding: 40px 60px 60px 60px;
+        &.gray-section {
+          background-color: #fafafa;
+          border-right: 1px solid #ebebeb;
+        }
+      }
+      &:nth-child(2) {
+        padding: 40px 60px 60px 20px;
+      }
     }
   }
 }

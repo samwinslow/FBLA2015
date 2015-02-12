@@ -5728,13 +5728,13 @@ button.close {
   filter: alpha(opacity=0);
 }
 .modal-backdrop.in {
-  opacity: 0.5;
-  filter: alpha(opacity=50);
+  opacity: 0.75;
+  filter: alpha(opacity=75);
 }
 .modal-header {
-  padding: 15px;
-  border-bottom: 1px solid #e5e5e5;
-  min-height: 16.42857143px;
+  padding: 0;
+  border-bottom: 1px solid transparent;
+  min-height: 1.42857143;
 }
 .modal-header .close {
   margin-top: -2px;
@@ -5745,12 +5745,12 @@ button.close {
 }
 .modal-body {
   position: relative;
-  padding: 15px;
+  padding: 0;
 }
 .modal-footer {
-  padding: 15px;
+  padding: 0;
   text-align: right;
-  border-top: 1px solid #e5e5e5;
+  border-top: 1px solid transparent;
 }
 .modal-footer .btn + .btn {
   margin-left: 5px;
@@ -5771,7 +5771,7 @@ button.close {
 }
 @media (min-width: 768px) {
   .modal-dialog {
-    width: 600px;
+    width: 780px;
     margin: 30px auto;
   }
   .modal-content {
@@ -5784,7 +5784,7 @@ button.close {
 }
 @media (min-width: 992px) {
   .modal-lg {
-    width: 900px;
+    width: 780px;
   }
 }
 .tooltip {
@@ -6651,6 +6651,12 @@ h2,
   -o-transition: all 0.1s ease-in-out;
   transition: all 0.1s ease-in-out;
 }
+.navbar-inverse .navbar-nav > li > a:focus {
+  outline: none;
+  -webkit-outline: none;
+  -moz-outline: none;
+  -ms-outline: none;
+}
 p.navbar-text {
   margin-left: 0;
   margin-right: 0;
@@ -6862,4 +6868,48 @@ img.social {
 }
 .footer-text a:hover {
   text-decoration: none;
+}
+.modal .modal-body:before,
+.modal .modal-body:after {
+  content: " ";
+  display: table;
+}
+.modal .modal-body:after {
+  clear: both;
+}
+.modal .modal-body:before,
+.modal .modal-body:after {
+  content: " ";
+  display: table;
+}
+.modal .modal-body:after {
+  clear: both;
+}
+.modal .modal-body h2 {
+  margin: 0 0 40px 0;
+}
+.modal .modal-body .btn.btn-success {
+  padding-left: 46px;
+  padding-right: 46px;
+}
+.modal .modal-body > div input {
+  margin-bottom: 20px;
+}
+.modal .modal-body > div .col-md-6:first-of-type {
+  padding-left: 0;
+  padding-right: 10px;
+}
+.modal .modal-body > div .col-md-6:last-of-type {
+  padding-left: 10px;
+  padding-right: 0;
+}
+.modal .modal-body > div:nth-child(1) {
+  padding: 40px 60px 60px 60px;
+}
+.modal .modal-body > div:nth-child(1).gray-section {
+  background-color: #fafafa;
+  border-right: 1px solid #ebebeb;
+}
+.modal .modal-body > div:nth-child(2) {
+  padding: 40px 60px 60px 20px;
 }
