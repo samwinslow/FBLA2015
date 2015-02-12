@@ -6802,7 +6802,7 @@ img.logo {
   background-color: #f7f2e7;
   background-image: url("../img/promo-bike.png");
   background-repeat: no-repeat;
-  background-position: right center;
+  background-position: 275px center;
 }
 .promo-section h1 {
   font-size: 100px;
