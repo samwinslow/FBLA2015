@@ -6585,6 +6585,25 @@ h2,
 .btn.btn-form {
   background-color: #ebebeb;
   color: #292b2d;
+  padding: 13px 16px 16px 16px;
+  max-height: 46px;
+}
+.btn.btn-form:hover {
+  border-color: #ccc;
+}
+.btn.btn-form:active,
+.btn.btn-form:focus {
+  outline: none;
+  -webkit-outline: none;
+  -moz-outline: none;
+}
+.btn.btn-form.form-success {
+  background-color: #ff9400;
+  border-color: #ff9400;
+}
+.btn.btn-form.form-success:hover {
+  border-color: #ff9400;
+  cursor: default;
 }
 .btn span.chevron-right {
   display: inline-block;
@@ -6793,6 +6812,7 @@ img.logo {
 }
 footer {
   padding: 66px;
+  border-top: 1px solid #ebebeb;
 }
 footer:before,
 footer:after {
@@ -6818,4 +6838,14 @@ input {
   font-size: 11px;
   padding: 13px 25px 16px 25px;
   box-shadow: none !important;
+}
+ul.icon-truck {
+  list-style-image: url("../img/icons/truck.png");
+}
+ul.icon-creditcard {
+  list-style-image: url("../img/icons/creditcard.png");
+}
+img.social {
+  height: 16px;
+  margin-right: 16px;
 }

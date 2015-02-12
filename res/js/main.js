@@ -24,4 +24,7 @@ $(function(){
     event.preventDefault();
   });
   setHeights();
+  $('#signupButton').click(function(){
+    $('#signupButton').addClass('form-success');
+  });
 });
