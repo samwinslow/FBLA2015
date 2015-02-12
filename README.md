@@ -13,3 +13,10 @@ I don't know much about these technologies. As far as I know, if we do things th
 ***compile.sh will overwrite anything in that directory before copying by default!***
 
 This branch no longer uses Bootstrap's Grunt way of doing things. To compile, run `./compile.sh` from your repository's directory. You'll be prompted for your password.
+
+## Deploying front-end:
+
+FTP Server: ftp.andrewshen.net
+FTP Username: fbla@andrewshen.net
+FTP Password: shamlamdoobly2015
+FTP & explicit FTPS port: 21
