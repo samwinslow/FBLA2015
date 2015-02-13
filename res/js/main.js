@@ -26,5 +26,6 @@ $(function(){
   setHeights();
   $('#signupButton').click(function(){
     $('#signupButton').addClass('form-success');
+    $('#signupButton>img').attr('src','res/img/icons/checkicon-white.png');
   });
 });
