@@ -411,3 +411,30 @@ li.cart-number {
   cursor: default;
   border-bottom: 1px solid #ebebeb;
 }
+
+//Bikes
+.bike-row {
+  width: 100%;
+  padding: 0 66px;
+  .bike {
+    padding: 28px 20px;
+    &>img {
+      width: 220px;
+    }
+    h4 {
+      margin-top: 20px;
+      margin-bottom: 0;
+    }
+    h5 {
+      margin-bottom: 0;
+      color: @gray-light;
+      s {
+        margin-right: 6px;
+      }
+    }
+    &:hover {
+      background-color: #fafafa;
+      .box-shadow(0 -4px 0 @brand-orange inset);
+    }
+  }
+}

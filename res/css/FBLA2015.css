@@ -1256,7 +1256,7 @@ h4,
 }
 h5,
 .h5 {
-  font-size: 14px;
+  font-size: 16px;
 }
 h6,
 .h6 {
@@ -6968,4 +6968,30 @@ li.cart-number {
   line-height: 11px;
   cursor: default;
   border-bottom: 1px solid #ebebeb;
+}
+.bike-row {
+  width: 100%;
+  padding: 0 66px;
+}
+.bike-row .bike {
+  padding: 28px 20px;
+}
+.bike-row .bike > img {
+  width: 220px;
+}
+.bike-row .bike h4 {
+  margin-top: 20px;
+  margin-bottom: 0;
+}
+.bike-row .bike h5 {
+  margin-bottom: 0;
+  color: #777777;
+}
+.bike-row .bike h5 s {
+  margin-right: 6px;
+}
+.bike-row .bike:hover {
+  background-color: #fafafa;
+  -webkit-box-shadow: 0 -4px 0 #ff9400 inset;
+  box-shadow: 0 -4px 0 #ff9400 inset;
 }
