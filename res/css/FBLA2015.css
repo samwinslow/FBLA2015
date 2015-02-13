@@ -6540,10 +6540,17 @@ h2,
 .caps {
   text-transform: uppercase;
 }
-input {
+input,
+select {
   font-size: 11px;
   padding: 13px 25px 16px 25px;
   box-shadow: none !important;
+}
+select.form-control {
+  border-radius: 2px;
+  -webkit-appearance: none;
+  position: relative;
+  top: -10px;
 }
 .text-orange {
   color: #ff9400;
@@ -7028,4 +7035,37 @@ li.cart-number {
   cursor: pointer;
   -webkit-box-shadow: 0 -4px 0 #ff9400 inset;
   box-shadow: 0 -4px 0 #ff9400 inset;
+}
+#bikeModal .gray-section {
+  padding-top: 120px;
+  min-height: 468px;
+}
+#bikeModal .modal-body > div:nth-child(2) {
+  padding: 40px 20px 60px 20px;
+}
+#bikeModal h3 {
+  font-size: 30px;
+}
+#bikeModal h4 {
+  color: #777777;
+}
+#bikeModal p {
+  font-size: 12px;
+  color: #777777;
+}
+#bikeModal .bike-modal-img {
+  width: 340px;
+}
+#bikeModal #purchaseSize {
+  width: 150px;
+}
+#bikeModal #purchaseQty {
+  width: 100px;
+}
+#bikeModal button[type=submit] {
+  margin-bottom: 20px;
+}
+#bikeModal ul.icon-truck {
+  padding-left: 30px;
+  opacity: 0.6;
 }

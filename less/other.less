@@ -16,10 +16,16 @@ p {
 h1, h2, .caps {
   text-transform: uppercase;
 }
-input {
+input, select {
   font-size: 11px;
   padding: 13px 25px 16px 25px;
   box-shadow: none !important;
+}
+select.form-control {
+  border-radius: @border-radius-base;
+  -webkit-appearance: none;
+  position: relative;
+  top: -10px;
 }
 .text-orange {
   color: @brand-orange;
@@ -472,5 +478,40 @@ li.cart-number {
       cursor: pointer;
       .box-shadow(0 -4px 0 @brand-orange inset);
     }
+  }
+}
+#bikeModal{
+  .gray-section {
+    padding-top: 120px;
+    min-height: 468px;
+  }
+  .modal-body>div:nth-child(2) {
+    padding: 40px 20px 60px 20px;
+  }
+  h3 {
+    font-size: 30px;
+  }
+  h4 {
+    color: @gray-light;
+  }
+  p {
+    font-size: 12px;
+    color: @gray-light;
+  }
+  .bike-modal-img {
+    width: 340px;
+  }
+  #purchaseSize {
+    width: 150px;
+  }
+  #purchaseQty {
+    width: 100px;
+  }
+  button[type=submit] {
+    margin-bottom: 20px;
+  }
+  ul.icon-truck {
+    padding-left: 30px;
+    opacity: 0.6;
   }
 }
