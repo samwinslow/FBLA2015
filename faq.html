@@ -32,20 +32,7 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Bikes</a>
-              <ul class="dropdown-menu" role="menu">
-                <li>
-                  <a href="#">Men's</a>
-                </li>
-                <li>
-                  <a href="#">Women's</a>
-                </li>
-                <li>
-                  <a href="#">Children's</a>
-                </li>
-              </ul>
-            </li>
+            <li><a href="bikes.html">Bikes</a></li>
             <li><a href="#">Trips</a></li>
             <li><a href="#">Seminars</a></li>
             <li><a href="#">FAQ</a></li>
@@ -107,124 +94,34 @@
   </div>
 
   <!-- Jumbotron -->
-	<div class="jumbotron nhp-header bike-header">
-	  <div class="container">
-	    <div class="row">
-	      <div class="col-md-5 col-md-offset-7">
-		      <h1>Road Bikes <br> On Sale</h1>
-          <a class="btn btn-primary btn-bike-header btn-lg" href="#" role="button">See Collection <span class="chevron-right chevron-orange"></span></a>
-        </div>
-      </div>
-		</div>
+	<div class="jumbotron nhp-header faq-header">
+	  <h1>FAQs</h1>
+    <p>Here are a list of frequently asked questions. Still can’t find what you’re looking for? <br> We’re always happy to help out. Drop us a message anytime through our <a href="#"><u>contact form</u></a>.</p>
 	</div><!--/Jumbotron -->
-	
-	<!-- Modal -->
-  <div class="modal fade" id="bikeModal" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-body">
-          <div class="col-md-7 gray-section">
-            <img class="bike-modal-img" src="res/img/bikes/bike-1.png">
-          </div>
-          <div class="col-md-5">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
-            <h3>Trek Aeolus 5 Road Bike</h3>
-            <h4><s>$289.99</s> <span class="text-orange">$229.99</span></h4>
-            <p>The "Classics killer" Aeolus 5 D3 clincher road wheel offers the all-around performance of a 50mm carbon rim, while D3 shaping keeps the weight down and
-            aero benefits up. Now everyone can race like a professional over rolling terrain and in varying crosswinds.</p>
-            <form class="form-inline">
-              <div class="form-group">
-                <select class="form-control" id="purchaseSize" required>
-                  <option value="">SIZE</option>
-                  <option value="52">52 cm</option>
-                  <option value="54">54 cm</option>
-                  <option value="56">56 cm</option>
-                </select>
+  
+  <div class="container">   
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <div class="panel-group" id="accordion-cat-1">
+          <div class="panel panel-default panel-faq">
+            <div class="panel-heading">
+              <a data-toggle="collapse" data-parent="#accordion-cat-1" href="#faq-cat-1-sub-1">
+                <h3 class="panel-title">
+                  FAQ Item Category #1
+                  <span class="pull-right panel-action"><img src="res/img/icons/panel-plus.png"></span>
+                </h3>
+              </a>
+            </div>
+            <div id="faq-cat-1-sub-1" class="panel-collapse collapse">
+              <div class="panel-body">
+                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
               </div>
-              <div class="form-group">
-                <input type="number" class="form-control" id="purchaseQty" placeholder="QTY" min="1" max="10" step="1" required>
-              </div>
-              <br>
-              <div class="form-group">
-                <button type="submit" class="btn btn-success btn-lg" role="button">
-                  Add Item to Cart
-                </button>
-              </div>
-            </form>
-            <ul class="icon-truck">
-              <li><small>FREE shipping on all orders</small></li>
-            </ul>
-          </div>
+            </div>
         </div>
       </div>
     </div>
   </div>
   
-	<nav class="navbar bike-navbar" role="navigation">
-    <div id="bikeNavbar" class="navbar-collapse collapse">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Mens</a></li>
-        <li><a href="#">Womens</a></li>
-        <li><a href="#">Childrens</a></li>
-        <li class="spacer"></li>
-        <li><a href="#">Cyclecross</a></li>
-        <li><a href="#">Mountain</a></li>
-        <li><a href="#">Road</a></li>
-        <li><a href="#">Folding</a></li>
-        <li><a href="#">Electric Assist</a></li>
-        <li><a href="#">Hybrid</a></li>
-        <li><a href="#">BMX</a></li>
-      </ul>
-    </div><!--/.navbar-collapse -->
-  </nav>
-  
-  <div class="fullwidth-wrapper">
-    <div class="row bike-row">
-      <div class="col-md-3 text-center bike">
-        <img src="res/img/bikes/bike-1.png">
-        <h4>Trek Bontrager Road Bike</h4>
-        <h5><s>$289.99</s> <span class="text-orange">$229.99</span></h5>
-      </div>
-      <div class="col-md-3 text-center bike">
-        <img src="res/img/bikes/bike-1.png">
-        <h4>Trek Bontrager Road Bike</h4>
-        <h5>$289.99</h5>
-      </div>
-      <div class="col-md-3 text-center bike">
-        <img src="res/img/bikes/bike-1.png">
-        <h4>Trek Bontrager Road Bike</h4>
-        <h5>$289.99</h5>
-      </div>
-      <div class="col-md-3 text-center bike">
-        <img src="res/img/bikes/bike-1.png">
-        <h4>Trek Bontrager Road Bike</h4>
-        <h5>$289.99</h5>
-      </div>
-    </div>
-    <div class="row bike-row">
-      <div class="col-md-3 text-center bike">
-        <img src="res/img/bikes/bike-1.png">
-        <h4>Trek Bontrager Road Bike</h4>
-        <h5><s>$289.99</s> <span class="text-orange">$229.99</span></h5>
-      </div>
-      <div class="col-md-3 text-center bike">
-        <img src="res/img/bikes/bike-1.png">
-        <h4>Trek Bontrager Road Bike</h4>
-        <h5>$289.99</h5>
-      </div>
-      <div class="col-md-3 text-center bike">
-        <img src="res/img/bikes/bike-1.png">
-        <h4>Trek Bontrager Road Bike</h4>
-        <h5>$289.99</h5>
-      </div>
-      <div class="col-md-3 text-center bike">
-        <img src="res/img/bikes/bike-1.png">
-        <h4>Trek Bontrager Road Bike</h4>
-        <h5>$289.99</h5>
-      </div>
-    </div>
-  </div>
-    
   <footer>
     <div class="col-md-2">
       <img class="logo" alt="Cycle Fitness" src="res/img/logos/logo-white.png" title="Cycle Fitness" style="-webkit-filter: invert(1);">

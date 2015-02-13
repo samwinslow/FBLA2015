@@ -28,6 +28,9 @@ select.form-control {
 .text-orange {
   color: @brand-orange;
 }
+h3.panel-title {
+  font-size: @font-size-h3;
+}
 
 // Nav
 .top-nav-collapse {
@@ -253,41 +256,49 @@ button.close {
     font-size: 16px;
     color: #959595;
   }
-  &.bike-header {
+  &.nhp-header {
     background-color: #000;
-    background-image: url("../img/header/bikes.png");
     background-repeat: no-repeat;
-    background-position: center 60px;
-  }
-  &.contact-header {
-    padding-bottom: 0;
-    background-color: #000;
-    background-image: url("../img/header/contact.png");
-    background-repeat: no-repeat;
-    background-position: center top;
-    text-align: center;
-    &>h1 {
-      margin: 0;
-    }
     &>p {
       padding-top: 0;
       color: #fafafa;
+      a {
+        color: inherit;
+      }
     }
-    &>.container {
-      padding: 40px 60px;
-      background-color: #ebebeb;
-      @media (min-width: @screen-md-min){
-        background-image: url("../img/map.png");
-        background-repeat: no-repeat;
-        background-position: 640px top;
+    &.bike-header {
+      background-image: url("../img/header/bikes.png");
+      background-position: center 60px;
+    }
+    &.contact-header {
+      padding-bottom: 0;
+      background-image: url("../img/header/contact.png");
+      background-position: center top;
+      text-align: center;
+      &>h1 {
+        margin: 0;
       }
-      .form-control {
-        margin-bottom: @grid-gutter-width;
+      &>.container {
+        padding: 40px 60px;
+        background-color: #ebebeb;
+        @media (min-width: @screen-md-min){
+          background-image: url("../img/map.png");
+          background-repeat: no-repeat;
+          background-position: 640px top;
+        }
+        .form-control {
+          margin-bottom: @grid-gutter-width;
+        }
+        textarea {
+          font-size: 14px;
+          resize: none;
+        }
       }
-      textarea {
-        font-size: 14px;
-        resize: none;
-      }
+    }
+    &.faq-header {
+      background-image: url("../img/header/faq.png");
+      background-position: center 60px;
+      text-align: center;
     }
   }
 }
@@ -547,5 +558,14 @@ li.cart-number {
   select.form-control {
     position: relative;
     top: -10px;
+  }
+}
+
+// Panels
+.panel {
+  box-shadow: none;
+  border: none;
+  .panel-heading a {
+    text-decoration: none;
   }
 }
