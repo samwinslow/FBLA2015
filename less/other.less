@@ -47,7 +47,7 @@ input {
     padding-left: 15px;
   }
 }
-.navbar-inverse {
+.navbar {
   padding-right: 57px;
   .navbar-nav>li>a {
     padding-top: 20px;
@@ -64,6 +64,29 @@ input {
     transition: all 0.1s ease-in-out;
     &:focus {
       .disable-outline();
+    }
+  }
+  &.bike-navbar {
+    padding: 0 66px;
+    border-bottom: 1px solid #ebebeb;
+    text-align: center;
+    .navbar-nav {
+      display: inline-block;
+      float: none;
+      vertical-align: top;
+      margin: 0 auto;
+      &>li{
+        a {
+          color: @gray-light;
+        }
+        &.active a {
+          color: #000;
+        }
+      }
+    }
+    li.spacer {
+      height: 60px;
+      min-width: 33px;
     }
   }
 }

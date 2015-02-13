@@ -6569,10 +6569,10 @@ input {
   font-size: 20px;
   padding-left: 15px;
 }
-.navbar-inverse {
+.navbar {
   padding-right: 57px;
 }
-.navbar-inverse .navbar-nav > li > a {
+.navbar .navbar-nav > li > a {
   padding-top: 20px;
   padding-bottom: 20px;
   font-family: "Tungsten", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -6586,11 +6586,32 @@ input {
   -o-transition: all 0.1s ease-in-out;
   transition: all 0.1s ease-in-out;
 }
-.navbar-inverse .navbar-nav > li > a:focus {
+.navbar .navbar-nav > li > a:focus {
   outline: none;
   -webkit-outline: none;
   -moz-outline: none;
   -ms-outline: none;
+}
+.navbar.bike-navbar {
+  padding: 0 66px;
+  border-bottom: 1px solid #ebebeb;
+  text-align: center;
+}
+.navbar.bike-navbar .navbar-nav {
+  display: inline-block;
+  float: none;
+  vertical-align: top;
+  margin: 0 auto;
+}
+.navbar.bike-navbar .navbar-nav > li a {
+  color: #777777;
+}
+.navbar.bike-navbar .navbar-nav > li.active a {
+  color: #000;
+}
+.navbar.bike-navbar li.spacer {
+  height: 60px;
+  min-width: 33px;
 }
 img.logo {
   height: 12px;
