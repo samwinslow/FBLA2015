@@ -177,6 +177,17 @@ img.logo{
     }
   }
 }
+button.close {
+  width: 10px;
+  height: 10px;
+  background: url("../img/icons/close.png") no-repeat;
+  background-size: 100% 100%;
+  opacity: 0.6;
+  &:hover, &:active, &:focus {
+    .disable-outline();
+    opacity: 0.8;
+  }
+}
 
 // Jumbotron
 .bike-feature {
@@ -380,5 +391,10 @@ img.social {
         padding: 40px 60px 60px 20px;
       }
     }
+  }
+  button.close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
   }
 }

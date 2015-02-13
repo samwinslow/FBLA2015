@@ -6697,6 +6697,22 @@ img.logo {
 .btn.small-chevron span.chevron-right {
   margin-left: 40px;
 }
+button.close {
+  width: 10px;
+  height: 10px;
+  background: url("../img/icons/close.png") no-repeat;
+  background-size: 100% 100%;
+  opacity: 0.6;
+}
+button.close:hover,
+button.close:active,
+button.close:focus {
+  outline: none;
+  -webkit-outline: none;
+  -moz-outline: none;
+  -ms-outline: none;
+  opacity: 0.8;
+}
 .bike-feature {
   background: url("../img/header/3series.png");
   padding-top: 100px;
@@ -6936,4 +6952,9 @@ img.social {
 }
 .modal .modal-body > div:nth-child(2) {
   padding: 40px 60px 60px 20px;
+}
+.modal button.close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
 }
