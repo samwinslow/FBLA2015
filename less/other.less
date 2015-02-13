@@ -256,11 +256,14 @@ button.close {
   &.bike-header {
     background-color: #000;
     background-image: url("../img/header/bikes.png");
+    background-repeat: no-repeat;
     background-position: center 60px;
   }
   &.contact-header {
+    padding-bottom: 0;
     background-color: #000;
     background-image: url("../img/header/contact.png");
+    background-repeat: no-repeat;
     background-position: center top;
     text-align: center;
     &>h1 {
@@ -273,7 +276,12 @@ button.close {
     &>.container {
       padding: 40px 60px;
       background-color: #ebebeb;
-      .row {
+      @media (min-width: @screen-md-min){
+        background-image: url("../img/map.png");
+        background-repeat: no-repeat;
+        background-position: 640px top;
+      }
+      .form-control {
         margin-bottom: @grid-gutter-width;
       }
       textarea {

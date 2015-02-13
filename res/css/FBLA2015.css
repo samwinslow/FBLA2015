@@ -6780,11 +6780,14 @@ button.close:focus {
 .jumbotron.bike-header {
   background-color: #000;
   background-image: url("../img/header/bikes.png");
+  background-repeat: no-repeat;
   background-position: center 60px;
 }
 .jumbotron.contact-header {
+  padding-bottom: 0;
   background-color: #000;
   background-image: url("../img/header/contact.png");
+  background-repeat: no-repeat;
   background-position: center top;
   text-align: center;
 }
@@ -6799,7 +6802,14 @@ button.close:focus {
   padding: 40px 60px;
   background-color: #ebebeb;
 }
-.jumbotron.contact-header > .container .row {
+@media (min-width: 992px) {
+  .jumbotron.contact-header > .container {
+    background-image: url("../img/map.png");
+    background-repeat: no-repeat;
+    background-position: 640px top;
+  }
+}
+.jumbotron.contact-header > .container .form-control {
   margin-bottom: 30px;
 }
 .jumbotron.contact-header > .container textarea {
