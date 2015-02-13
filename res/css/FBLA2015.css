@@ -6783,6 +6783,19 @@ button.close:focus {
   background-image: url("../img/header/bikes.png");
   background-position: center 60px;
 }
+.jumbotron.contact-header {
+  background-color: #000;
+  background-image: url("../img/header/contact.png");
+  background-position: center top;
+  text-align: center;
+}
+.jumbotron.contact-header > h1 {
+  margin: 0;
+}
+.jumbotron.contact-header > p {
+  padding-top: 0;
+  color: #fafafa;
+}
 .ul-left {
   font-size: 21px;
   float: left;
