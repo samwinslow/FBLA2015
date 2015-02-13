@@ -6824,13 +6824,37 @@ button.close:focus {
 }
 .jumbotron.nhp-header.faq-header {
   background-image: url("../img/header/faq.png");
-  background-position: center 60px;
+  background-position: center top;
   text-align: center;
 }
 .jumbotron.nhp-header.seminars-header {
   background-image: url("../img/header/seminars.png");
-  background-position: center 60px;
+  background-position: center top;
   text-align: center;
+}
+.jumbotron.nhp-header.trips-header {
+  background-image: url("../img/header/trips.png");
+  background-position: center top;
+  text-align: center;
+}
+.jumbotron.nhp-header.trips-header > p {
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+.jumbotron.nhp-header.trips-header > h1 {
+  margin-top: 0;
+}
+.jumbotron.nhp-header.trips-header .btn-primary {
+  background-color: rgba(0, 0, 0, 0.75);
+  border-color: rgba(0, 0, 0, 0.75);
+}
+.jumbotron.nhp-header.trips-header .btn-primary:hover {
+  color: #fff;
+  background-color: transparent;
+  border-color: #fff;
+}
+.jumbotron.nhp-header.trips-header .btn-primary:hover .chevron-orange {
+  background-image: url("../img/icons/chevron-thin-right-white.png");
 }
 .ul-left {
   font-size: 21px;
@@ -6966,6 +6990,83 @@ button.close:focus {
 }
 .promo-section .btn {
   margin-top: 25px;
+}
+.trips-container {
+  padding-top: 66px;
+  padding-bottom: 100px;
+}
+.trips-container > .row {
+  margin-bottom: 30px;
+}
+.trips-container > .row > div {
+  padding: 48px 80px;
+  color: #fff;
+}
+.trips-container > .row > div.col-md-6:nth-of-type(1) {
+  padding-right: 95px;
+  box-shadow: -15px 0 0 #ffffff inset;
+}
+.trips-container > .row > div.col-md-6:nth-of-type(2) {
+  padding-left: 95px;
+  box-shadow: 15px 0 0 #ffffff inset;
+}
+.trips-container > .row > div > h3 {
+  margin-top: 0;
+  font-size: 30px;
+}
+.trips-container > .row > div > h4 {
+  margin-bottom: 30px;
+}
+.trips-container > .row > div .form-control,
+.trips-container > .row > div .btn {
+  margin-top: 30px;
+}
+.trips-container > .row > div select.form-control {
+  border-color: #fff;
+  width: 220px;
+}
+.trips-container > .row > div .btn-ghost {
+  background-color: transparent;
+}
+.trips-container > .row > div .btn-ghost:hover {
+  background-color: #fff;
+}
+.trips-container > .row > div.lightblue {
+  background-color: #4babcf;
+}
+.trips-container > .row > div.lightblue .btn-ghost:hover {
+  color: #4babcf;
+}
+.trips-container > .row > div.darkblue {
+  background-color: #334653;
+}
+.trips-container > .row > div.darkblue .btn-ghost:hover {
+  color: #334653;
+}
+.trips-container > .row > div.gray-light {
+  background-color: #777777;
+}
+.trips-container > .row > div.gray-light .btn-ghost:hover {
+  color: #777777;
+}
+.trips-container > .row > div.white {
+  color: #333333;
+  background-color: #fafafa;
+}
+.trips-container > .row > div.white > h4,
+.trips-container > .row > div.white > p {
+  color: #777777;
+}
+.trips-container > .row > div.white select.form-control {
+  border-color: #ebebeb;
+}
+.trips-container > .row > div.white .btn-ghost {
+  color: inherit;
+  border-color: #333333;
+}
+.trips-container > .row > div.white .btn-ghost:hover {
+  color: #fafafa;
+  background-color: #333333;
 }
 footer {
   padding: 66px 66px 33px 66px;

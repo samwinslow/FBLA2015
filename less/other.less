@@ -297,13 +297,37 @@ button.close {
     }
     &.faq-header {
       background-image: url("../img/header/faq.png");
-      background-position: center 60px;
+      background-position: center top;
       text-align: center;
     }
     &.seminars-header {
       background-image: url("../img/header/seminars.png");
-      background-position: center 60px;
+      background-position: center top;
       text-align: center;
+    }
+    &.trips-header {
+      background-image: url("../img/header/trips.png");
+      background-position: center top;
+      text-align: center;
+      &>p {
+        padding-bottom: 0;
+        margin-bottom: 0;
+      }
+      &>h1 {
+        margin-top: 0;
+      }
+      .btn-primary {
+        background-color: rgba(0,0,0,0.75);
+        border-color: rgba(0,0,0,0.75);
+        &:hover {
+          color: #fff;
+          background-color: transparent;
+          border-color: #fff;
+          .chevron-orange {
+            background-image: url("../img/icons/chevron-thin-right-white.png");
+          }
+        }
+      }
     }
   }
 }
@@ -426,6 +450,89 @@ button.close {
   }
   .btn {
     margin-top: 25px;
+  }
+}
+.trips-container {
+  padding-top: 66px;
+  padding-bottom: 100px;
+  &>.row {
+    margin-bottom: @grid-gutter-width;
+    &>div {
+      padding: 48px 80px;
+      color: #fff;
+      &.col-md-6 {
+        &:nth-of-type(1) {
+          padding-right: 80px + (@grid-gutter-width / 2);
+          box-shadow: -(@grid-gutter-width / 2) 0 0 #fff inset;
+        }
+        &:nth-of-type(2) {
+          padding-left: 80px + (@grid-gutter-width / 2);
+          box-shadow: (@grid-gutter-width / 2) 0 0 #fff inset;
+        }
+      }
+      & > h3 {
+        margin-top: 0;
+        font-size: 30px;
+      }
+      & > h4 {
+        margin-bottom: 30px;
+      }
+      .form-control, .btn {
+        margin-top: 30px;
+      }
+      select.form-control {
+        border-color: #fff;
+        width: 220px;
+      }
+      .btn-ghost {
+        background-color: transparent;
+        &:hover {
+          background-color: #fff;
+        }
+      }
+      &.lightblue {
+        background-color: @brand-lightblue;
+        .btn-ghost {
+          &:hover {
+            color: @brand-lightblue;
+          }
+        }
+      }
+      &.darkblue {
+        background-color: @brand-darkblue;
+        .btn-ghost {
+          &:hover {
+            color: @brand-darkblue;
+          }
+        }
+      }
+      &.gray-light {
+        background-color: @gray-light;
+        .btn-ghost {
+          &:hover {
+            color: @gray-light;
+          }
+        }
+      }
+      &.white {
+        color: @text-color;
+        background-color: #fafafa;
+        & > h4, & > p {
+          color: @gray-light;
+        }
+        select.form-control {
+          border-color: #ebebeb;
+        }
+        .btn-ghost {
+          color: inherit;
+          border-color: @text-color;
+          &:hover {
+            color: #fafafa;
+            background-color: @text-color;
+          }
+        }
+      }
+    }
   }
 }
 
