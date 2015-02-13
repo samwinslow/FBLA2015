@@ -17,7 +17,11 @@ $(window).scroll(function(){
   } else{
     $(".navbar-fixed-top").removeClass("top-nav-collapse");}
   });
-
+  
+$('.bike').click(function(){
+  $('#bikeModal').modal('show');
+});
+  
 $(function(){
   $('.page-scroll a').bind('click',function(event){
     var $anchor=$(this);$('html, body').stop().animate({scrollTop:$($anchor.attr('href')).offset().top},1500,'jswing');
