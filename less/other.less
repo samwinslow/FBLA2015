@@ -16,7 +16,7 @@ p {
 h1, h2, .caps {
   text-transform: uppercase;
 }
-input, select {
+input.form-control, select.form-control, textarea.form-control {
   font-size: 11px;
   padding: 13px 25px 16px 25px;
   box-shadow: none !important;
@@ -24,8 +24,6 @@ input, select {
 select.form-control {
   border-radius: @border-radius-base;
   -webkit-appearance: none;
-  position: relative;
-  top: -10px;
 }
 .text-orange {
   color: @brand-orange;
@@ -272,8 +270,16 @@ button.close {
       padding-top: 0;
       color: #fafafa;
     }
-    .container {
-      
+    &>.container {
+      padding: 40px 60px;
+      background-color: #ebebeb;
+      .row {
+        margin-bottom: @grid-gutter-width;
+      }
+      textarea {
+        font-size: 14px;
+        resize: none;
+      }
     }
   }
 }
@@ -529,5 +535,9 @@ li.cart-number {
   ul.icon-truck {
     padding-left: 30px;
     opacity: 0.6;
+  }
+  select.form-control {
+    position: relative;
+    top: -10px;
   }
 }

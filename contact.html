@@ -98,7 +98,32 @@
 	  <h1>Contact Us</h1>
     <p>We love our customers. Whether you have a question, general inquiry, or partnership <br> proposal, we’re always more than happy to help you out.</p>
 	  <div class="container">
-		  
+	    <form action="">
+	      <div class="row">
+	        <div class="col-md-3">
+	          <input type="text" class="form-control" id="messageName" placeholder="NAME">
+	        </div>
+	        <div class="col-md-3">
+	          <select class="form-control">
+	            <option value="inquiry">GENERAL INQUIRY</option>
+	            <option value="partnership">PARTNERSHIP</option>
+	            <option value="support">SUPPORT</option>
+	            <option value="other">OTHER</option>
+	          </select>
+	        </div>
+	      </div>
+	      <div class="row">
+	        <div class="col-md-6">
+	          <textarea class="form-control" rows="12" placeholder="Enter your message here - we’d love to help!"></textarea>
+	        </div>
+	      </div>
+	      <div class="row">
+	        <div class="col-md-2 col-md-offset-4">
+	          <button type="submit" class="btn btn-success btn-lg" role="button">Send Message</button>
+	        </div>
+	      </div>
+	    </form>
+		    
 		</div>
 	</div><!--/Jumbotron -->
     

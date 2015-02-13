@@ -6540,8 +6540,9 @@ h2,
 .caps {
   text-transform: uppercase;
 }
-input,
-select {
+input.form-control,
+select.form-control,
+textarea.form-control {
   font-size: 11px;
   padding: 13px 25px 16px 25px;
   box-shadow: none !important;
@@ -6549,8 +6550,6 @@ select {
 select.form-control {
   border-radius: 2px;
   -webkit-appearance: none;
-  position: relative;
-  top: -10px;
 }
 .text-orange {
   color: #ff9400;
@@ -6795,6 +6794,17 @@ button.close:focus {
 .jumbotron.contact-header > p {
   padding-top: 0;
   color: #fafafa;
+}
+.jumbotron.contact-header > .container {
+  padding: 40px 60px;
+  background-color: #ebebeb;
+}
+.jumbotron.contact-header > .container .row {
+  margin-bottom: 30px;
+}
+.jumbotron.contact-header > .container textarea {
+  font-size: 14px;
+  resize: none;
 }
 .ul-left {
   font-size: 21px;
@@ -7081,4 +7091,8 @@ li.cart-number {
 #bikeModal ul.icon-truck {
   padding-left: 30px;
   opacity: 0.6;
+}
+#bikeModal select.form-control {
+  position: relative;
+  top: -10px;
 }
