@@ -6827,6 +6827,11 @@ button.close:focus {
   background-position: center 60px;
   text-align: center;
 }
+.jumbotron.nhp-header.seminars-header {
+  background-image: url("../img/header/seminars.png");
+  background-position: center 60px;
+  text-align: center;
+}
 .ul-left {
   font-size: 21px;
   float: left;
@@ -6900,33 +6905,50 @@ button.close:focus {
   padding: 66px;
   min-height: 563px;
 }
-.seminar-section h2 {
+.seminar-tile {
+  padding: 0 4%;
+}
+.seminar-tile h2 {
   margin-bottom: 50px;
 }
-.seminar-section a {
+.seminar-tile a {
   font-weight: 500;
   letter-spacing: 1px;
 }
-.seminar-section .col-md-4 {
-  padding: 0 4%;
-}
 @media (min-width: 992px) {
-  .seminar-section .col-md-4 img {
+  .seminar-tile img {
     width: 75%;
   }
-  .seminar-section .col-md-4 p {
+  .seminar-tile p {
     min-height: 80px;
   }
 }
 @media (max-width: 991px) {
-  .seminar-section .col-md-4 img {
+  .seminar-tile img {
     width: 150px;
     margin-top: 50px;
   }
 }
-.seminar-section .col-md-4 h3 {
+.seminar-tile h3 {
   margin-top: 40px;
   font-size: 21px;
+}
+.seminar-tile.seminar-page {
+  padding: 0 30px;
+  margin-bottom: 60px;
+}
+.seminar-tile.seminar-page img {
+  width: 110px;
+}
+.seminar-tile.seminar-page h3 {
+  font-size: 21px;
+}
+.seminar-tile.seminar-page p {
+  color: #777777;
+}
+.seminar-container {
+  padding-top: 80px;
+  padding-bottom: 60px;
 }
 .promo-section {
   padding: 150px 66px 66px 66px;

@@ -300,6 +300,11 @@ button.close {
       background-position: center 60px;
       text-align: center;
     }
+    &.seminars-header {
+      background-image: url("../img/header/seminars.png");
+      background-position: center 60px;
+      text-align: center;
+    }
   }
 }
 
@@ -360,6 +365,9 @@ button.close {
 .seminar-section {
   padding: 66px;
   min-height: 563px;
+}
+.seminar-tile {
+  padding: 0 4%;
   h2 {
     margin-bottom: 50px;
   }
@@ -367,27 +375,41 @@ button.close {
     font-weight: 500;
     letter-spacing: 1px;
   }
-  .col-md-4 {
-    padding: 0 4%;
-    @media (min-width: @screen-md-min){
-      img {
-        width: 75%;
-      }
-      p {
-        min-height: 80px;
-      }
+  @media (min-width: @screen-md-min){
+    img {
+      width: 75%;
     }
-    @media (max-width: @screen-sm-max){
-      img {
-        width: 150px;
-        margin-top: 50px;
-      }
-    }
-    h3 {
-      margin-top: 40px;
-      font-size: 21px;
+    p {
+      min-height: 80px;
     }
   }
+  @media (max-width: @screen-sm-max){
+    img {
+      width: 150px;
+      margin-top: 50px;
+    }
+  }
+  h3 {
+    margin-top: 40px;
+    font-size: 21px;
+  }
+  &.seminar-page {
+    padding: 0 @grid-gutter-width;
+    margin-bottom: 60px;
+    img {
+      width: 110px;
+    }
+    h3 {
+      font-size: 21px;
+    }
+    p {
+      color: @gray-light;
+    }
+  }
+}
+.seminar-container {
+  padding-top: 80px;
+  padding-bottom: 60px;
 }
 .promo-section {
   padding: 150px 66px 66px 66px;
