@@ -7001,6 +7001,9 @@ button.close:focus {
 .trips-container > .row > div {
   padding: 48px 80px;
   color: #fff;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
 }
 .trips-container > .row > div.col-md-6:nth-of-type(1) {
   padding-right: 95px;
@@ -7067,6 +7070,18 @@ button.close:focus {
 .trips-container > .row > div.white .btn-ghost:hover {
   color: #fafafa;
   background-color: #333333;
+}
+.trips-container > .row > div#manhattanRT {
+  background-image: url("../img/trip-1.png");
+}
+.trips-container > .row > div#brooklynRT {
+  background-image: url("../img/trip-2.png");
+}
+.trips-container > .row > div#bronxRT {
+  background-image: url("../img/trip-3.png");
+}
+.trips-container > .row > div#harlemRT {
+  background-image: url("../img/trip-4.png");
 }
 footer {
   padding: 66px 66px 33px 66px;

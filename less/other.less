@@ -460,6 +460,9 @@ button.close {
     &>div {
       padding: 48px 80px;
       color: #fff;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: top center;
       &.col-md-6 {
         &:nth-of-type(1) {
           padding-right: 80px + (@grid-gutter-width / 2);
@@ -531,6 +534,19 @@ button.close {
             background-color: @text-color;
           }
         }
+      }
+      // Specific trip panels
+      &#manhattanRT {
+        background-image: url("../img/trip-1.png");
+      }
+      &#brooklynRT {
+        background-image: url("../img/trip-2.png");
+      }
+      &#bronxRT {
+        background-image: url("../img/trip-3.png");
+      }
+      &#harlemRT {
+        background-image: url("../img/trip-4.png");
       }
     }
   }
