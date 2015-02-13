@@ -35,13 +35,13 @@
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Bikes</a>
               <ul class="dropdown-menu" role="menu">
-                <li class="dropdown">
+                <li>
                   <a href="#">Men's</a>
                 </li>
-                <li class="dropdown">
+                <li>
                   <a href="#">Women's</a>
                 </li>
-                <li class="dropdown">
+                <li>
                   <a href="#">Children's</a>
                 </li>
               </ul>
@@ -50,7 +50,22 @@
             <li><a href="#">Seminars</a></li>
             <li><a href="#">FAQ</a></li>
             <li><a href="#">Contact</a></li>
-            <li class="cart-li"><p class="navbar-text"><span class="badge">3</span> <a href="#" class="navbar-link cart-money">$200</a></p></li>
+            <li class="cart-li dropdown">
+              <a href="#" data-toggle="dropdown" aria-expanded="false">
+                <span class="badge">3</span> <span class="cart-money">$200</span></a>
+              </a>
+              <ul class="dropdown-menu" role="menu">
+                <li class="cart-number">
+                  <span class="text-orange">3</span> items in your cart
+                </li>
+                <li class="dropdown">
+                  <a href="#">Item 1</a>
+                </li>
+                <li class="dropdown">
+                  <a href="#">Item 2</a>
+                </li>
+              </ul>
+            </li>
             <li><a href="#" style="color:#fff;" data-toggle="modal" data-target="#signinModal">Log In / Sign Up</a></li>
           </ul>
         </div><!--/.navbar-collapse -->
