@@ -6613,6 +6613,13 @@ img.logo {
   color: #292b2d;
   background-color: transparent;
 }
+.btn.btn-primary:hover.btn-bike-header {
+  color: #fff;
+  border-color: #fff;
+}
+.btn.btn-primary:hover.btn-bike-header .chevron-orange {
+  background-image: url("../img/icons/chevron-thin-right-white.png");
+}
 .btn.btn-default:hover {
   color: #ffffff;
   background-color: transparent;
@@ -6717,15 +6724,15 @@ button.close:focus {
 }
 .bike-feature {
   background: url("../img/header/3series.png");
-  padding-top: 100px;
-  padding-bottom: 200px;
+  padding-top: 0;
+  padding-bottom: 130px;
   background-repeat: no-repeat;
-  background-position: 53% 150px;
+  background-position: 53% 75px;
 }
 .jumbotron {
   margin: 0;
-  padding-top: 73px;
-  padding-bottom: 0;
+  padding-top: 140px;
+  padding-bottom: 80px;
   background: url("../img/header/header-bg.png") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -6742,6 +6749,11 @@ button.close:focus {
   padding-bottom: 20px;
   font-size: 16px;
   color: #959595;
+}
+.jumbotron.bike-header {
+  background-color: #000;
+  background-image: url("../img/header/bikes.png");
+  background-position: center 60px;
 }
 .ul-left {
   font-size: 21px;
@@ -6992,6 +7004,7 @@ li.cart-number {
 }
 .bike-row .bike:hover {
   background-color: #fafafa;
+  cursor: pointer;
   -webkit-box-shadow: 0 -4px 0 #ff9400 inset;
   box-shadow: 0 -4px 0 #ff9400 inset;
 }

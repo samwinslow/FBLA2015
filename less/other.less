@@ -88,6 +88,13 @@ img.logo{
   &.btn-primary:hover {
     color: @btn-primary-bg;
     background-color: transparent;
+    &.btn-bike-header {
+      color: #fff;
+      border-color: #fff;
+      .chevron-orange {
+        background-image: url("../img/icons/chevron-thin-right-white.png");
+      }
+    }
   }
   &.btn-default:hover {
     color: @btn-default-bg;
@@ -194,15 +201,15 @@ button.close {
 // Jumbotron
 .bike-feature {
   background: url("../img/header/3series.png");
-  padding-top: 100px;
-  padding-bottom: 200px;
+  padding-top: 0;
+  padding-bottom: 130px;
   background-repeat: no-repeat;
-  background-position: 53% 150px;
+  background-position: 53% 75px;
 }
 .jumbotron {
   margin: 0;
-  padding-top: 73px;
-  padding-bottom: 0;
+  padding-top: 140px;
+  padding-bottom: 80px;
   background: url("../img/header/header-bg.png") no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -218,6 +225,11 @@ button.close {
     padding-bottom: 20px;
     font-size: 16px;
     color: #959595;
+  }
+  &.bike-header {
+    background-color: #000;
+    background-image: url("../img/header/bikes.png");
+    background-position: center 60px;
   }
 }
 
@@ -434,6 +446,7 @@ li.cart-number {
     }
     &:hover {
       background-color: #fafafa;
+      cursor: pointer;
       .box-shadow(0 -4px 0 @brand-orange inset);
     }
   }
