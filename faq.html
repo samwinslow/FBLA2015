@@ -18,7 +18,7 @@
   <!--[if lt IE 8]>
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
-  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <nav class="navbar navbar-inverse navbar-fixed-top top-nav-collapse" role="navigation">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
             <span class="sr-only">Toggle navigation</span>
@@ -40,7 +40,7 @@
             <li class="cart-li dropdown">
               <a href="#" data-toggle="dropdown" aria-expanded="false">
                 <span class="badge">3</span> <span class="cart-money">$200</span></a>
-              </a>
+              
               <ul class="dropdown-menu" role="menu">
                 <li class="cart-number">
                   <span class="text-orange">3</span> items in your cart
@@ -67,13 +67,13 @@
             <h2>Register</h2>
             <form action="">
               <div class="col-md-6">
-                <input type="text" class="form-control" id="registerFirstName" placeholder="FIRST NAME" required>
+                <input type="text" class="form-control" id="registerFirstName" placeholder="FIRST NAME" required="">
               </div>
               <div class="col-md-6">
-                <input type="text" class="form-control" id="registerLastName" placeholder="LAST NAME" required>
+                <input type="text" class="form-control" id="registerLastName" placeholder="LAST NAME" required="">
               </div>
-              <input type="email" class="form-control" id="registerEmail" placeholder="EMAIL ADDRESS" required>
-              <input type="password" class="form-control" id="registerPassword" placeholder="PASSWORD" required>
+              <input type="email" class="form-control" id="registerEmail" placeholder="EMAIL ADDRESS" required="">
+              <input type="password" class="form-control" id="registerPassword" placeholder="PASSWORD" required="">
               <p class="text-right"><button type="submit" class="btn btn-success btn-lg" role="button">Sign Up</button></p>
             </form>
           </div>
@@ -81,8 +81,8 @@
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
             <h2>Login</h2>
             <form action="">
-              <input type="email" class="form-control" id="signinEmail" placeholder="EMAIL ADDRESS" required>
-              <input type="password" class="form-control" id="signinPassword" placeholder="PASSWORD" required>
+              <input type="email" class="form-control" id="signinEmail" placeholder="EMAIL ADDRESS" required="">
+              <input type="password" class="form-control" id="signinPassword" placeholder="PASSWORD" required="">
               <p><button type="submit" class="btn btn-success btn-ghost btn-lg small-chevron" role="button">
                 Log In <span class="chevron-right chevron-orange"></span>
               </button></p>
@@ -94,14 +94,14 @@
   </div>
 
   <!-- Jumbotron -->
-	<div class="jumbotron nhp-header faq-header">
-	  <h1>FAQs</h1>
+  <div class="jumbotron nhp-header faq-header">
+    <h1>FAQs</h1>
     <p>Here are a list of frequently asked questions. Still can’t find what you’re looking for? <br> We’re always happy to help out. Drop us a message anytime through our <a href="#"><u>contact form</u></a>.</p>
-	</div><!--/Jumbotron -->
+  </div><!--/Jumbotron -->
   
   <div class="container">   
     <div class="row">
-      <div class="col-md-6 col-md-offset-3">
+      <div class="col-md-10 col-md-offset-1">
         <div class="panel-group" id="accordion-cat-1">
           <div class="panel panel-default panel-faq">
             <div class="panel-heading">
@@ -121,9 +121,9 @@
       </div>
     </div>
   </div>
-  </div>
-  
-  <footer>
+</div>
+
+<footer>
     <div class="col-md-2">
       <img class="logo" alt="Cycle Fitness" src="res/img/logos/logo-white.png" title="Cycle Fitness" style="-webkit-filter: invert(1);">
     </div>
@@ -169,11 +169,9 @@
       <p class="footer-text">Copyright 2015 Cycle Fitness. Created by Andrew Shen and Samuel Winslow. No templates used. <a href="#">Reference Page</a></p>
     </div>
   </footer>
-    	
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
   <script>window.jQuery || document.write('<script src="res/js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
-  <script src="res/js/vendor/bootstrap.min.js"></script>
-  <script src="res/js/vendor/jquery.easing.min.js"></script>
+  <script src="res/js/vendor/bootstrap.min.js"></script><script src="res/js/vendor/jquery.easing.min.js"></script>
   <script src="res/js/main.js"></script>
-</body>
+  </body>
 </html>
