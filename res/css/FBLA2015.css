@@ -7269,7 +7269,11 @@ li.cart-number {
 .panel {
   box-shadow: none;
   border: none;
+  border-bottom: 1px solid #EFF1F2;
 }
 .panel .panel-heading a {
   text-decoration: none;
+}
+.panel-heading {
+  padding: 35px 30px 35px 30px;
 }
