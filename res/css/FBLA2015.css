@@ -6840,6 +6840,8 @@ button.close:focus {
 .jumbotron.nhp-header.trips-header > p {
   padding-bottom: 0;
   margin-bottom: 0;
+  letter-spacing: 1px;
+  font-weight: 500;
 }
 .jumbotron.nhp-header.trips-header > h1 {
   margin-top: 0;
@@ -7016,7 +7018,7 @@ button.close:focus {
 }
 .trips-container > .row > div > h3 {
   margin-top: 0;
-  font-size: 30px;
+  font-size: 42px;
 }
 .trips-container > .row > div > h4 {
   margin-bottom: 30px;
