@@ -6858,6 +6858,11 @@ button.close:focus {
 .jumbotron.nhp-header.trips-header .btn-primary:hover .chevron-orange {
   background-image: url("../img/icons/chevron-thin-right-white.png");
 }
+.jumbotron.nhp-header.reference-header {
+  background-image: url("../img/header/reference.png");
+  background-position: center top;
+  text-align: center;
+}
 .ul-left {
   font-size: 21px;
   float: left;
@@ -7266,6 +7271,9 @@ li.cart-number {
 #bikeModal select.form-control {
   position: relative;
   top: -10px;
+}
+.reference-container {
+  padding: 80px 0px;
 }
 .panel {
   box-shadow: none;
