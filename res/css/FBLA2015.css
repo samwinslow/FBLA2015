@@ -6939,6 +6939,9 @@ button.close:focus {
 .seminar-tile {
   padding: 0 4%;
 }
+.seminar-tile p {
+  color: #777777;
+}
 .seminar-tile h2 {
   margin-bottom: 50px;
 }
@@ -7237,10 +7240,10 @@ li.cart-number {
 }
 #bikeModal .gray-section {
   padding-top: 120px;
-  min-height: 468px;
+  min-height: 524px;
 }
 #bikeModal .modal-body > div:nth-child(2) {
-  padding: 40px 20px 60px 20px;
+  padding: 10px 20px 40px 20px;
 }
 #bikeModal h3 {
   font-size: 30px;
@@ -7249,7 +7252,8 @@ li.cart-number {
   color: #777777;
 }
 #bikeModal p {
-  font-size: 12px;
+  margin: 30px 0px;
+  font-size: 14px;
   color: #777777;
 }
 #bikeModal .bike-modal-img {
