@@ -28,7 +28,7 @@ if (mysql_num_rows($result) >= 1){
   if (!$result){
     header("Location: ../mysql_error.html");
   } else {
-    die("New user $first $last created");
+    header("Location: signin-user.php?email=$email&password=$password");
   }
 }
 

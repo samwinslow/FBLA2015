@@ -120,9 +120,12 @@ if (isset($_GET['error'])){
           <div class="col-md-5">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
             <h2>Login</h2>
-            <form action="">
-              <input type="email" class="form-control" id="signinEmail" placeholder="Email Address" required>
-              <input type="password" class="form-control" id="signinPassword" placeholder="Password" required>
+            <?php if($page_error==='login_no_email'){ ?><p>Please provide an email below.</p><?php } ?>
+            <?php if($page_error==='login_no_password'){ ?><p>Please provide a password below.</p><?php } ?>
+            <?php if($page_error==='login_wrong_password'){ ?><p>Username or password is incorrect.</p><?php } ?>
+            <form action="mysql-admin/signin-user.php" method="post">
+              <input type="email" class="form-control" name="email" placeholder="Email Address" required>
+              <input type="password" class="form-control" name="password" placeholder="Password" required>
               <p><button type="submit" class="btn btn-success btn-ghost btn-lg small-chevron" role="button">
                 Log In <span class="chevron-right chevron-orange"></span>
               </button></p>
