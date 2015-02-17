@@ -17,6 +17,9 @@ if (isset($_COOKIE['cyclefitness_email'])){
   }
   $user = $users[0];
 }
+if (isset($_GET['error'])){
+  $page_error = $_GET['error'];
+}
 
 ?>
 <!doctype html>
@@ -99,15 +102,18 @@ if (isset($_COOKIE['cyclefitness_email'])){
         <div class="modal-body">
           <div class="col-md-7 gray-section">
             <h2>Register</h2>
-            <form action="">
+            <?php if($page_error==='register_no_email'){ ?><p>Please provide an email below.</p><?php } ?>
+            <?php if($page_error==='register_no_password'){ ?><p>Please provide a password below.</p><?php } ?>
+            <?php if($page_error==='register_email_taken'){ ?><p>An account with that email already exists.</p><?php } ?>
+            <form action="mysql-admin/create-user.php" method="post">
               <div class="col-md-6">
-                <input type="text" class="form-control" id="registerFirstName" placeholder="First Name" required>
+                <input type="text" class="form-control" name="first" placeholder="First Name" required>
               </div>
               <div class="col-md-6">
-                <input type="text" class="form-control" id="registerLastName" placeholder="Last Name" required>
+                <input type="text" class="form-control" name="last" placeholder="Last Name" required>
               </div>
-              <input type="email" class="form-control" id="registerEmail" placeholder="Email Address" required>
-              <input type="password" class="form-control" id="registerPassword" placeholder="Password" required>
+              <input type="email" class="form-control" name="email" placeholder="Email Address" required>
+              <input type="password" class="form-control" name="password" placeholder="Password" required>
               <p class="text-right"><button type="submit" class="btn btn-success btn-lg" role="button">Sign Up</button></p>
             </form>
           </div>
@@ -263,5 +269,12 @@ if (isset($_COOKIE['cyclefitness_email'])){
   <script src="res/js/vendor/bootstrap.min.js"></script>
   <script src="res/js/vendor/jquery.easing.min.js"></script>
   <script src="res/js/main.js"></script>
+  <?php if (isset($page_error)){ ?>
+  <script type="text/javascript">
+  $(function (){
+    $('#signinModal').modal('show');
+  });
+  </script>
+  <?php } ?>
 </body>
 </html>
