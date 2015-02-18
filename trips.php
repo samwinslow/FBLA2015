@@ -1,3 +1,28 @@
+<?php
+
+if (isset($_COOKIE['cyclefitness_email'])){
+  $signedin = true;
+  $signin_email = $_COOKIE['cyclefitness_email'];
+  $signin_password = $_COOKIE['cyclefitness_password'];
+  $signin_admin = $_COOKIE['cyclefitness_admin'];
+
+  // Connect to server and select databse.
+  mysql_connect("localhost", "root", "password") or header("Location: mysql_error.html"); 
+  mysql_select_db("cyclefitness") or header("Location: mysql_error.html");
+  $result = mysql_query("SELECT * FROM users WHERE email_address = '".$signin_email."' and password = '".$signin_password."';");
+  mysql_close();
+
+  $users = array();
+  while ($row = mysql_fetch_array($result)) {
+    array_push($users, $row);
+  }
+  $user = $users[0];
+}
+if (isset($_GET['error'])){
+  $page_error = $_GET['error'];
+}
+
+?>
 <!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
@@ -26,17 +51,17 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="index.html">
+          <a class="navbar-brand" href="index.php">
             <img class="logo" alt="Cycle Fitness" src="res/img/logos/logo-white.png" title="Cycle Fitness">
           </a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="bikes.html">Bikes</a></li>
-            <li><a href="trips.html">Trips</a></li>
-            <li><a href="seminars.html">Seminars</a></li>
-            <li><a href="faq.html">FAQ</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="bikes.php">Bikes</a></li>
+            <li><a href="trips.php">Trips</a></li>
+            <li><a href="seminars.php">Seminars</a></li>
+            <li><a href="faq.php">FAQ</a></li>
+            <li><a href="contact.php">Contact</a></li>
             <li class="cart-li dropdown">
               <a href="#" data-toggle="dropdown" aria-expanded="false">
                 <span class="badge">3</span> <span class="cart-money">$200</span></a>
@@ -45,15 +70,37 @@
                 <li class="cart-number">
                   <span class="text-orange">3</span> items in your cart
                 </li>
-                <li class="dropdown">
+                <li class="">
                   <a href="#">Item 1</a>
                 </li>
-                <li class="dropdown">
+                <li class="">
                   <a href="#">Item 2</a>
                 </li>
               </ul>
             </li>
-            <li><a href="#" style="color:#fff;" data-toggle="modal" data-target="#signinModal">Log In / Sign Up</a></li>
+            <?php if($signedin){ ?>
+              <li class="dropdown">
+                <a href="#" data-toggle="dropdown" aria-expanded="false" style="color:#fff;">
+                  <?php echo($user['first_name']." ".$user['last_name']); ?>
+                </a>
+                <ul class="dropdown-menu" role="menu">
+                  <li class="">
+                    <a href="mysql-admin/signout-user.php">Sign Out</a>
+                  </li>
+                  <?php if($signin_admin) { ?>
+                  <li class="">
+                    <a href="admin-panel">Admin Panel</a>
+                  </li>
+                  <?php } else { ?>
+                  <li class="">
+                    <a href="user-profile">User Profile</a>
+                  </li>
+                  <?php } ?>
+                </ul>
+              </li>
+            <?php } else { ?>
+              <li><a href="#" style="color:#fff;" data-toggle="modal" data-target="#signinModal">Log In / Sign Up</a></li>
+            <?php } ?>
           </ul>
         </div><!--/.navbar-collapse -->
   </nav>
@@ -65,24 +112,30 @@
         <div class="modal-body">
           <div class="col-md-7 gray-section">
             <h2>Register</h2>
-            <form action="">
+            <?php if($page_error==='register_no_email'){ ?><p>Please provide an email below.</p><?php } ?>
+            <?php if($page_error==='register_no_password'){ ?><p>Please provide a password below.</p><?php } ?>
+            <?php if($page_error==='register_email_taken'){ ?><p>An account with that email already exists.</p><?php } ?>
+            <form action="mysql-admin/create-user.php" method="post">
               <div class="col-md-6">
-                <input type="text" class="form-control" id="registerFirstName" placeholder="FIRST NAME" required>
+                <input type="text" class="form-control" id="registerFirstName" name="first" placeholder="First Name" required>
               </div>
               <div class="col-md-6">
-                <input type="text" class="form-control" id="registerLastName" placeholder="LAST NAME" required>
+                <input type="text" class="form-control" name="last" placeholder="Last Name" required>
               </div>
-              <input type="email" class="form-control" id="registerEmail" placeholder="EMAIL ADDRESS" required>
-              <input type="password" class="form-control" id="registerPassword" placeholder="PASSWORD" required>
+              <input type="email" class="form-control" name="email" placeholder="Email Address" required>
+              <input type="password" class="form-control" name="password" placeholder="Password" required>
               <p class="text-right"><button type="submit" class="btn btn-success btn-lg" role="button">Sign Up</button></p>
             </form>
           </div>
           <div class="col-md-5">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
             <h2>Login</h2>
-            <form action="">
-              <input type="email" class="form-control" id="signinEmail" placeholder="EMAIL ADDRESS" required>
-              <input type="password" class="form-control" id="signinPassword" placeholder="PASSWORD" required>
+            <?php if($page_error==='login_no_email'){ ?><p>Please provide an email below.</p><?php } ?>
+            <?php if($page_error==='login_no_password'){ ?><p>Please provide a password below.</p><?php } ?>
+            <?php if($page_error==='login_wrong_password'){ ?><p>Username or password is incorrect.</p><?php } ?>
+            <form action="mysql-admin/signin-user.php" method="post">
+              <input type="email" class="form-control" id="loginEmail" name="email" placeholder="Email Address" required>
+              <input type="password" class="form-control" name="password" placeholder="Password" required>
               <p><button type="submit" class="btn btn-success btn-ghost btn-lg small-chevron" role="button">
                 Log In <span class="chevron-right chevron-orange"></span>
               </button></p>
@@ -192,15 +245,19 @@
       </p>
     </div>
     <div class="col-md-3">
-      <p>Get all the latest updates and discounts</p>
-      <div class="input-group">
-        <input type="email" class="form-control" id="signupEmail" placeholder="Your email address" width="24">
-        <span class="input-group-btn">
-          <button class="btn btn-form" id="signupButton" type="button">
-            <img alt="Sign up" title="Sign up" src="res/img/icons/arrow-right-black.png">
-          </button>
-        </span>
-      </div>
+      <form action="mysql-admin/add-subscriber.php">
+        <p>Get all the latest updates and discounts</p>
+        <?php if($page_error==='subscribe_no_email'){ ?><p>Please provide an email below.</p><?php } ?>
+        <?php if($page_error==='subscribe_email_taken'){ ?><p>A subscriber with that email already exists.</p><?php } ?>
+        <div class="input-group">
+          <input type="email" class="form-control" name="email" id="signupEmail" placeholder="Your email address" width="24" required>
+          <span class="input-group-btn">
+            <button class="btn btn-form" id="signupButton" type="submit">
+              <img alt="Sign up" title="Sign up" src="res/img/icons/arrow-right-black.png">
+            </button>
+          </span>
+        </div>
+      </form>
     </div>
     <div class="col-md-2 col-md-offset-1">
       <p>Connect with us</p>
@@ -212,7 +269,7 @@
       </p>
     </div>
     <div class="col-md-12">
-      <p class="footer-text">Copyright 2015 Cycle Fitness. Created by Andrew Shen and Samuel Winslow. No templates used. <a href="reference.html">Reference Page</a></p>
+      <p class="footer-text">Copyright 2015 Cycle Fitness. Created by Andrew Shen and Samuel Winslow. No templates used. <a href="reference.php">Reference Page</a></p>
     </div>
   </footer>
     	
