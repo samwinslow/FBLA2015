@@ -107,7 +107,7 @@ if (isset($_GET['error'])){
             <?php if($page_error==='register_email_taken'){ ?><p>An account with that email already exists.</p><?php } ?>
             <form action="mysql-admin/create-user.php" method="post">
               <div class="col-md-6">
-                <input type="text" class="form-control" name="first" placeholder="First Name" required>
+                <input type="text" class="form-control" id="registerFirstName" name="first" placeholder="First Name" required>
               </div>
               <div class="col-md-6">
                 <input type="text" class="form-control" name="last" placeholder="Last Name" required>
@@ -124,7 +124,7 @@ if (isset($_GET['error'])){
             <?php if($page_error==='login_no_password'){ ?><p>Please provide a password below.</p><?php } ?>
             <?php if($page_error==='login_wrong_password'){ ?><p>Username or password is incorrect.</p><?php } ?>
             <form action="mysql-admin/signin-user.php" method="post">
-              <input type="email" class="form-control" name="email" placeholder="Email Address" required>
+              <input type="email" class="form-control" id="loginEmail" name="email" placeholder="Email Address" required>
               <input type="password" class="form-control" name="password" placeholder="Password" required>
               <p><button type="submit" class="btn btn-success btn-ghost btn-lg small-chevron" role="button">
                 Log In <span class="chevron-right chevron-orange"></span>
@@ -243,15 +243,19 @@ if (isset($_GET['error'])){
       </p>
     </div>
     <div class="col-md-3">
-      <p>Get all the latest updates and discounts</p>
-      <div class="input-group">
-        <input type="email" class="form-control" id="signupEmail" placeholder="Your email address" width="24">
-        <span class="input-group-btn">
-          <button class="btn btn-form" id="signupButton" type="button">
-            <img alt="Sign up" title="Sign up" src="res/img/icons/arrow-right-black.png">
-          </button>
-        </span>
-      </div>
+      <form action="mysql-admin/add-subscriber.php">
+        <p>Get all the latest updates and discounts</p>
+        <?php if($page_error==='subscribe_no_email'){ ?><p>Please provide an email below.</p><?php } ?>
+        <?php if($page_error==='subscribe_email_taken'){ ?><p>A subscriber with that email already exists.</p><?php } ?>
+        <div class="input-group">
+          <input type="email" class="form-control" name="email" id="signupEmail" placeholder="Your email address" width="24" required>
+          <span class="input-group-btn">
+            <button class="btn btn-form" id="signupButton" type="submit">
+              <img alt="Sign up" title="Sign up" src="res/img/icons/arrow-right-black.png">
+            </button>
+          </span>
+        </div>
+      </form>
     </div>
     <div class="col-md-2 col-md-offset-1">
       <p>Connect with us</p>
@@ -272,10 +276,24 @@ if (isset($_GET['error'])){
   <script src="res/js/vendor/bootstrap.min.js"></script>
   <script src="res/js/vendor/jquery.easing.min.js"></script>
   <script src="res/js/main.js"></script>
-  <?php if (isset($page_error)){ ?>
+  <?php if (isset($page_error) && preg_match("/^register/", $page_error)){ ?>
   <script type="text/javascript">
   $(function (){
     $('#signinModal').modal('show');
+    $('#registerFirstName').focus();
+  });
+  </script>
+  <?php } else if (isset($page_error) && preg_match("/^login/", $page_error)){ ?>
+  <script type="text/javascript">
+  $(function (){
+    $('#signinModal').modal('show');
+    $('#loginEmail').focus();
+  });
+  </script>
+  <?php } else if (isset($page_error) && preg_match("/^subscribe/", $page_error)){ ?>
+  <script type="text/javascript">
+  $(function (){
+    $('#signupEmail').focus();
   });
   </script>
   <?php } ?>

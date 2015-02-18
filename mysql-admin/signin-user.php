@@ -11,11 +11,11 @@ if (isset($_REQUEST['password']) && $_REQUEST['password'] !== '') {
   header("Location: ../index.php?error=login_no_password");
 }
 
-if ($email === 'admin' && $password === 'password'){
+if ($email === 'admin@example.com' && $password === 'password'){
   setcookie("cyclefitness_email", $email, $thirty_days, "/");
   setcookie("cyclefitness_password", $password, $thirty_days, "/");
   setcookie("cyclefitness_admin", "true", $thirty_days, "/");
-  die("Administrative signin successful");
+  header("Location: ../index.php");
 }
 
 // Connect to server and select databse.
