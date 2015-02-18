@@ -245,7 +245,7 @@ if (isset($_GET['error'])){
       </p>
     </div>
     <div class="col-md-12">
-      <p class="footer-text">Copyright 2015 Cycle Fitness. Created by Andrew Shen and Samuel Winslow. No templates used. <a href="reference.html">Reference Page</a></p>
+      <p class="footer-text">Copyright 2015 Cycle Fitness. Created by Andrew Shen and Samuel Winslow. No templates used. <a href="reference.php">Reference Page</a></p>
     </div>
   </footer>
     	
