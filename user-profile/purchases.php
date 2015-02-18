@@ -6,7 +6,7 @@ if (isset($_COOKIE['cyclefitness_email'])){
   $signin_password = $_COOKIE['cyclefitness_password'];
 
   // Connect to server and select databse.
-  mysql_connect("localhost", "root", "password") or header("Location: ../mysql_error.html");
+  mysql_connect("localhost", "andrewsh_root", "shamlamdoobly2015") or header("Location: ../mysql_error.html");
   mysql_select_db("andrewsh_cyclefitness") or header("Location: ../mysql_error.html");
   $result = mysql_query("SELECT * FROM users WHERE email_address = '".$signin_email."' and password = '".$signin_password."';");
   mysql_close();
@@ -25,7 +25,7 @@ if (isset($_GET['error'])){
 }
 
 // Generate list of all users
-mysql_connect("localhost", "root", "password") or header("Location: ../mysql_error.html");
+mysql_connect("localhost", "andrewsh_root", "shamlamdoobly2015") or header("Location: ../mysql_error.html");
 mysql_select_db("andrewsh_cyclefitness") or header("Location: ../mysql_error.html");
 $result = mysql_query("SELECT * FROM purchases WHERE user_id=".$user['id']." ORDER BY date DESC;");
 mysql_close();
