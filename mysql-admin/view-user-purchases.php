@@ -7,7 +7,7 @@ if (isset($_REQUEST['id']) && $_REQUEST['id'] !== '') {
 }
 
 // Connect to server and select databse.
-mysql_connect("localhost", "root", "password") or die("cannot connect"); 
+mysql_connect("localhost", "andrewsh_root", "password") or die("cannot connect"); 
 mysql_select_db("andrewsh_cyclefitness") or die("cannot select DB");
 $result = mysql_query("SELECT * FROM purchases WHERE user_id = '".$uid."';");
 mysql_close();

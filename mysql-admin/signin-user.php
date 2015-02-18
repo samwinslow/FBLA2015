@@ -20,7 +20,7 @@ if ($email === 'admin@example.com' && $password === 'password'){
 }
 
 // Connect to server and select databse.
-mysql_connect("localhost", "root", "password") or header("Location: ../mysql_error.html");
+mysql_connect("localhost", "andrewsh_root", "shamlamdoobly2015") or header("Location: ../mysql_error.html");
 mysql_select_db("andrewsh_cyclefitness") or header("Location: ../mysql_error.html");
 
 $result = mysql_query("SELECT * FROM users WHERE email_address='".$email."' and password = '".$password."';");
