@@ -29,7 +29,7 @@ if (isset($_GET['error'])){
 // Generate list of all users
 mysql_connect("localhost", "root", "password") or header("Location: ../mysql_error.html");
 mysql_select_db("cyclefitness") or header("Location: ../mysql_error.html");
-$result = mysql_query("SELECT * FROM contact_submissions;");
+$result = mysql_query("SELECT * FROM contact_submissions ORDER BY date DESC;");
 mysql_close();
 
 $submissions = array();
@@ -66,7 +66,7 @@ while ($row = mysql_fetch_array($result)) {
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="index.php">
+          <a class="navbar-brand" href="../index.php">
             <img class="logo" alt="Cycle Fitness" src="../res/img/logos/logo-white.png" title="Cycle Fitness">
           </a>
         </div>

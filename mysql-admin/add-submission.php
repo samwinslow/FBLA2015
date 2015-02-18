@@ -28,7 +28,7 @@ $date = date("Y-m-d H:i:s");
 $inquiry = $_REQUEST['inquiry'];
 
 if (isset($_REQUEST['text']) && $_REQUEST['text'] !== '') {
-  $text = $_REQUEST['text'];
+  $text = mysql_real_escape_string($_REQUEST['text']);
 } else {
   header("Location: ../contact.php?error=contact_no_info");
 }

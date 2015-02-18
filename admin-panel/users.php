@@ -66,7 +66,7 @@ while ($row = mysql_fetch_array($result)) {
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="index.php">
+          <a class="navbar-brand" href="../index.php">
             <img class="logo" alt="Cycle Fitness" src="../res/img/logos/logo-white.png" title="Cycle Fitness">
           </a>
         </div>
