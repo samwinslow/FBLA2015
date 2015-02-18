@@ -29,12 +29,12 @@ if (isset($_GET['error'])){
 // Generate list of all users
 mysql_connect("localhost", "root", "password") or header("Location: ../mysql_error.html");
 mysql_select_db("cyclefitness") or header("Location: ../mysql_error.html");
-$result = mysql_query("SELECT * FROM users;");
+$result = mysql_query("SELECT * FROM email_list;");
 mysql_close();
 
-$users = array();
+$subscribers = array();
 while ($row = mysql_fetch_array($result)) {
-  array_push($users, $row);
+  array_push($subscribers, $row);
 }
 
 ?>
@@ -154,37 +154,31 @@ while ($row = mysql_fetch_array($result)) {
   <div class="fullwidth-wrapper admin-panel-wrapper">
       <div class="col-md-3 admin-panel-sidebar">
         <div class="list-group">
-          <a href="users.php" class="list-group-item active">
-            Users
+          <a href="users.php" class="list-group-item">Users</a>
+          <a href="email_list.php" class="list-group-item active">
+            Email List
           </a>
-          <a href="email_list.php" class="list-group-item">Email List</a>
           <a href="contact_submissions.php" class="list-group-item">Contact Submissions</a>
           <a href="purchases.php" class="list-group-item">Purchases</a>
         </div>
       </div>
       <div class="col-md-9 admin-panel-container">
-        <h2>Users</h2>
+        <h2>Email List</h2>
         <table class="table">
           <thead>
             <tr>
               <th>ID#</th>
               <th>Email Address</th>
-              <th>Password</th>
-              <th>First Name</th>
-              <th>Last Name</th>
               <th class="text-right"><img class="delete-header" src="../res/img/icons/trash.png" alt="Delete" title="Delete"></th>
             </tr>
           </thead>
           <tbody>
             <?php
-            foreach ($users as $index){
+            foreach ($subscribers as $index){
               echo "<tr>";
               echo "<td>".$index['id']."</td>";
               echo "<td>".$index['email_address']."</td>";
-              echo "<td>".$index['password']."</td>";
-              echo "<td>".$index['first_name']."</td>";
-              echo "<td>".$index['last_name']."</td>";
-              echo '<td class="text-right"><a href="../mysql-admin/delete-user.php?id='.$index['id'].'"><img height="10" src="../res/img/icons/close.png" alt="Delete" title="Delete"></a></td>';
+              echo '<td class="text-right"><a href="../mysql-admin/delete-subscriber.php?id='.$index['id'].'"><img height="10" src="../res/img/icons/close.png" alt="Delete" title="Delete"></a></td>';
               echo "</tr>";
             }
             ?>
