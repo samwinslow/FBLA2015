@@ -77,7 +77,20 @@ if (isset($_GET['error'])){
                 </li>
               </ul>
             </li>
-            <li><a href="#" style="color:#fff;" data-toggle="modal" data-target="#signinModal">Log In / Sign Up</a></li>
+            <?php if($signedin){ ?>
+              <li class="dropdown">
+                <a href="#" data-toggle="dropdown" aria-expanded="false" style="color:#fff;">
+                  <?php echo($user['first_name']." ".$user['last_name']); ?>
+                </a>
+                <ul class="dropdown-menu" role="menu">
+                  <li class="">
+                    <a href="mysql-admin/signout-user.php">Sign Out</a>
+                  </li>
+                </ul>
+              </li>
+            <?php } else { ?>
+              <li><a href="#" style="color:#fff;" data-toggle="modal" data-target="#signinModal">Log In / Sign Up</a></li>
+            <?php } ?>
           </ul>
         </div><!--/.navbar-collapse -->
   </nav>

@@ -1,3 +1,27 @@
+<?php
+
+if (isset($_COOKIE['cyclefitness_email'])){
+  $signedin = true;
+  $signin_email = $_COOKIE['cyclefitness_email'];
+  $signin_password = $_COOKIE['cyclefitness_password'];
+
+  // Connect to server and select databse.
+  mysql_connect("localhost", "root", "password") or die("cannot connect"); 
+  mysql_select_db("cyclefitness") or die("cannot select DB");
+  $result = mysql_query("SELECT * FROM users WHERE email_address = '".$signin_email."' and password = '".$signin_password."';");
+  mysql_close();
+
+  $users = array();
+  while ($row = mysql_fetch_array($result)) {
+    array_push($users, $row);
+  }
+  $user = $users[0];
+}
+if (isset($_GET['error'])){
+  $page_error = $_GET['error'];
+}
+
+?>
 <!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
@@ -53,7 +77,20 @@
                 </li>
               </ul>
             </li>
-            <li><a href="#" style="color:#fff;" data-toggle="modal" data-target="#signinModal">Log In / Sign Up</a></li>
+            <?php if($signedin){ ?>
+              <li class="dropdown">
+                <a href="#" data-toggle="dropdown" aria-expanded="false" style="color:#fff;">
+                  <?php echo($user['first_name']." ".$user['last_name']); ?>
+                </a>
+                <ul class="dropdown-menu" role="menu">
+                  <li class="">
+                    <a href="mysql-admin/signout-user.php">Sign Out</a>
+                  </li>
+                </ul>
+              </li>
+            <?php } else { ?>
+              <li><a href="#" style="color:#fff;" data-toggle="modal" data-target="#signinModal">Log In / Sign Up</a></li>
+            <?php } ?>
           </ul>
         </div><!--/.navbar-collapse -->
   </nav>
