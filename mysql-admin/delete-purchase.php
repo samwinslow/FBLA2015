@@ -9,8 +9,8 @@ if (isset($_REQUEST['id']) && $_REQUEST['id'] !== '') {
 }
 
 // Connect to server and select databse.
-mysql_connect("localhost", "root", "password") or die("cannot connect"); 
-mysql_select_db("cyclefitness") or die("cannot select DB");
+mysql_connect("localhost", "root", "password") or header("Location: ../mysql_error.html");
+mysql_select_db("cyclefitness") or header("Location: ../mysql_error.html");
 
 $result = mysql_query("SELECT * FROM purchases WHERE id='".$id."';");
 
@@ -21,9 +21,9 @@ if (mysql_num_rows($result) === 0){
   $result = mysql_query("DELETE FROM purchases WHERE id='".$id."';");
   mysql_close();
   if (!$result){
-    die("A MySQL error occurred");
+    header("Location: ../mysql_error.html");
   } else {
-    die("Purchase with ID #$id deleted");
+    header("Location: ../admin-panel/purchases.php");
   }
 }
 
