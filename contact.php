@@ -1,3 +1,27 @@
+<?php
+
+if (isset($_COOKIE['cyclefitness_email'])){
+  $signedin = true;
+  $signin_email = $_COOKIE['cyclefitness_email'];
+  $signin_password = $_COOKIE['cyclefitness_password'];
+
+  // Connect to server and select databse.
+  mysql_connect("localhost", "root", "password") or die("cannot connect"); 
+  mysql_select_db("cyclefitness") or die("cannot select DB");
+  $result = mysql_query("SELECT * FROM users WHERE email_address = '".$signin_email."' and password = '".$signin_password."';");
+  mysql_close();
+
+  $users = array();
+  while ($row = mysql_fetch_array($result)) {
+    array_push($users, $row);
+  }
+  $user = $users[0];
+}
+if (isset($_GET['error'])){
+  $page_error = $_GET['error'];
+}
+
+?>
 <!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
@@ -98,23 +122,24 @@
 	  <h1>Contact Us</h1>
     <p>We love our customers. Whether you have a question, general inquiry, or partnership <br> proposal, we’re always more than happy to help you out.</p>
 	  <div class="container">
-	    <form action="">
+	    <form action="mysql-admin/add-submission.php" method="post">
 	      <div class="row">
 	        <div class="col-md-3">
-	          <input type="text" class="form-control" id="messageName" placeholder="Name">
+	          <input type="text" class="form-control" name="name" id="messageName" placeholder="Name">
 	        </div>
 	        <div class="col-md-3">
-	          <select class="form-control">
-	            <option value="inquiry">General Inquiry</option>
-	            <option value="partnership">Partnership</option>
-	            <option value="support">Support</option>
-	            <option value="other">Other</option>
+	          <select class="form-control" name="inquiry">
+	            <option value="General Inquiry">General Inquiry</option>
+	            <option value="Partnership">Partnership</option>
+	            <option value="Support">Support</option>
+	            <option value="Other">Other</option>
 	          </select>
 	        </div>
 	      </div>
 	      <div class="row">
 	        <div class="col-md-6">
-	          <textarea class="form-control" rows="12" placeholder="Enter your message here - we’d love to help!"></textarea>
+	          <?php if($page_error==='contact_no_info'){ ?><p>Please include a message to send.</p><?php } ?>
+	          <textarea class="form-control" name="text" rows="12" placeholder="Enter your message here - we’d love to help!" required></textarea>
 	        </div>
 	      </div>
 	      <div class="row">
