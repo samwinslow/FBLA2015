@@ -188,15 +188,19 @@ if (isset($_GET['error'])){
       </p>
     </div>
     <div class="col-md-3">
-      <p>Get all the latest updates and discounts</p>
-      <div class="input-group">
-        <input type="email" class="form-control" id="signupEmail" placeholder="Your email address" width="24">
-        <span class="input-group-btn">
-          <button class="btn btn-form" id="signupButton" type="button">
-            <img alt="Sign up" title="Sign up" src="res/img/icons/arrow-right-black.png">
-          </button>
-        </span>
-      </div>
+      <form action="mysql-admin/add-subscriber.php">
+        <p>Get all the latest updates and discounts</p>
+        <?php if($page_error==='subscribe_no_email'){ ?><p>Please provide an email below.</p><?php } ?>
+        <?php if($page_error==='subscribe_email_taken'){ ?><p>A subscriber with that email already exists.</p><?php } ?>
+        <div class="input-group">
+          <input type="email" class="form-control" name="email" id="signupEmail" placeholder="Your email address" width="24" required>
+          <span class="input-group-btn">
+            <button class="btn btn-form" id="signupButton" type="submit">
+              <img alt="Sign up" title="Sign up" src="res/img/icons/arrow-right-black.png">
+            </button>
+          </span>
+        </div>
+      </form>
     </div>
     <div class="col-md-2 col-md-offset-1">
       <p>Connect with us</p>

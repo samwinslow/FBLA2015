@@ -133,7 +133,7 @@ if (isset($_GET['error'])){
   <!-- Jumbotron -->
   <div class="jumbotron nhp-header faq-header">
     <h1>FAQs</h1>
-    <p>Here are a list of frequently asked questions. Still can’t find what you’re looking for? <br> We’re always happy to help out. Drop us a message anytime through our <a href="contact.html"><u>contact form</u></a>.</p>
+    <p>Here are a list of frequently asked questions. Still can’t find what you’re looking for? <br> We’re always happy to help out. Drop us a message anytime through our <a href="contact.php"><u>contact form</u></a>.</p>
   </div><!--/Jumbotron -->
   
   <div class="container">   
@@ -382,15 +382,19 @@ if (isset($_GET['error'])){
       </p>
     </div>
     <div class="col-md-3">
-      <p>Get all the latest updates and discounts</p>
-      <div class="input-group">
-        <input type="email" class="form-control" id="signupEmail" placeholder="Your email address" width="24">
-        <span class="input-group-btn">
-          <button class="btn btn-form" id="signupButton" type="button">
-            <img alt="Sign up" title="Sign up" src="res/img/icons/arrow-right-black.png">
-          </button>
-        </span>
-      </div>
+      <form action="mysql-admin/add-subscriber.php">
+        <p>Get all the latest updates and discounts</p>
+        <?php if($page_error==='subscribe_no_email'){ ?><p>Please provide an email below.</p><?php } ?>
+        <?php if($page_error==='subscribe_email_taken'){ ?><p>A subscriber with that email already exists.</p><?php } ?>
+        <div class="input-group">
+          <input type="email" class="form-control" name="email" id="signupEmail" placeholder="Your email address" width="24" required>
+          <span class="input-group-btn">
+            <button class="btn btn-form" id="signupButton" type="submit">
+              <img alt="Sign up" title="Sign up" src="res/img/icons/arrow-right-black.png">
+            </button>
+          </span>
+        </div>
+      </form>
     </div>
     <div class="col-md-2 col-md-offset-1">
       <p>Connect with us</p>
