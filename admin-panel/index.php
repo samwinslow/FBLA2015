@@ -6,8 +6,8 @@ if (isset($_COOKIE['cyclefitness_email'])){
   $signin_password = $_COOKIE['cyclefitness_password'];
 
   // Connect to server and select databse.
-  mysql_connect("localhost", "root", "password") or header("Location: mysql_error.html"); 
-  mysql_select_db("cyclefitness") or header("Location: mysql_error.html");
+  mysql_connect("localhost", "root", "password") or header("Location: ../mysql_error.html");
+  mysql_select_db("cyclefitness") or header("Location: ../mysql_error.html");
   $result = mysql_query("SELECT * FROM users WHERE email_address = '".$signin_email."' and password = '".$signin_password."';");
   mysql_close();
 
@@ -17,8 +17,24 @@ if (isset($_COOKIE['cyclefitness_email'])){
   }
   $user = $users[0];
 }
+if (isset($_COOKIE['cyclefitness_admin']) && $_COOKIE['cyclefitness_admin']=='true'){
+  
+} else {
+  header("Location: ../index.php");
+}
 if (isset($_GET['error'])){
   $page_error = $_GET['error'];
+}
+
+// Generate list of all users
+mysql_connect("localhost", "root", "password") or header("Location: ../mysql_error.html");
+mysql_select_db("cyclefitness") or header("Location: ../mysql_error.html");
+$result = mysql_query("SELECT * FROM users;");
+mysql_close();
+
+$users = array();
+while ($row = mysql_fetch_array($result)) {
+  array_push($users, $row);
 }
 
 ?>
@@ -34,9 +50,9 @@ if (isset($_GET['error'])){
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
-  <link rel="stylesheet" href="res/css/FBLA2015.min.css">
-  <link rel="stylesheet" href="res/css/fonts.css">
-  <script src="res/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+  <link rel="stylesheet" href="../res/css/FBLA2015.min.css">
+  <link rel="stylesheet" href="../res/css/fonts.css">
+  <script src="../res/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
 </head>
 <body>
   <!--[if lt IE 8]>
@@ -51,16 +67,16 @@ if (isset($_GET['error'])){
             <span class="icon-bar"></span>
           </button>
           <a class="navbar-brand" href="index.php">
-            <img class="logo" alt="Cycle Fitness" src="res/img/logos/logo-white.png" title="Cycle Fitness">
+            <img class="logo" alt="Cycle Fitness" src="../res/img/logos/logo-white.png" title="Cycle Fitness">
           </a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="bikes.php">Bikes</a></li>
-            <li><a href="trips.php">Trips</a></li>
-            <li><a href="seminars.php">Seminars</a></li>
-            <li><a href="faq.php">FAQ</a></li>
-            <li><a href="contact.php">Contact</a></li>
+            <li><a href="../bikes.php">Bikes</a></li>
+            <li><a href="../trips.php">Trips</a></li>
+            <li><a href="../seminars.php">Seminars</a></li>
+            <li><a href="../faq.php">FAQ</a></li>
+            <li><a href="../contact.php">Contact</a></li>
             <li class="cart-li dropdown">
               <a href="#" data-toggle="dropdown" aria-expanded="false">
                 <span class="badge">3</span> <span class="cart-money">$200</span></a>
@@ -84,7 +100,7 @@ if (isset($_GET['error'])){
                 </a>
                 <ul class="dropdown-menu" role="menu">
                   <li class="">
-                    <a href="mysql-admin/signout-user.php">Sign Out</a>
+                    <a href="../mysql-admin/signout-user.php">Sign Out</a>
                   </li>
                 </ul>
               </li>
@@ -94,6 +110,7 @@ if (isset($_GET['error'])){
           </ul>
         </div><!--/.navbar-collapse -->
   </nav>
+
   
   <!-- Modal -->
   <div class="modal fade" id="signinModal" tabindex="-1" role="dialog" aria-labelledby="signinModalLabel" aria-hidden="true">
@@ -131,43 +148,54 @@ if (isset($_GET['error'])){
   </div>
 
   <!-- Jumbotron -->
-	<div class="jumbotron nhp-header contact-header">
-	  <h1>Contact Us</h1>
-    <p>We love our customers. Whether you have a question, general inquiry, or partnership <br> proposal, we’re always more than happy to help you out.</p>
-	  <div class="container">
-	    <form action="mysql-admin/add-submission.php" method="post">
-	      <div class="row">
-	        <div class="col-md-3">
-	          <input type="text" class="form-control" name="name" id="messageName" placeholder="Name">
-	        </div>
-	        <div class="col-md-3">
-	          <select class="form-control" name="inquiry">
-	            <option value="General Inquiry">General Inquiry</option>
-	            <option value="Partnership">Partnership</option>
-	            <option value="Support">Support</option>
-	            <option value="Other">Other</option>
-	          </select>
-	        </div>
-	      </div>
-	      <div class="row">
-	        <div class="col-md-6">
-	          <?php if($page_error==='contact_no_info'){ ?><p>Please include a message to send.</p><?php } ?>
-	          <textarea class="form-control" name="text" rows="12" placeholder="Enter your message here - we’d love to help!" required></textarea>
-	        </div>
-	      </div>
-	      <div class="row">
-	        <div class="col-md-2 col-md-offset-4">
-	          <button type="submit" class="btn btn-success btn-lg form-control" role="button">Send Message</button>
-	        </div>
-	      </div>
-	    </form>
-		    
-		</div>
+	<div class="jumbotron nhp-header reference-header">
+	  <h1>Admin Panel</h1>
 	</div><!--/Jumbotron -->
-    
+  <div class="fullwidth-wrapper admin-panel-wrapper">
+      <div class="col-md-3 admin-panel-sidebar">
+        <div class="list-group">
+          <a href="#" class="list-group-item active">
+            Users
+          </a>
+          <a href="#" class="list-group-item">Email List</a>
+          <a href="#" class="list-group-item">Contact Submissions</a>
+          <a href="#" class="list-group-item">Purchases</a>
+        </div>
+      </div>
+      <div class="col-md-9 admin-panel-container">
+        <h2>Users</h2>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>ID#</th>
+              <th>Email Address</th>
+              <th>Password</th>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th class="text-center"><img class="delete-header" src="../res/img/icons/trash.png" alt="Delete" title="Delete"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <?php
+            foreach ($users as $index){
+              echo "<tr>";
+              echo "<td>".$index['id']."</td>";
+              echo "<td>".$index['email_address']."</td>";
+              echo "<td>".$index['password']."</td>";
+              echo "<td>".$index['first_name']."</td>";
+              echo "<td>".$index['last_name']."</td>";
+              echo '<td class="text-center"><a href="../mysql-admin/delete_user.php?id='.$index['id'].'"><img height="10" src="../res/img/icons/close.png" alt="Delete" title="Delete"></a></td>';
+              echo "</tr>";
+            }
+            ?>
+          </tbody>
+        </table>
+      </div>
+  </div>
+  
   <footer>
     <div class="col-md-2">
-      <img class="logo" alt="Cycle Fitness" src="res/img/logos/logo-white.png" title="Cycle Fitness" style="-webkit-filter: invert(1);">
+      <img class="logo" alt="Cycle Fitness" src="../res/img/logos/logo-white.png" title="Cycle Fitness" style="-webkit-filter: invert(1);">
     </div>
     <div class="col-md-2">
       <ul class="icon-truck">
@@ -180,15 +208,15 @@ if (isset($_GET['error'])){
     <div class="col-md-2">
       <p>We accept</p>
       <p>
-        <img class="credit-card" alt="PayPal" title="PayPal" src="res/img/icons/cc-paypal.png">
-        <img class="credit-card" alt="Visa" title="Visa" src="res/img/icons/cc-visa.png">
-        <img class="credit-card" alt="MasterCard" title="MasterCard" src="res/img/icons/cc-mastercard.png">
-        <img class="credit-card" alt="American Express" title="American Express" src="res/img/icons/cc-amex.png">
-        <img class="credit-card" alt="Chase Cards" title="Chase Cards" src="res/img/icons/cc-chase.png">
+        <img class="credit-card" alt="PayPal" title="PayPal" src="../res/img/icons/cc-paypal.png">
+        <img class="credit-card" alt="Visa" title="Visa" src="../res/img/icons/cc-visa.png">
+        <img class="credit-card" alt="MasterCard" title="MasterCard" src="../res/img/icons/cc-mastercard.png">
+        <img class="credit-card" alt="American Express" title="American Express" src="../res/img/icons/cc-amex.png">
+        <img class="credit-card" alt="Chase Cards" title="Chase Cards" src="../res/img/icons/cc-chase.png">
       </p>
     </div>
     <div class="col-md-3">
-      <form action="mysql-admin/add-subscriber.php">
+      <form action="../mysql-admin/add-subscriber.php">
         <p>Get all the latest updates and discounts</p>
         <?php if($page_error==='subscribe_no_email'){ ?><p>Please provide an email below.</p><?php } ?>
         <?php if($page_error==='subscribe_email_taken'){ ?><p>A subscriber with that email already exists.</p><?php } ?>
@@ -196,7 +224,7 @@ if (isset($_GET['error'])){
           <input type="email" class="form-control" name="email" id="signupEmail" placeholder="Your email address" width="24" required>
           <span class="input-group-btn">
             <button class="btn btn-form" id="signupButton" type="submit">
-              <img alt="Sign up" title="Sign up" src="res/img/icons/arrow-right-black.png">
+              <img alt="Sign up" title="Sign up" src="../res/img/icons/arrow-right-black.png">
             </button>
           </span>
         </div>
@@ -205,21 +233,21 @@ if (isset($_GET['error'])){
     <div class="col-md-2 col-md-offset-1">
       <p>Connect with us</p>
       <p>
-        <a href="http://facebook.com"><img class="social" alt="Facebook" title="Facebook" src="res/img/icons/facebook.png"></a>
-        <a href="http://twitter.com"><img class="social" alt="Twitter" title="Twitter" src="res/img/icons/twitter.png"></a>
-        <a href="http://instagram.com"><img class="social" alt="Instagram" title="Instagram" src="res/img/icons/instagram.png"></a>
-        <a href="http://youtube.com"><img class="social" alt="YouTube" title="YouTube" src="res/img/icons/youtube.png"></a>
+        <a href="http://facebook.com"><img class="social" alt="Facebook" title="Facebook" src="../res/img/icons/facebook.png"></a>
+        <a href="http://twitter.com"><img class="social" alt="Twitter" title="Twitter" src="../res/img/icons/twitter.png"></a>
+        <a href="http://instagram.com"><img class="social" alt="Instagram" title="Instagram" src="../res/img/icons/instagram.png"></a>
+        <a href="http://youtube.com"><img class="social" alt="YouTube" title="YouTube" src="../res/img/icons/youtube.png"></a>
       </p>
     </div>
     <div class="col-md-12">
-      <p class="footer-text">Copyright 2015 Cycle Fitness. Created by Andrew Shen and Samuel Winslow. No templates used. <a href="reference.php">Reference Page</a></p>
+      <p class="footer-text">Copyright 2015 Cycle Fitness. Created by Andrew Shen and Samuel Winslow. No templates used. <a href="../reference.php">Reference Page</a></p>
     </div>
   </footer>
     	
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-  <script>window.jQuery || document.write('<script src="res/js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
-  <script src="res/js/vendor/bootstrap.min.js"></script>
-  <script src="res/js/vendor/jquery.easing.min.js"></script>
-  <script src="res/js/main.js"></script>
+  <script>window.jQuery || document.write('<script src="../res/js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+  <script src="../res/js/vendor/bootstrap.min.js"></script>
+  <script src="../res/js/vendor/jquery.easing.min.js"></script>
+  <script src="../res/js/main.js"></script>
 </body>
 </html>

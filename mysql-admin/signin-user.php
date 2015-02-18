@@ -30,7 +30,6 @@ $thirty_days = time() + 60*60*24*30;
 if (mysql_num_rows($result) === 1){
   setcookie("cyclefitness_email", $email, $thirty_days, "/");
   setcookie("cyclefitness_password", $password, $thirty_days, "/");
-  setcookie("cyclefitness_admin", "false", $thirty_days, "/");
   header("Location: ../index.php");
 } else {
   header("Location: ../index.php?error=login_wrong_password");

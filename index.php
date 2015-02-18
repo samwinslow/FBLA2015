@@ -6,8 +6,8 @@ if (isset($_COOKIE['cyclefitness_email'])){
   $signin_password = $_COOKIE['cyclefitness_password'];
 
   // Connect to server and select databse.
-  mysql_connect("localhost", "root", "password") or die("cannot connect"); 
-  mysql_select_db("cyclefitness") or die("cannot select DB");
+  mysql_connect("localhost", "root", "password") or header("Location: mysql_error.html"); 
+  mysql_select_db("cyclefitness") or header("Location: mysql_error.html");
   $result = mysql_query("SELECT * FROM users WHERE email_address = '".$signin_email."' and password = '".$signin_password."';");
   mysql_close();
 
