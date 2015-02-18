@@ -4,9 +4,10 @@ if (isset($_COOKIE['cyclefitness_email'])){
   $signedin = true;
   $signin_email = $_COOKIE['cyclefitness_email'];
   $signin_password = $_COOKIE['cyclefitness_password'];
+  $signin_admin = $_COOKIE['cyclefitness_admin'];
 
   // Connect to server and select databse.
-  mysql_connect("localhost", "root", "password") or header("Location: mysql_error.html");
+  mysql_connect("localhost", "root", "password") or header("Location: mysql_error.html"); 
   mysql_select_db("cyclefitness") or header("Location: mysql_error.html");
   $result = mysql_query("SELECT * FROM users WHERE email_address = '".$signin_email."' and password = '".$signin_password."';");
   mysql_close();
@@ -86,6 +87,15 @@ if (isset($_GET['error'])){
                     <li class="">
                       <a href="mysql-admin/signout-user.php">Sign Out</a>
                     </li>
+                    <?php if($signin_admin) { ?>
+                    <li class="">
+                      <a href="admin-panel">Admin Panel</a>
+                    </li>
+                    <?php } else { ?>
+                    <li class="">
+                      <a href="user-profile">User Profile</a>
+                    </li>
+                    <?php } ?>
                   </ul>
                 </li>
               <?php } else { ?>
