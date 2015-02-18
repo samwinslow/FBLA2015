@@ -7194,6 +7194,22 @@ img.social {
   top: 15px;
   right: 15px;
 }
+.modal-checkout .modal-dialog {
+  width: 300px;
+}
+.modal-checkout .modal-body {
+  padding: 30px;
+}
+.modal-checkout .modal-body h2 {
+  margin-bottom: 0;
+}
+.modal-checkout .modal-body input.form-control {
+  margin-bottom: 20px;
+}
+.modal-checkout .modal-body input.form-control.half-width {
+  width: 111px;
+  margin-right: 20px;
+}
 li.cart-number {
   padding: 11px 20px 16px 20px;
   text-transform: uppercase;

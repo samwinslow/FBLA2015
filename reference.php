@@ -5,6 +5,9 @@ if (isset($_COOKIE['cyclefitness_email'])){
   $signin_email = $_COOKIE['cyclefitness_email'];
   $signin_password = $_COOKIE['cyclefitness_password'];
   $signin_admin = $_COOKIE['cyclefitness_admin'];
+  
+  $cart_items = $_COOKIE['cyclefitness_cart_items'] or 0;
+  $cart_total = $_COOKIE['cyclefitness_cart_total'] or 0;
 
   // Connect to server and select databse.
   mysql_connect("localhost", "root", "password") or header("Location: mysql_error.html"); 
@@ -62,23 +65,23 @@ if (isset($_GET['error'])){
             <li><a href="seminars.php">Seminars</a></li>
             <li><a href="faq.php">FAQ</a></li>
             <li><a href="contact.php">Contact</a></li>
-            <li class="cart-li dropdown">
-              <a href="#" data-toggle="dropdown" aria-expanded="false">
-                <span class="badge">3</span> <span class="cart-money">$200</span></a>
-              </a>
-              <ul class="dropdown-menu" role="menu">
-                <li class="cart-number">
-                  <span class="text-orange">3</span> items in your cart
-                </li>
-                <li class="">
-                  <a href="#">Item 1</a>
-                </li>
-                <li class="">
-                  <a href="#">Item 2</a>
-                </li>
-              </ul>
-            </li>
             <?php if($signedin){ ?>
+              <li class="cart-li dropdown">
+                <a href="#" data-toggle="dropdown" aria-expanded="false">
+                  <span class="badge"><?php echo $cart_items; ?></span> <span class="cart-money">$<?php echo $cart_total; ?></span></a>
+                </a>
+                <ul class="dropdown-menu" role="menu">
+                  <li class="cart-number">
+                    <span class="text-orange"><?php echo $cart_items; ?></span> items in your cart
+                  </li>
+                  <li class="">
+                    <a href="mysql-admin/clear-cart.php" class="caps">Clear Cart</a>
+                  </li>
+                  <li class="">
+                    <a href="#" class="caps" data-toggle="modal" data-target="#checkoutModal">Check Out</a>
+                  </li>
+                </ul>
+              </li>
               <li class="dropdown">
                 <a href="#" data-toggle="dropdown" aria-expanded="false" style="color:#fff;">
                   <?php echo($user['first_name']." ".$user['last_name']); ?>
@@ -140,13 +143,36 @@ if (isset($_GET['error'])){
               <p><button type="submit" class="btn btn-success btn-ghost btn-lg small-chevron" role="button">
                 Log In <span class="chevron-right chevron-orange"></span>
               </button></p>
+              <p><small>FBLA: Use <u>admin@example.com</u> and <u>password</u> as email and password.</small></p>
             </form>
           </div>
         </div>
       </div>
     </div>
   </div>
-
+  
+  <!-- Modal -->
+  <div class="modal fade modal-checkout" id="checkoutModal" tabindex="-1" role="dialog" aria-labelledby="checkoutModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
+          <h2 class="text-center">Your Purchase</h2>
+          <p class="text-center caps">
+            <span class="text-orange"><?php echo $cart_items; ?></span> items <span class="text-muted">($<?php echo $cart_total; ?>)</span>
+          </p>
+          <form action="mysql-admin/add-purchase.php" method="post">
+            <img src="res/img/form.png" style="margin-bottom: 20px; -webkit-user-select: none">
+            <p><button type="submit" class="btn btn-success btn-lg btn-block" role="button">
+              Pay $<?php echo $cart_total; ?>
+            </button></p>
+            <p class="text-center text-muted">Do not provide actual information.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  
   <!-- Jumbotron -->
 	<div class="jumbotron nhp-header reference-header">
 	  <h1>Reference Page</h1>

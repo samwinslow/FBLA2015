@@ -1,30 +1,44 @@
 <?php
 
-header("Content-Type: text/plain");
+if (isset($_COOKIE['cyclefitness_email'])){
+  $signedin = true;
+  $signin_email = $_COOKIE['cyclefitness_email'];
+  $signin_password = $_COOKIE['cyclefitness_password'];
+  $signin_admin = $_COOKIE['cyclefitness_admin'];
+  
+  $cart_items = $_COOKIE['cyclefitness_cart_items'] or 0;
+  $cart_total = $_COOKIE['cyclefitness_cart_total'] or 0;
 
-if (isset($_REQUEST['user_id']) && $_REQUEST['user_id'] !== '') {
-  $uid = $_REQUEST['user_id'];
-} else {
-  die("User ID not provided");
+  // Connect to server and select databse.
+  mysql_connect("localhost", "root", "password") or header("Location: ../mysql_error.html"); 
+  mysql_select_db("cyclefitness") or header("Location: ../mysql_error.html");
+  $result = mysql_query("SELECT * FROM users WHERE email_address = '".$signin_email."' and password = '".$signin_password."';");
+  mysql_close();
+
+  $users = array();
+  while ($row = mysql_fetch_array($result)) {
+    array_push($users, $row);
+  }
+  $user = $users[0];
 }
-if (isset($_REQUEST['amount']) && $_REQUEST['amount'] !== '') {
-  $amount = $_REQUEST['amount'];
-} else {
-  die("Amount not provided");
-}
+
+$uid = $user['id'];
+$amount = $cart_total;
 date_default_timezone_set('America/Los_Angeles');
 $date = date("Y-m-d H:i:s");
 
 // Connect to server and select databse.
-mysql_connect("localhost", "root", "password") or die("cannot connect"); 
-mysql_select_db("cyclefitness") or die("cannot select DB");
+mysql_connect("localhost", "root", "password") or header("Location: ../mysql_error.html");
+mysql_select_db("cyclefitness") or header("Location: ../mysql_error.html");
 
 $result = mysql_query("INSERT INTO purchases (`user_id`,`date`,`amount`) VALUES ($uid,'$date',$amount);");
 mysql_close();
 if (!$result){
-  die("A MySQL error occurred");
+  header("Location: ../mysql_error.html");
 } else {
-  die("New purchase added");
+  setcookie("cyclefitness_cart_items", 0, $thirty_days, "/");
+  setcookie("cyclefitness_cart_total", 0, $thirty_days, "/");
+  header("Location: ../user-profile/purchases.php");
 }
 
 ?> 
