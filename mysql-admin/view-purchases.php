@@ -2,7 +2,7 @@
 
 // Connect to server and select databse.
 mysql_connect("localhost", "root", "password") or die("cannot connect"); 
-mysql_select_db("cyclefitness") or die("cannot select DB");
+mysql_select_db("andrewsh_cyclefitness") or die("cannot select DB");
 $result = mysql_query("SELECT * FROM purchases;");
 mysql_close();
 
