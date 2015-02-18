@@ -42,7 +42,7 @@ if (isset($_GET['error'])){
   <!--[if lt IE 8]>
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
-  <nav class="navbar navbar-inverse navbar-fixed-top top-nav-collapse" role="navigation">
+  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
             <span class="sr-only">Toggle navigation</span>
@@ -50,29 +50,29 @@ if (isset($_GET['error'])){
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="index.html">
+          <a class="navbar-brand" href="index.php">
             <img class="logo" alt="Cycle Fitness" src="res/img/logos/logo-white.png" title="Cycle Fitness">
           </a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="bikes.html">Bikes</a></li>
-            <li><a href="trips.html">Trips</a></li>
-            <li><a href="seminars.html">Seminars</a></li>
-            <li><a href="faq.html">FAQ</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="bikes.php">Bikes</a></li>
+            <li><a href="trips.php">Trips</a></li>
+            <li><a href="seminars.php">Seminars</a></li>
+            <li><a href="faq.php">FAQ</a></li>
+            <li><a href="contact.php">Contact</a></li>
             <li class="cart-li dropdown">
               <a href="#" data-toggle="dropdown" aria-expanded="false">
                 <span class="badge">3</span> <span class="cart-money">$200</span></a>
-              
+              </a>
               <ul class="dropdown-menu" role="menu">
                 <li class="cart-number">
                   <span class="text-orange">3</span> items in your cart
                 </li>
-                <li class="dropdown">
+                <li class="">
                   <a href="#">Item 1</a>
                 </li>
-                <li class="dropdown">
+                <li class="">
                   <a href="#">Item 2</a>
                 </li>
               </ul>

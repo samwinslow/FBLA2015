@@ -50,17 +50,17 @@ if (isset($_GET['error'])){
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="index.html">
+          <a class="navbar-brand" href="index.php">
             <img class="logo" alt="Cycle Fitness" src="res/img/logos/logo-white.png" title="Cycle Fitness">
           </a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="bikes.html">Bikes</a></li>
-            <li><a href="trips.html">Trips</a></li>
-            <li><a href="seminars.html">Seminars</a></li>
-            <li><a href="faq.html">FAQ</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="bikes.php">Bikes</a></li>
+            <li><a href="trips.php">Trips</a></li>
+            <li><a href="seminars.php">Seminars</a></li>
+            <li><a href="faq.php">FAQ</a></li>
+            <li><a href="contact.php">Contact</a></li>
             <li class="cart-li dropdown">
               <a href="#" data-toggle="dropdown" aria-expanded="false">
                 <span class="badge">3</span> <span class="cart-money">$200</span></a>
@@ -142,7 +142,7 @@ if (isset($_GET['error'])){
 	    <div class="container">
 		    <h1>New Trek <br> 3 Series</h1>
         <p>3 Series gives you upright confidence, <br> control, and road-to-trail versatility, <br> wherever you ride.</p>
-        <a class="btn btn-ghost btn-lg" href="bikes.html" role="button">See Collection <span class="chevron-right chevron-orange"></span></a>
+        <a class="btn btn-ghost btn-lg" href="bikes.php" role="button">See Collection <span class="chevron-right chevron-orange"></span></a>
 		  </div>
 	  </div>
 	</div><!--/Jumbotron -->
@@ -162,7 +162,7 @@ if (isset($_GET['error'])){
 	      <li>Hybrid Bikes</li>
 	      <li>BMX Bikes</li>
 	    </ul>
-	    <p><a class="btn btn-ghost btn-lg" href="bikes.html" role="button">See Collection <span class="chevron-right chevron-white"></span></a></p>
+	    <p><a class="btn btn-ghost btn-lg" href="bikes.php" role="button">See Collection <span class="chevron-right chevron-white"></span></a></p>
 	  </div>
 
 	  <div class="col-md-6 half-section womens-section">
@@ -179,13 +179,13 @@ if (isset($_GET['error'])){
 	       <li>Hybrid Bikes</li>
 	       <li>BMX Bikes</li>
 	     </ul>
-	     <p><a class="btn btn-primary btn-lg" href="bikes.html" role="button">See Collection <span class="chevron-right chevron-white"></span></a></p>
+	     <p><a class="btn btn-primary btn-lg" href="bikes.php" role="button">See Collection <span class="chevron-right chevron-white"></span></a></p>
 	  </div>
   </div>
 
   <div class="text-center road-trip">
   	<h1>Manhattan Road Trip</h1>
-  	<p><a class="btn btn-default btn-lg" href="trips.html" role="button">Join Event <span class="chevron-right chevron-lightblue"></span></a></p>
+  	<p><a class="btn btn-default btn-lg" href="trips.php" role="button">Join Event <span class="chevron-right chevron-lightblue"></span></a></p>
   </div>
 
   <div class="fullwidth-wrapper" id="promos">
