@@ -95,40 +95,46 @@ if (isset($_GET['error'])){
           </div><!--/.navbar-collapse -->
     </nav>
 
-  <!-- Modal -->
-  <div class="modal fade" id="signinModal" tabindex="-1" role="dialog" aria-labelledby="signinModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-body">
-          <div class="col-md-7 gray-section">
-            <h2>Register</h2>
-            <form action="">
-              <div class="col-md-6">
-                <input type="text" class="form-control" id="registerFirstName" placeholder="FIRST NAME" required>
-              </div>
-              <div class="col-md-6">
-                <input type="text" class="form-control" id="registerLastName" placeholder="LAST NAME" required>
-              </div>
-              <input type="email" class="form-control" id="registerEmail" placeholder="EMAIL ADDRESS" required>
-              <input type="password" class="form-control" id="registerPassword" placeholder="PASSWORD" required>
-              <p class="text-right"><button type="submit" class="btn btn-success btn-lg" role="button">Sign Up</button></p>
-            </form>
-          </div>
-          <div class="col-md-5">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
-            <h2>Login</h2>
-            <form action="">
-              <input type="email" class="form-control" id="signinEmail" placeholder="EMAIL ADDRESS" required>
-              <input type="password" class="form-control" id="signinPassword" placeholder="PASSWORD" required>
-              <p><button type="submit" class="btn btn-success btn-ghost btn-lg small-chevron" role="button">
-                Log In <span class="chevron-right chevron-orange"></span>
-              </button></p>
-            </form>
+    <!-- Modal -->
+    <div class="modal fade" id="signinModal" tabindex="-1" role="dialog" aria-labelledby="signinModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div class="col-md-7 gray-section">
+              <h2>Register</h2>
+              <?php if($page_error==='register_no_email'){ ?><p>Please provide an email below.</p><?php } ?>
+              <?php if($page_error==='register_no_password'){ ?><p>Please provide a password below.</p><?php } ?>
+              <?php if($page_error==='register_email_taken'){ ?><p>An account with that email already exists.</p><?php } ?>
+              <form action="mysql-admin/create-user.php" method="post">
+                <div class="col-md-6">
+                  <input type="text" class="form-control" id="registerFirstName" name="first" placeholder="First Name" required>
+                </div>
+                <div class="col-md-6">
+                  <input type="text" class="form-control" name="last" placeholder="Last Name" required>
+                </div>
+                <input type="email" class="form-control" name="email" placeholder="Email Address" required>
+                <input type="password" class="form-control" name="password" placeholder="Password" required>
+                <p class="text-right"><button type="submit" class="btn btn-success btn-lg" role="button">Sign Up</button></p>
+              </form>
+            </div>
+            <div class="col-md-5">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
+              <h2>Login</h2>
+              <?php if($page_error==='login_no_email'){ ?><p>Please provide an email below.</p><?php } ?>
+              <?php if($page_error==='login_no_password'){ ?><p>Please provide a password below.</p><?php } ?>
+              <?php if($page_error==='login_wrong_password'){ ?><p>Username or password is incorrect.</p><?php } ?>
+              <form action="mysql-admin/signin-user.php" method="post">
+                <input type="email" class="form-control" id="loginEmail" name="email" placeholder="Email Address" required>
+                <input type="password" class="form-control" name="password" placeholder="Password" required>
+                <p><button type="submit" class="btn btn-success btn-ghost btn-lg small-chevron" role="button">
+                  Log In <span class="chevron-right chevron-orange"></span>
+                </button></p>
+              </form>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
 
   <!-- Jumbotron -->
 	<div class="jumbotron nhp-header bike-header">
