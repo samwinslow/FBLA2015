@@ -1,5 +1,13 @@
 <?php
+
+// Globals
+$db_host     = "localhost";
+$db_user     = "andrewsh_root";
+$db_password = "shamlamdoobly2015";
+$db_name     = "andrewsh_cyclefitness";
+
 function generate_header(){
+  global $db_host, $db_user, $db_password, $db_name;
   if (isset($_COOKIE['cyclefitness_email'])){
     $signedin = true;
     $signin_email = $_COOKIE['cyclefitness_email'];
@@ -10,16 +18,18 @@ function generate_header(){
     $cart_total = $_COOKIE['cyclefitness_cart_total'] or 0;
 
     // Connect to server and select databse.
-    mysql_connect("localhost", "andrewsh_root", "shamlamdoobly2015") or header("Location: mysql_error.html"); 
-    mysql_select_db("andrewsh_cyclefitness") or header("Location: mysql_error.html");
+    mysql_connect($db_host, $db_user, $db_password) or header("Location: mysql_error.html"); 
+    mysql_select_db($db_name) or header("Location: mysql_error.html");
     $result = mysql_query("SELECT * FROM users WHERE email_address = '".$signin_email."' and password = '".$signin_password."';");
     mysql_close();
 
     $users = array();
-    while ($row = mysql_fetch_array($result)) {
-      array_push($users, $row);
+    if ($result){
+      while ($row = mysql_fetch_array($result)) {
+        array_push($users, $row);
+      }
+      $user = $users[0];
     }
-    $user = $users[0];
   }
   if (isset($_GET['error'])){
     $page_error = $_GET['error'];
@@ -170,4 +180,4 @@ function generate_header(){
         </div>
       </div>
     </div>
-<? } ?>
+<?php } ?>
