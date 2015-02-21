@@ -1,25 +1,54 @@
 <?php
 
 // Globals
-$db_host     = "localhost";
-$db_user     = "andrewsh_root";
-$db_password = "shamlamdoobly2015";
-$db_name     = "andrewsh_cyclefitness";
+$is_deployment = false;
+if ($is_deployment) {
+  $db_host     = "localhost";
+  $db_user     = "andrewsh_root";
+  $db_password = "shamlamdoobly2015";
+  $db_name     = "andrewsh_cyclefitness";
+  $base_href   = "/fbla/";
+} else {
+  $db_host     = "localhost";
+  $db_user     = "root";
+  $db_password = "password";
+  $db_name     = "cyclefitness";
+  $base_href   = "/";
+}
 
-function generate_header(){
-  global $db_host, $db_user, $db_password, $db_name;
+function database_connect() {
+  global $db_host, $db_user, $db_password, $db_name, $base_href;
+  mysql_connect($db_host, $db_user, $db_password) or header("Location: ".$base_href."mysql_error.html"); 
+  mysql_select_db($db_name) or header("Location: ".$base_href."mysql_error.html");
+}
+
+function verify_admin(){
+  if (!isset($_COOKIE['cyclefitness_admin']) || $_COOKIE['cyclefitness_admin']!='true'){
+    header("Location: ".$base_href."/index.php");
+  }
+}
+
+function get_cookies(){
+  global $signedin, $signin_email, $signin_password, $signin_admin, $base_href, $user, $cart_items, $cart_total, $page_error;
   if (isset($_COOKIE['cyclefitness_email'])){
     $signedin = true;
     $signin_email = $_COOKIE['cyclefitness_email'];
     $signin_password = $_COOKIE['cyclefitness_password'];
     $signin_admin = $_COOKIE['cyclefitness_admin'];
 
-    $cart_items = $_COOKIE['cyclefitness_cart_items'] or 0;
-    $cart_total = $_COOKIE['cyclefitness_cart_total'] or 0;
+    if (isset($_COOKIE['cyclefitness_cart_items']) && $_COOKIE['cyclefitness_cart_items'] != 0){
+      $cart_items = $_COOKIE['cyclefitness_cart_items'] or 0;
+    } else {
+      $cart_items = 0;
+    }
+    if (isset($_COOKIE['cyclefitness_cart_total']) && $_COOKIE['cyclefitness_cart_total'] != 0){
+      $cart_total = $_COOKIE['cyclefitness_cart_total'] or 0;
+    } else {
+      $cart_total = 0;
+    }
 
     // Connect to server and select databse.
-    mysql_connect($db_host, $db_user, $db_password) or header("Location: mysql_error.html"); 
-    mysql_select_db($db_name) or header("Location: mysql_error.html");
+    database_connect();
     $result = mysql_query("SELECT * FROM users WHERE email_address = '".$signin_email."' and password = '".$signin_password."';");
     mysql_close();
 
@@ -34,6 +63,11 @@ function generate_header(){
   if (isset($_GET['error'])){
     $page_error = $_GET['error'];
   }
+}
+
+function generate_header(){
+  global $signedin, $signin_email, $signin_password, $signin_admin, $base_href, $user, $cart_items, $cart_total, $page_error;
+  get_cookies();
 ?>
   <!doctype html>
   <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
@@ -46,6 +80,7 @@ function generate_header(){
     <title>Cycle Fitness</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <base href="<?php echo $base_href; ?>">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <link rel="stylesheet" href="res/css/FBLA2015.min.css">
     <link rel="stylesheet" href="res/css/fonts.css">
@@ -75,30 +110,40 @@ function generate_header(){
               <li><a href="faq.php">FAQ</a></li>
               <li><a href="contact.php">Contact</a></li>
               <?php if($signedin){ ?>
-                <li class="cart-li dropdown">
-                  <a href="#" data-toggle="dropdown" aria-expanded="false">
-                    <span class="badge"><?php echo $cart_items; ?></span> <span class="cart-money">$<?php echo $cart_total; ?></span></a>
-                  </a>
-                  <ul class="dropdown-menu" role="menu">
-                    <li class="cart-number">
-                      <span class="text-orange"><?php echo $cart_items; ?></span> items in your cart
-                    </li>
-                    <li class="">
-                      <a href="mysql-admin/clear-cart.php" class="caps">Clear Cart</a>
-                    </li>
-                    <li class="">
-                      <a href="#" class="caps" data-toggle="modal" data-target="#checkoutModal">Check Out</a>
-                    </li>
-                  </ul>
-                </li>
+                <?php if ($cart_items > 0) { ?>
+                  <li class="cart-li dropdown">
+                    <a href="#" data-toggle="dropdown" aria-expanded="false">
+                      <span class="badge"><?php echo $cart_items; ?></span> <span class="cart-money">$<?php echo $cart_total; ?></span>
+                    </a>
+                    <ul class="dropdown-menu" role="menu">
+                      <li class="cart-number">
+                        <span class="text-orange"><?php echo $cart_items; ?></span> items in your cart
+                      </li>
+                      <li class="">
+                        <a href="mysql-admin/clear-cart.php" class="caps">Clear Cart</a>
+                      </li>
+                      <li class="">
+                        <a href="#" class="caps" data-toggle="modal" data-target="#checkoutModal">Check Out</a>
+                      </li>
+                    </ul>
+                  </li>
+                <?php } else { ?>
+                  <li class="cart-li dropdown">
+                    <a href="#" data-toggle="dropdown" aria-expanded="false">
+                      Cart
+                    </a>
+                    <ul class="dropdown-menu" role="menu">
+                      <li class="cart-number">
+                        Cart is empty
+                      </li>
+                    </ul>
+                  </li>
+                <?php } ?>
                 <li class="dropdown">
                   <a href="#" data-toggle="dropdown" aria-expanded="false" style="color:#fff;">
                     <?php echo($user['first_name']." ".$user['last_name']); ?>
                   </a>
                   <ul class="dropdown-menu" role="menu">
-                    <li class="">
-                      <a href="mysql-admin/signout-user.php">Sign Out</a>
-                    </li>
                     <?php if($signin_admin) { ?>
                     <li class="">
                       <a href="admin-panel">Admin Panel</a>
@@ -108,6 +153,9 @@ function generate_header(){
                       <a href="user-profile">User Profile</a>
                     </li>
                     <?php } ?>
+                    <li class="">
+                      <a href="mysql-admin/signout-user.php">Sign Out</a>
+                    </li>
                   </ul>
                 </li>
               <?php } else { ?>
@@ -180,4 +228,66 @@ function generate_header(){
         </div>
       </div>
     </div>
+<?php
+}
+
+function generate_footer() { ?>
+    <footer>
+      <div class="col-md-2">
+        <img class="logo" alt="Cycle Fitness" src="res/img/logos/logo-white.png" title="Cycle Fitness" style="-webkit-filter: invert(1);">
+      </div>
+      <div class="col-md-2">
+        <ul class="icon-truck">
+          <li>FREE shipping on all orders</li>
+        </ul>
+        <ul class="icon-creditcard">
+          <li>30 days money back guarantee</li>
+        </ul>
+      </div>
+      <div class="col-md-2">
+        <p>We accept</p>
+        <p>
+          <img class="credit-card" alt="PayPal" title="PayPal" src="res/img/icons/cc-paypal.png">
+          <img class="credit-card" alt="Visa" title="Visa" src="res/img/icons/cc-visa.png">
+          <img class="credit-card" alt="MasterCard" title="MasterCard" src="res/img/icons/cc-mastercard.png">
+          <img class="credit-card" alt="American Express" title="American Express" src="res/img/icons/cc-amex.png">
+          <img class="credit-card" alt="Chase Cards" title="Chase Cards" src="res/img/icons/cc-chase.png">
+        </p>
+      </div>
+      <div class="col-md-3">
+        <form action="mysql-admin/add-subscriber.php">
+          <p>Get all the latest updates and discounts</p>
+          <?php if($page_error==='subscribe_no_email'){ ?><p>Please provide an email below.</p><?php } ?>
+          <?php if($page_error==='subscribe_email_taken'){ ?><p>A subscriber with that email already exists.</p><?php } ?>
+          <div class="input-group">
+            <input type="email" class="form-control" name="email" id="signupEmail" placeholder="Your email address" width="24" required>
+            <span class="input-group-btn">
+              <button class="btn btn-form" id="signupButton" type="submit">
+                <img alt="Sign up" title="Sign up" src="res/img/icons/arrow-right-black.png">
+              </button>
+            </span>
+          </div>
+        </form>
+      </div>
+      <div class="col-md-2 col-md-offset-1">
+        <p>Connect with us</p>
+        <p>
+          <a href="http://facebook.com"><img class="social" alt="Facebook" title="Facebook" src="res/img/icons/facebook.png"></a>
+          <a href="http://twitter.com"><img class="social" alt="Twitter" title="Twitter" src="res/img/icons/twitter.png"></a>
+          <a href="http://instagram.com"><img class="social" alt="Instagram" title="Instagram" src="res/img/icons/instagram.png"></a>
+          <a href="http://youtube.com"><img class="social" alt="YouTube" title="YouTube" src="res/img/icons/youtube.png"></a>
+        </p>
+      </div>
+      <div class="col-md-12">
+        <p class="footer-text">Copyright 2015 Cycle Fitness. Created by Andrew Shen and Samuel Winslow. No templates used. <a href="reference.php">Reference Page</a></p>
+      </div>
+    </footer>
+
+  	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="res/js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+    <script src="res/js/vendor/bootstrap.min.js"></script>
+    <script src="res/js/vendor/jquery.easing.min.js"></script>
+    <script src="res/js/main.js"></script>
+  </body>
+  </html>
 <?php } ?>
