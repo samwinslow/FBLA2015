@@ -83,19 +83,24 @@
       mysql_close();
 
       $bikes = array();
+      
       while ($row = mysql_fetch_array($result)) {
         array_push($bikes, $row);
       }
-      foreach ($bikes as $index) { ?>
-        <div class="col-md-3 text-center bike">
-          <img src="<?php echo $index['image_url']; ?>">
-          <h4><?php echo $index['name']; ?></h4>
-          <?php if ($index['old_price'] != $index['sale_price']){ ?>
-            <h5><s><?php echo $index['old_price']; ?></s> <span class="text-orange"><?php echo $index['sale_price']; ?></span></h5>
-          <?php } else { ?>
-            <h5><?php echo $index['sale_price']; ?></h5>
-          <?php } ?>
-        </div>
+      if (mysql_num_rows($result) > 0){
+        foreach ($bikes as $index) { ?>
+          <div class="col-md-3 text-center bike">
+            <img src="<?php echo $index['image_url']; ?>">
+            <h4><?php echo $index['name']; ?></h4>
+            <?php if ($index['old_price'] != $index['sale_price']){ ?>
+              <h5><s><?php echo $index['old_price']; ?></s> <span class="text-orange"><?php echo $index['sale_price']; ?></span></h5>
+            <?php } else { ?>
+              <h5><?php echo $index['sale_price']; ?></h5>
+            <?php } ?>
+          </div>
+        <?php }
+      } else { ?>
+      <h3 class="text-center">No bikes found in this section</h3>
       <?php } ?>
     </div>
   </div>
