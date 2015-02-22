@@ -76,48 +76,27 @@
   
   <div class="fullwidth-wrapper bikes">
     <div class="row bike-row">
-      <div class="col-md-3 text-center bike">
-        <img src="res/img/bikes/bike-1.png">
-        <h4>Trek Bontrager Road Bike</h4>
-        <h5><s>$289.99</s> <span class="text-orange">$229.99</span></h5>
-      </div>
-      <div class="col-md-3 text-center bike">
-        <img src="res/img/bikes/bike-1.png">
-        <h4>Trek Bontrager Road Bike</h4>
-        <h5>$289.99</h5>
-      </div>
-      <div class="col-md-3 text-center bike">
-        <img src="res/img/bikes/bike-1.png">
-        <h4>Trek Bontrager Road Bike</h4>
-        <h5>$289.99</h5>
-      </div>
-      <div class="col-md-3 text-center bike">
-        <img src="res/img/bikes/bike-1.png">
-        <h4>Trek Bontrager Road Bike</h4>
-        <h5>$289.99</h5>
-      </div>
-    </div>
-    <div class="row bike-row">
-      <div class="col-md-3 text-center bike">
-        <img src="res/img/bikes/bike-1.png">
-        <h4>Trek Bontrager Road Bike</h4>
-        <h5><s>$289.99</s> <span class="text-orange">$229.99</span></h5>
-      </div>
-      <div class="col-md-3 text-center bike">
-        <img src="res/img/bikes/bike-1.png">
-        <h4>Trek Bontrager Road Bike</h4>
-        <h5>$289.99</h5>
-      </div>
-      <div class="col-md-3 text-center bike">
-        <img src="res/img/bikes/bike-1.png">
-        <h4>Trek Bontrager Road Bike</h4>
-        <h5>$289.99</h5>
-      </div>
-      <div class="col-md-3 text-center bike">
-        <img src="res/img/bikes/bike-1.png">
-        <h4>Trek Bontrager Road Bike</h4>
-        <h5>$289.99</h5>
-      </div>
+      <?php
+      // Generate list of all users
+      database_connect();
+      $result = mysql_query("SELECT * FROM bikes;");
+      mysql_close();
+
+      $bikes = array();
+      while ($row = mysql_fetch_array($result)) {
+        array_push($bikes, $row);
+      }
+      foreach ($bikes as $index) { ?>
+        <div class="col-md-3 text-center bike">
+          <img src="<?php echo $index['image_url']; ?>">
+          <h4><?php echo $index['name']; ?></h4>
+          <?php if ($index['old_price'] != $index['sale_price']){ ?>
+            <h5><s><?php echo $index['old_price']; ?></s> <span class="text-orange"><?php echo $index['sale_price']; ?></span></h5>
+          <?php } else { ?>
+            <h5><?php echo $index['sale_price']; ?></h5>
+          <?php } ?>
+        </div>
+      <?php } ?>
     </div>
   </div>
     
