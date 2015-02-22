@@ -20,17 +20,16 @@
       <div class="modal-content">
         <div class="modal-body">
           <div class="col-md-7 gray-section">
-            <img class="bike-modal-img" src="res/img/bikes/bike-1.png">
+            <img id="bike-img" class="bike-modal-img" src="res/img/bikes/bike-1.png">
           </div>
           <div class="col-md-5">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
-            <h3>Trek Aeolus 5 Road Bike</h3>
-            <h4><s>$289.99</s> <span class="text-orange">$229.99</span></h4>
-            <p>The "Classics killer" Aeolus 5 D3 clincher road wheel offers the all-around performance of a 50mm carbon rim, while D3 shaping keeps the weight down and
-            aero benefits up. Now everyone can race like a professional over rolling terrain and in varying crosswinds.</p>
-            <form class="form-inline" action="mysql-admin/add-one-to-cart.php?amount=229.99" method="post">
+            <h3 id="bike-title"></h3>
+            <h4 id="bike-price"></h4>
+            <p id="bike-text"></p>
+            <form id="bike-form" class="form-inline" action="mysql-admin/add-to-cart.php?" method="post">
               <div class="form-group">
-                <select class="form-control" id="purchaseSize" required>
+                <select class="form-control" id="bike-sizes" required>
                   <option value="">SIZE</option>
                   <option value="52">52 cm</option>
                   <option value="54">54 cm</option>
@@ -89,13 +88,13 @@
       }
       if (mysql_num_rows($result) > 0){
         foreach ($bikes as $index) { ?>
-          <div class="col-md-3 text-center bike">
+          <div class="col-md-3 text-center bike" data-bike-id="<?php echo $index['id']; ?>">
             <img src="<?php echo $index['image_url']; ?>">
             <h4><?php echo $index['name']; ?></h4>
-            <?php if ($index['old_price'] != $index['sale_price']){ ?>
-              <h5><s><?php echo $index['old_price']; ?></s> <span class="text-orange"><?php echo $index['sale_price']; ?></span></h5>
+            <?php if ($index['old_price'] != $index['sale_price'] && $index['old_price'] != null){ ?>
+              <h5><s>$<?php echo $index['old_price']; ?></s> <span class="text-orange">$<?php echo $index['sale_price']; ?></span></h5>
             <?php } else { ?>
-              <h5><?php echo $index['sale_price']; ?></h5>
+              <h5>$<?php echo $index['sale_price']; ?></h5>
             <?php } ?>
           </div>
         <?php }

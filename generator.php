@@ -29,22 +29,31 @@ function verify_admin(){
 }
 
 function get_cookies(){
-  global $signedin, $signin_email, $signin_password, $signin_admin, $base_href, $user, $cart_items, $cart_total, $page_error;
+  global $signedin, $signin_email, $signin_password, $signin_admin, $base_href, $user, $cart_items, $cart_total, $cart_array, $page_error;
   if (isset($_COOKIE['cyclefitness_email'])){
     $signedin = true;
     $signin_email = $_COOKIE['cyclefitness_email'];
     $signin_password = $_COOKIE['cyclefitness_password'];
     $signin_admin = $_COOKIE['cyclefitness_admin'];
 
-    if (isset($_COOKIE['cyclefitness_cart_items']) && $_COOKIE['cyclefitness_cart_items'] != 0){
-      $cart_items = $_COOKIE['cyclefitness_cart_items'] or 0;
-    } else {
-      $cart_items = 0;
-    }
-    if (isset($_COOKIE['cyclefitness_cart_total']) && $_COOKIE['cyclefitness_cart_total'] != 0){
-      $cart_total = $_COOKIE['cyclefitness_cart_total'] or 0;
-    } else {
+    if (isset($_COOKIE['cyclefitness_cart_json']) && $_COOKIE['cyclefitness_cart_json'] != ''){
+      $cart = json_decode($_COOKIE['cyclefitness_cart_json']);
+      $cart_items = count($cart);
       $cart_total = 0;
+      $cart_array = array();
+      
+      foreach ($cart as $index => $value) {
+        database_connect();
+        $result = mysql_query("SELECT * FROM bikes WHERE id=".$value.";");
+        mysql_close();
+        if (mysql_num_rows($result) == 1){
+          while ($row = mysql_fetch_array($result, MYSQL_ASSOC)) {
+            array_push($cart_array, $row);
+            $cart_total += $row['sale_price'];
+          }
+        }
+      }
+      
     }
 
     // Connect to server and select databse.
@@ -66,7 +75,7 @@ function get_cookies(){
 }
 
 function generate_header(){
-  global $signedin, $signin_email, $signin_password, $signin_admin, $base_href, $user, $cart_items, $cart_total, $page_error;
+  global $signedin, $signin_email, $signin_password, $signin_admin, $base_href, $user, $cart_items, $cart_total, $cart_array, $page_error;
   get_cookies();
 ?>
   <!doctype html>
@@ -119,6 +128,11 @@ function generate_header(){
                       <li class="cart-number">
                         <span class="text-orange"><?php echo $cart_items; ?></span> items in your cart
                       </li>
+                      <?php foreach ($cart_array as $item) { ?>
+                        <li class="">
+                          <a href="mysql-admin/clear-cart.php" class="caps"><?php echo $item['name']; ?></a>
+                        </li>
+                      <?php } ?>
                       <li class="">
                         <a href="mysql-admin/clear-cart.php" class="caps">Clear Cart</a>
                       </li>

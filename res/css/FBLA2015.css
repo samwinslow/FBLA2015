@@ -7235,7 +7235,7 @@ li.cart-number {
   transition: all 0.15s ease-in-out;
 }
 .bike-row .bike > img {
-  width: 220px;
+  height: 130px;
 }
 .bike-row .bike h4 {
   margin-top: 20px;
@@ -7275,7 +7275,7 @@ li.cart-number {
 #bikeModal .bike-modal-img {
   width: 340px;
 }
-#bikeModal #purchaseSize {
+#bikeModal #bike-sizes {
   width: 150px;
 }
 #bikeModal #purchaseQty {
