@@ -129,15 +129,15 @@ function generate_header(){
                         <span class="text-orange"><?php echo $cart_items; ?></span> items in your cart
                       </li>
                       <?php foreach ($cart_array as $item) { ?>
-                        <li class="">
-                          <a href="mysql-admin/clear-cart.php" class="caps"><?php echo $item['name']; ?></a>
+                        <li class="cart-item">
+                          <img src="<?php echo $item['image_url']; ?>" class="item-thumbnail pull-left">
+                          <p><?php echo $item['name']; ?></p>
+                          <p class="item-price">1 &times; <span class="text-orange"><?php echo $item['sale_price']; ?></span></p>
                         </li>
                       <?php } ?>
-                      <li class="">
-                        <a href="mysql-admin/clear-cart.php" class="caps">Clear Cart</a>
-                      </li>
-                      <li class="">
-                        <a href="#" class="caps" data-toggle="modal" data-target="#checkoutModal">Check Out</a>
+                      <li class="cart-actions">
+                        <a href="mysql-admin/clear-cart.php">Clear Cart</a>
+                        <a class="cart-action-primary" href="#" data-toggle="modal" data-target="#checkoutModal">Check Out</a>
                       </li>
                     </ul>
                   </li>

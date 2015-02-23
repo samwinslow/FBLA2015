@@ -41,7 +41,7 @@ h3.panel-title {
   border-left: 1px solid #222;
   border-right: 1px solid #222;
   height: 60px;
-  a {
+  &>a {
     margin-left: 0;
     margin-right: 0;
     .badge {
@@ -53,6 +53,57 @@ h3.panel-title {
     font-weight: @headings-font-weight;
     font-size: 20px;
     padding-left: 15px;
+  }
+  ul.dropdown-menu {
+    padding: 0;
+    li.cart-number {
+      padding: 16px 26px;
+      text-transform: uppercase;
+      text-align: center;
+      font-size: 11px;
+      line-height: 1;
+      cursor: default;
+      border-bottom: 1px solid #ebebeb;
+    }
+    li.cart-item {
+      min-width: 273px;
+      padding: 16px 26px;
+      font-family: @headings-font-family;
+      font-weight: @headings-font-weight;
+      font-size: 18px;
+      line-height: @line-height-base;
+      cursor: default;
+      img.item-thumbnail {
+        width: 70px;
+        margin-right: 18px;
+      }
+      p {
+        margin-bottom: 0;
+        &.item-price {
+          color: @gray-light;
+        }
+      }
+    }
+    li.cart-actions {
+      padding: 0;
+      a {
+        width: 50%;
+        padding: 16px 0;
+        display: inline-block;
+        font-size: 11px;
+        text-align: center;
+        text-transform: uppercase;
+        .box-shadow(0 1px 0 #ebebeb inset);
+        &:first-child {
+          float: left;
+        }
+        &.cart-action-primary {
+          background-color: @brand-orange;
+          color: #fff;
+          .box-shadow(none);
+        }
+      }
+    }
   }
 }
 .navbar {
@@ -659,19 +710,7 @@ img.social {
   }
 }
 
-// Shopping cart
-li.cart-number {
-  padding: 11px 20px 16px 20px;
-  text-transform: uppercase;
-  text-align: center;
-  font-size: 11px;
-  line-height: 11px;
-  cursor: default;
-  border-bottom: 1px solid #ebebeb;
-}
-
 //Bikes
-
 .bikes {
   margin: 80px 0px;
 }

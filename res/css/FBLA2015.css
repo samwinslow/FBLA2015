@@ -6565,11 +6565,11 @@ h3.panel-title {
   border-right: 1px solid #222;
   height: 60px;
 }
-.cart-li a {
+.cart-li > a {
   margin-left: 0;
   margin-right: 0;
 }
-.cart-li a .badge {
+.cart-li > a .badge {
   background-color: #ff9400;
 }
 .cart-li .cart-money {
@@ -6577,6 +6577,59 @@ h3.panel-title {
   font-weight: 500;
   font-size: 20px;
   padding-left: 15px;
+}
+.cart-li ul.dropdown-menu {
+  padding: 0;
+}
+.cart-li ul.dropdown-menu li.cart-number {
+  padding: 16px 26px;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 11px;
+  line-height: 1;
+  cursor: default;
+  border-bottom: 1px solid #ebebeb;
+}
+.cart-li ul.dropdown-menu li.cart-item {
+  min-width: 273px;
+  padding: 16px 26px;
+  font-family: "Tungsten", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.42857143;
+  cursor: default;
+}
+.cart-li ul.dropdown-menu li.cart-item img.item-thumbnail {
+  width: 70px;
+  margin-right: 18px;
+}
+.cart-li ul.dropdown-menu li.cart-item p {
+  margin-bottom: 0;
+}
+.cart-li ul.dropdown-menu li.cart-item p.item-price {
+  color: #777777;
+}
+.cart-li ul.dropdown-menu li.cart-actions {
+  padding: 0;
+}
+.cart-li ul.dropdown-menu li.cart-actions a {
+  width: 50%;
+  padding: 16px 0;
+  display: inline-block;
+  font-size: 11px;
+  text-align: center;
+  text-transform: uppercase;
+  -webkit-box-shadow: 0 1px 0 #ebebeb inset;
+  box-shadow: 0 1px 0 #ebebeb inset;
+}
+.cart-li ul.dropdown-menu li.cart-actions a:first-child {
+  float: left;
+}
+.cart-li ul.dropdown-menu li.cart-actions a.cart-action-primary {
+  background-color: #ff9400;
+  color: #fff;
+  -webkit-box-shadow: none;
+  box-shadow: none;
 }
 .navbar {
   padding-right: 57px;
@@ -7209,15 +7262,6 @@ img.social {
 .modal-checkout .modal-body input.form-control.half-width {
   width: 111px;
   margin-right: 20px;
-}
-li.cart-number {
-  padding: 11px 20px 16px 20px;
-  text-transform: uppercase;
-  text-align: center;
-  font-size: 11px;
-  line-height: 11px;
-  cursor: default;
-  border-bottom: 1px solid #ebebeb;
 }
 .bikes {
   margin: 80px 0px;
