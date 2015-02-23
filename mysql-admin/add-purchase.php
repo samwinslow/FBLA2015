@@ -14,10 +14,9 @@ $result = mysql_query("INSERT INTO purchases (`user_id`,`date`,`amount`) VALUES 
 mysql_close();
 
 if (!$result){
+  die("!result");
   header("Location: ../mysql_error.html");
 } else {
-  setcookie("cyclefitness_cart_items", 0, $thirty_days, "/");
-  setcookie("cyclefitness_cart_total", 0, $thirty_days, "/");
   header("Location: ../user-profile/purchases.php");
 }
 
