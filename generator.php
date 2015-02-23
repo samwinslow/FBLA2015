@@ -144,7 +144,7 @@ function generate_header(){
                 <?php } else { ?>
                   <li class="cart-li dropdown">
                     <a href="#" data-toggle="dropdown" aria-expanded="false">
-                      Cart
+                      <span class="badge">0</span> <span class="cart-money">$0</span>
                     </a>
                     <ul class="dropdown-menu" role="menu">
                       <li class="cart-number">
@@ -155,7 +155,7 @@ function generate_header(){
                 <?php } ?>
                 <li class="dropdown">
                   <a href="#" data-toggle="dropdown" aria-expanded="false" style="color:#fff;">
-                    <?php echo($user['first_name']." ".$user['last_name']); ?>
+                    <?php echo($user['first_name']." ".$user['last_name']); ?> &#x25be;
                   </a>
                   <ul class="dropdown-menu" role="menu">
                     <?php if($signin_admin) { ?>
