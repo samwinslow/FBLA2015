@@ -14,9 +14,10 @@ $result = mysql_query("INSERT INTO purchases (`user_id`,`date`,`amount`) VALUES 
 mysql_close();
 
 if (!$result){
-  die("!result");
   header("Location: ../mysql_error.html");
 } else {
+  $thirty_days = time() + 60*60*24*30;
+  setcookie("cyclefitness_cart_json", '', $thirty_days, "/");
   header("Location: ../user-profile/purchases.php");
 }
 
