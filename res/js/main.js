@@ -19,7 +19,7 @@ $(window).scroll(function(){
   });
   
 $('.bike').click(function(){
-  $('#bikeModal').modal('show');
+  loadBike($(this).attr('data-bike-id'));
 });
   
 $(function(){
@@ -33,3 +33,23 @@ $(function(){
     $('#signupButton>img').attr('src','res/img/icons/checkicon-white.png');
   });
 });
+
+function loadBike(id){
+  var url = "mysql-admin/ajax-bike-info.php?id=" + id;
+  var bikeData;
+  $.ajax(url, {
+    success: function(bike){
+      console.log(bike);
+      $('#bike-title').html(bike.name);
+      $('#bike-img').attr('src', bike.image_url);
+      if(bike.old_price != bike.sale_price && bike.old_price != null){
+        $('#bike-price').html('<s>$'+bike.old_price+'</s> <span class="text-orange">$'+bike.sale_price+'</span>');
+      } else {
+        $('#bike-price').html('$'+bike.sale_price);
+      }
+      $('#bike-text').html(bike.text);
+      $('#bike-form input[name="id"]').attr('value', bike.id);
+      $('#bikeModal').modal('show');
+    }
+  });
+}

@@ -41,7 +41,7 @@ h3.panel-title {
   border-left: 1px solid #222;
   border-right: 1px solid #222;
   height: 60px;
-  a {
+  &>a {
     margin-left: 0;
     margin-right: 0;
     .badge {
@@ -53,6 +53,57 @@ h3.panel-title {
     font-weight: @headings-font-weight;
     font-size: 20px;
     padding-left: 15px;
+  }
+  ul.dropdown-menu {
+    padding: 0;
+    li.cart-number {
+      padding: 16px 26px;
+      text-transform: uppercase;
+      text-align: center;
+      font-size: 11px;
+      line-height: 1;
+      cursor: default;
+      border-bottom: 1px solid #ebebeb;
+    }
+    li.cart-item {
+      min-width: 273px;
+      padding: 16px 26px;
+      font-family: @headings-font-family;
+      font-weight: @headings-font-weight;
+      font-size: 18px;
+      line-height: @line-height-base;
+      cursor: default;
+      img.item-thumbnail {
+        width: 70px;
+        margin-right: 18px;
+      }
+      p {
+        margin-bottom: 0;
+        &.item-price {
+          color: @gray-light;
+        }
+      }
+    }
+    li.cart-actions {
+      padding: 0;
+      a {
+        width: 50%;
+        padding: 16px 0;
+        display: inline-block;
+        font-size: 11px;
+        text-align: center;
+        text-transform: uppercase;
+        .box-shadow(0 1px 0 #ebebeb inset);
+        &:first-child {
+          float: left;
+        }
+        &.cart-action-primary {
+          background-color: @brand-orange;
+          color: #fff;
+          .box-shadow(none);
+        }
+      }
+    }
   }
 }
 .navbar {
@@ -241,7 +292,7 @@ button.close {
   margin: 0;
   padding-top: 140px;
   padding-bottom: 80px;
-  background: url("../img/header/header-bg.png") no-repeat center center fixed; 
+  background: url("../img/header/header-bg.jpg") no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -268,12 +319,12 @@ button.close {
       }
     }
     &.bike-header {
-      background-image: url("../img/header/bikes.png");
+      background-image: url("../img/header/bikes.jpg");
       background-position: center 60px;
     }
     &.contact-header {
       padding-bottom: 0;
-      background-image: url("../img/header/contact.png");
+      background-image: url("../img/header/contact.jpg");
       background-position: center top;
       text-align: center;
       &>h1 {
@@ -297,17 +348,17 @@ button.close {
       }
     }
     &.faq-header {
-      background-image: url("../img/header/faq.png");
+      background-image: url("../img/header/faq.jpg");
       background-position: center top;
       text-align: center;
     }
     &.seminars-header {
-      background-image: url("../img/header/seminars.png");
+      background-image: url("../img/header/seminars.jpg");
       background-position: center top;
       text-align: center;
     }
     &.trips-header {
-      background-image: url("../img/header/trips.png");
+      background-image: url("../img/header/trips.jpg");
       background-position: center top;
       text-align: center;
       &>p {
@@ -333,7 +384,7 @@ button.close {
       }
     }
     &.reference-header {
-      background-image: url("../img/header/reference.png");
+      background-image: url("../img/header/reference.jpg");
       background-position: center top;
       text-align: center;
     }
@@ -368,7 +419,7 @@ button.close {
   }
   &.mens-section {
     background-color: @brand-darkblue;
-    background-image: url("../img/mens-bikes.png");
+    background-image: url("../img/mens-bikes.jpg");
     background-repeat: no-repeat;
     background-position: right bottom;
     color: #fff;
@@ -376,7 +427,7 @@ button.close {
   &.womens-section {
     background-color: #fff;
     color: @brand-bluegray;
-    background-image: url("../img/womens-bikes.png");
+    background-image: url("../img/womens-bikes.jpg");
     background-repeat: no-repeat;
     background-position: right bottom;
   }
@@ -384,7 +435,7 @@ button.close {
 .road-trip {
   width: (100% - 132px);
   background-color: @brand-lightblue;
-  background-image: url("../img/trip.png");
+  background-image: url("../img/trip.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center -100px;
@@ -550,16 +601,16 @@ button.close {
       }
       // Specific trip panels
       &#manhattanRT {
-        background-image: url("../img/trip-1.png");
+        background-image: url("../img/trip-1.jpg");
       }
       &#brooklynRT {
-        background-image: url("../img/trip-2.png");
+        background-image: url("../img/trip-2.jpg");
       }
       &#bronxRT {
-        background-image: url("../img/trip-3.png");
+        background-image: url("../img/trip-3.jpg");
       }
       &#harlemRT {
-        background-image: url("../img/trip-4.png");
+        background-image: url("../img/trip-4.jpg");
       }
     }
   }
@@ -659,19 +710,7 @@ img.social {
   }
 }
 
-// Shopping cart
-li.cart-number {
-  padding: 11px 20px 16px 20px;
-  text-transform: uppercase;
-  text-align: center;
-  font-size: 11px;
-  line-height: 11px;
-  cursor: default;
-  border-bottom: 1px solid #ebebeb;
-}
-
 //Bikes
-
 .bikes {
   margin: 80px 0px;
 }
@@ -687,7 +726,7 @@ li.cart-number {
     -o-transition: all 0.15s ease-in-out;
     transition: all 0.15s ease-in-out;
     &>img {
-      width: 220px;
+      height: 130px;
     }
     h4 {
       margin-top: 20px;
@@ -729,7 +768,7 @@ li.cart-number {
   .bike-modal-img {
     width: 340px;
   }
-  #purchaseSize {
+  #bike-sizes {
     width: 150px;
   }
   #purchaseQty {
