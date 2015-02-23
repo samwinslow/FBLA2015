@@ -61,19 +61,19 @@
         <h2>Latest Seminars:</h2>
       </div>
       <div class="col-md-4 col-sm-12 seminar-tile">
-        <img class="img-circle" src="res/img/seminar-1.png">
+        <img class="img-circle" src="res/img/seminar-1.jpg">
         <h3>Staying safe on the road: Bike Safety 101</h3>
         <p>This intro seminar goes over the basics of staying safe on the road.</p>
         <a class="caps" href="#">Watch Seminar</a>
       </div>
       <div class="col-md-4 col-sm-12 seminar-tile">
-        <img class="img-circle" src="res/img/seminar-2.png">
+        <img class="img-circle" src="res/img/seminar-2.jpg">
         <h3>Bicycle Types: How to Pick the Best Bike for You</h3>
         <p>This seminar goes over the functions of different types of bikes.</p>
         <a class="caps" href="#">Watch Seminar</a>
       </div>
       <div class="col-md-4 col-sm-12 seminar-tile">
-        <img class="img-circle" src="res/img/seminar-3.png">
+        <img class="img-circle" src="res/img/seminar-3.jpg">
         <h3>Cycling for fitness: Bike &amp; Cycling Exercises</h3>
         <p>This seminar helps get you started with cycling for fitness.</p>
         <a class="caps" href="#">Watch Seminar</a>
