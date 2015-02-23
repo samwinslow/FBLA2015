@@ -48,7 +48,7 @@ function loadBike(id){
         $('#bike-price').html('$'+bike.sale_price);
       }
       $('#bike-text').html(bike.text);
-      $('#bike-form').attr('action', 'mysql-admin/add-to-cart.php?id='+bike.id);
+      $('#bike-form input[name="id"]').attr('value', bike.id);
       $('#bikeModal').modal('show');
     }
   });

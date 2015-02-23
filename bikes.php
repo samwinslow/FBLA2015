@@ -27,7 +27,8 @@
             <h3 id="bike-title"></h3>
             <h4 id="bike-price"></h4>
             <p id="bike-text"></p>
-            <form id="bike-form" class="form-inline" action="mysql-admin/add-to-cart.php?" method="post">
+            <form id="bike-form" class="form-inline" action="mysql-admin/add-to-cart.php" method="post">
+              <input type="hidden" name="id">
               <div class="form-group">
                 <select class="form-control" id="bike-sizes" required>
                   <option value="">SIZE</option>
@@ -37,7 +38,7 @@
                 </select>
               </div>
               <div class="form-group">
-                <input type="number" class="form-control" id="purchaseQty" placeholder="QTY" min="1" max="10" step="1" required>
+                <input type="number" class="form-control" id="purchaseQty" name="qty" placeholder="QTY" min="1" max="10" step="1" required>
               </div>
               <br>
               <div class="form-group">
