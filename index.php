@@ -9,7 +9,7 @@
 	    <div class="container">
 		    <h1>New Trek <br> 3 Series</h1>
         <p>3 Series gives you upright confidence, <br> control, and road-to-trail versatility, <br> wherever you ride.</p>
-        <a class="btn btn-ghost btn-lg" href="bikes.php" role="button">See Collection <span class="chevron-right chevron-orange"></span></a>
+        <a class="btn btn-ghost btn-lg" href="bikes.php?page=1&gender=&type=mountain" role="button">See Collection <span class="chevron-right chevron-orange"></span></a>
 		  </div>
 	  </div>
 	</div><!--/Jumbotron -->
@@ -18,35 +18,35 @@
 	  <div class="col-md-6 half-section mens-section">
 	    <h2>Men's Bikes</h2>
 	    <ul class="ul-left">
-	      <li>New Arrivals</li>
-	      <li>Road Bikes</li>
-	      <li>Mountain Bikes</li>
-	      <li>Cyclecross Bikes</li>
+	      <li><a href="bikes.php?page=1&gender=mens&type=">New Arrivals</a></li>
+	      <li><a href="bikes.php?page=1&gender=mens&type=road">Road Bikes</a></li>
+	      <li><a href="bikes.php?page=1&gender=mens&type=mountain">Mountain Bikes</a></li>
+	      <li><a href="bikes.php?page=1&gender=mens&type=cyclecross">Cyclecross Bikes</a></li>
 	      </ul>
 	    <ul>
-	      <li>Folding Bikes</li>
-	      <li>Electric Assist Bikes</li>
-	      <li>Hybrid Bikes</li>
-	      <li>BMX Bikes</li>
+	      <li><a href="bikes.php?page=1&gender=mens&type=folding">Folding Bikes</li>
+	      <li><a href="bikes.php?page=1&gender=mens&type=electric_assist">Electric Assist Bikes</li>
+	      <li><a href="bikes.php?page=1&gender=mens&type=hybrid">Hybrid Bikes</li>
+	      <li><a href="bikes.php?page=1&gender=mens&type=bmx">BMX Bikes</li>
 	    </ul>
-	    <p><a class="btn btn-ghost btn-lg" href="bikes.php" role="button">See Collection <span class="chevron-right chevron-white"></span></a></p>
+	    <p><a class="btn btn-ghost btn-lg" href="bikes.php?page=1&gender=mens&type=" role="button">See Collection <span class="chevron-right chevron-white"></span></a></p>
 	  </div>
 
 	  <div class="col-md-6 half-section womens-section">
 	    <h2>Women's Bikes</h2>
 	    <ul class="ul-left">
-	      <li>New Arrivals</li>
-	      <li>Road Bikes</li>
-	      <li>Mountain Bikes</li>
-	      <li>Cyclecross Bikes</li>
+	      <li><a href="bikes.php?page=1&gender=womens&type=">New Arrivals</a></li>
+	      <li><a href="bikes.php?page=1&gender=womens&type=road">Road Bikes</a></li>
+	      <li><a href="bikes.php?page=1&gender=womens&type=mountain">Mountain Bikes</a></li>
+	      <li><a href="bikes.php?page=1&gender=womens&type=cyclecross">Cyclecross Bikes</a></li>
 	    </ul>
 	    <ul>
-	       <li>Folding Bikes</li>
-	       <li>Electric Assist Bikes</li>
-	       <li>Hybrid Bikes</li>
-	       <li>BMX Bikes</li>
+	      <li><a href="bikes.php?page=1&gender=womens&type=folding">Folding Bikes</a></li>
+	      <li><a href="bikes.php?page=1&gender=womens&type=electric_assist">Electric Assist Bikes</a></li>
+	      <li><a href="bikes.php?page=1&gender=womens&type=hybrid">Hybrid Bikes</a></li>
+	      <li><a href="bikes.php?page=1&gender=womens&type=bmx">BMX Bikes</a></li>
 	     </ul>
-	     <p><a class="btn btn-primary btn-lg" href="bikes.php" role="button">See Collection <span class="chevron-right chevron-white"></span></a></p>
+	     <p><a class="btn btn-primary btn-lg" href="bikes.php?page=1&gender=womens&type=" role="button">See Collection <span class="chevron-right chevron-white"></span></a></p>
 	  </div>
   </div>
 

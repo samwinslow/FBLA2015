@@ -423,13 +423,27 @@ button.close {
     background-repeat: no-repeat;
     background-position: right bottom;
     color: #fff;
+    li>a {
+      color: #fff;
+      &:hover {
+        color: fade(#fff, 75%);
+        text-decoration: none;
+      }
+    }
   }
   &.womens-section {
     background-color: #fff;
-    color: @brand-bluegray;
     background-image: url("../img/womens-bikes.jpg");
     background-repeat: no-repeat;
     background-position: right bottom;
+    color: @brand-bluegray;
+    li>a {
+      color: @brand-bluegray;
+      &:hover {
+        color: fade(@brand-bluegray, 75%);
+        text-decoration: none;
+      }
+    }
   }
 }
 .road-trip {
