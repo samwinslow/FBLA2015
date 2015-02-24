@@ -56,49 +56,67 @@
     </div>
   </div>
   
-	<nav class="navbar bike-navbar" role="navigation">
-    <div id="bikeNavbar" class="navbar-collapse collapse">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Mens</a></li>
-        <li><a href="#">Womens</a></li>
-        <li><a href="#">Childrens</a></li>
-        <li class="spacer"></li>
-        <li><a href="#">Cyclecross</a></li>
-        <li><a href="#">Mountain</a></li>
-        <li><a href="#">Road</a></li>
-        <li><a href="#">Folding</a></li>
-        <li><a href="#">Electric Assist</a></li>
-        <li><a href="#">Hybrid</a></li>
-        <li><a href="#">BMX</a></li>
-      </ul>
-    </div><!--/.navbar-collapse -->
-  </nav>
-  
-  <div class="fullwidth-wrapper bikes">
-    <?php 
-    
+  <?php
     if (isset($_GET['page']) && $_GET['page'] != '') {
       $page_number = $_GET['page'];
     } else {
       $page_number = 1;
     }
+    if (isset($_GET['type']) && $_GET['type'] != '') {
+      $bike_type = $_GET['type'];
+      $bike_type_mixin = "type='".$bike_type."'";
+    } else {
+      $bike_type = '';
+      $bike_type_mixin = "1=1";
+    }
+    if (isset($_GET['gender']) && $_GET['gender'] != '') {
+      $bike_gender = $_GET['gender'];
+      $bike_gender_mixin = "gender='".$bike_gender."'";
+    } else {
+      $bike_gender = '';
+      $bike_gender_mixin = "1=1";
+    }
+  
     $lim_length = 20;
     $lim_start = $lim_length * ($page_number - 1);
     $lim_start_next = $lim_length * ($page_number);
-    
+  
     // Generate list of all bikes
     database_connect();
-    $result = mysql_query("SELECT * FROM bikes LIMIT ".$lim_start.", ".$lim_length.";");
-    $result_next = mysql_query("SELECT * FROM bikes LIMIT ".$lim_start_next.", ".$lim_length.";");
+         $result = mysql_query("SELECT * FROM bikes WHERE $bike_type_mixin AND $bike_gender_mixin LIMIT $lim_start, $lim_length;");
+    $result_next = mysql_query("SELECT * FROM bikes WHERE $bike_type_mixin AND $bike_gender_mixin LIMIT $lim_start_next, $lim_length;");
     mysql_close();
-    
-    if ($page_number > 1) { ?>
+  ?>
+  
+	<nav class="navbar bike-navbar" role="navigation">
+    <div id="bikeNavbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li <?=($bike_gender=='')?'class="active"':'' ?>><a href="bikes.php?page=1&gender=&type=<?php echo $bike_type; ?>">All</a></li>
+        <li <?=($bike_gender=='mens')?'class="active"':'' ?>><a href="bikes.php?page=1&gender=mens&type=<?php echo $bike_type; ?>">Mens</a></li>
+        <li <?=($bike_gender=='womens')?'class="active"':'' ?>><a href="bikes.php?page=1&gender=womens&type=<?php echo $bike_type; ?>">Womens</a></li>
+        <li <?=($bike_gender=='childrens')?'class="active"':'' ?>><a href="bikes.php?page=1&gender=childrens&type=<?php echo $bike_type; ?>">Childrens</a></li>
+        <li class="spacer"></li>
+        <li <?=($bike_type=='')?'class="active"':'' ?>><a href="bikes.php?page=1&gender=<?php echo $bike_gender; ?>&type=">All</a></li>
+        <li <?=($bike_type=='cyclecross')?'class="active"':'' ?>><a href="bikes.php?page=1&gender=<?php echo $bike_gender; ?>&type=cyclecross">Cyclecross</a></li>
+        <li <?=($bike_type=='mountain')?'class="active"':'' ?>><a href="bikes.php?page=1&gender=<?php echo $bike_gender; ?>&type=cyclecross">Mountain</a></li>
+        <li <?=($bike_type=='road')?'class="active"':'' ?>><a href="bikes.php?page=1&gender=<?php echo $bike_gender; ?>&type=road">Road</a></li>
+        <li <?=($bike_type=='folding')?'class="active"':'' ?>><a href="bikes.php?page=1&gender=<?php echo $bike_gender; ?>&type=folding">Folding</a></li>
+        <li <?=($bike_type=='electric_assist')?'class="active"':'' ?>><a href="bikes.php?page=1&gender=<?php echo $bike_gender; ?>&type=electric_assist">Electric Assist</a></li>
+        <li <?=($bike_type=='hybrid')?'class="active"':'' ?>><a href="bikes.php?page=1&gender=<?php echo $bike_gender; ?>&type=hybrid">Hybrid</a></li>
+        <li <?=($bike_type=='bmx')?'class="active"':'' ?>><a href="bikes.php?page=1&gender=<?php echo $bike_gender; ?>&type=bmx">BMX</a></li>
+      </ul>
+    </div><!--/.navbar-collapse -->
+  </nav>
+  
+  <div class="fullwidth-wrapper bikes">
+    <?php if ($page_number > 1) { ?>
       <div class="pager">
-        <a class="btn btn-lg btn-primary" href="bikes.php?page=<?php echo $page_number - 1; ?>">Previous Page</a>
+        <a class="btn btn-lg btn-primary" href="bikes.php?page=<?php echo $page_number - 1; ?>&gender=<?php echo $bike_gender; ?>&type=<?php echo $bike_type; ?>">Previous Page</a>
       </div>
     <?php } ?>
     <div class="row bike-row">
-      <?php if (mysql_num_rows($result) > 0) {
+      <?php
+      if (mysql_num_rows($result) > 0) {
         $bikes = array();
         while ($row = mysql_fetch_array($result)) {
           array_push($bikes, $row);
@@ -120,7 +138,7 @@
     </div>
     <?php if (mysql_num_rows($result_next) > 0) { ?>
       <div class="pager">
-        <a class="btn btn-lg btn-primary" href="bikes.php?page=<?php echo $page_number + 1; ?>">Next Page</a>
+        <a class="btn btn-lg btn-primary" href="bikes.php?page=<?php echo $page_number + 1; ?>&gender=<?php echo $bike_gender; ?>&type=<?php echo $bike_type; ?>">Next Page</a>
       </div>
     <?php } ?>
   </div>
