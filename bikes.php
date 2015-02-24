@@ -8,7 +8,7 @@
 	    <div class="row">
 	      <div class="col-md-5 col-md-offset-7">
 		      <h1>Road Bikes <br> On Sale</h1>
-          <a class="btn btn-primary btn-bike-header btn-lg" href="#" role="button">See Collection <span class="chevron-right chevron-orange"></span></a>
+          <a class="btn btn-primary btn-bike-header btn-lg" href="bikes.php?page=1&gender=&type=road" role="button">See Collection <span class="chevron-right chevron-orange"></span></a>
         </div>
       </div>
 		</div>
