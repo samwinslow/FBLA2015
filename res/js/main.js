@@ -1,8 +1,8 @@
 function setHeights(){
   if($(window).width() > 992){
     var h = document.querySelector("#promos").offsetHeight;
-    document.querySelector("#promos .seminar-section").style.height = h + "px";
-    document.querySelector("#promos .promo-section").style.height = h + "px";
+    //document.querySelector("#promos .seminar-section").style.height = h + "px";
+    //document.querySelector("#promos .promo-section").style.height = h + "px";
   } else {
     document.querySelector("#promos .seminar-section").style.height ="auto";
     document.querySelector("#promos .promo-section").style.height = "auto";
