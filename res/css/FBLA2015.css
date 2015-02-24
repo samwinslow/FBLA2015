@@ -7264,7 +7264,7 @@ img.social {
   margin-right: 20px;
 }
 .bikes {
-  margin: 80px 0px;
+  padding: 80px 0px;
 }
 .bike-row {
   width: 100%;
@@ -7400,4 +7400,7 @@ p.submission {
 }
 blockquote.submission-text {
   font-size: 16px;
+}
+div.pager {
+  text-align: center;
 }

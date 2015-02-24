@@ -75,28 +75,34 @@
   </nav>
   
   <div class="fullwidth-wrapper bikes">
+    <?php 
+    
+    if (isset($_GET['page']) && $_GET['page'] != '') {
+      $page_number = $_GET['page'];
+    } else {
+      $page_number = 1;
+    }
+    $lim_length = 20;
+    $lim_start = $lim_length * ($page_number - 1);
+    $lim_start_next = $lim_length * ($page_number);
+    
+    // Generate list of all bikes
+    database_connect();
+    $result = mysql_query("SELECT * FROM bikes LIMIT ".$lim_start.", ".$lim_length.";");
+    $result_next = mysql_query("SELECT * FROM bikes LIMIT ".$lim_start_next.", ".$lim_length.";");
+    mysql_close();
+    
+    if ($page_number > 1) { ?>
+      <div class="pager">
+        <a class="btn btn-lg btn-primary" href="bikes.php?page=<?php echo $page_number - 1; ?>">Previous Page</a>
+      </div>
+    <?php } ?>
     <div class="row bike-row">
-      <?php
-      
-      if (isset($_GET['page']) && $_GET['page'] != '') {
-        $page_number = $_GET['page'];
-      } else {
-        $page_number = 1;
-      }
-      
-      $lim_start = 20 * ($page_number - 1);
-      $lim_end = $lim_start + 20;
-      
-      // Generate list of all bikes
-      database_connect();
-      $result = mysql_query("SELECT * FROM bikes LIMIT ".$lim_start.", ".$lim_end.";");
-      mysql_close();
-      
-      $bikes = array();
-      while ($row = mysql_fetch_array($result)) {
-        array_push($bikes, $row);
-      }
-      if (mysql_num_rows($result) > 0) {
+      <?php if (mysql_num_rows($result) > 0) {
+        $bikes = array();
+        while ($row = mysql_fetch_array($result)) {
+          array_push($bikes, $row);
+        }
         foreach ($bikes as $index) { ?>
           <div class="col-md-3 text-center bike" data-bike-id="<?php echo $index['id']; ?>">
             <img src="<?php echo $index['image_url']; ?>">
@@ -112,6 +118,11 @@
       <h3 class="text-center">No bikes found in this section</h3>
       <?php } ?>
     </div>
+    <?php if (mysql_num_rows($result_next) > 0) { ?>
+      <div class="pager">
+        <a class="btn btn-lg btn-primary" href="bikes.php?page=<?php echo $page_number + 1; ?>">Next Page</a>
+      </div>
+    <?php } ?>
   </div>
     
 <?php generate_footer(); ?>
