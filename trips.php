@@ -7,7 +7,7 @@
 	<div class="jumbotron nhp-header trips-header">
     <p class="caps">Come join us on our</p>
 	  <h1>Cycling Trips</h1>
-	  <a class="btn btn-primary btn-lg" href="#" role="button">Browse Trips <span class="chevron-right chevron-orange"></span></a>
+	  <a class="btn btn-primary btn-lg" href="trips.php#manhattanRT" role="button">Browse Trips <span class="chevron-right chevron-orange"></span></a>
 	</div><!--/Jumbotron -->
   
   <div class="container trips-container">   

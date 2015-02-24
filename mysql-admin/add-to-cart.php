@@ -1,7 +1,12 @@
 <?php
 
 include('../generator.php');
+get_cookies();
 
+if ($_COOKIE['cyclefitness_email']=='') {
+  header("Location: ../bikes.php?error=login");
+}
+ 
 if (isset($_REQUEST['id']) && $_REQUEST['id'] != ''){
   $id = $_REQUEST['id'];
 } else {
