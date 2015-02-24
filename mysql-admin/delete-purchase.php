@@ -1,5 +1,6 @@
 <?php
 
+include('../generator.php');
 header("Content-Type: text/plain");
 
 if (isset($_REQUEST['id']) && $_REQUEST['id'] !== '') {
@@ -9,9 +10,7 @@ if (isset($_REQUEST['id']) && $_REQUEST['id'] !== '') {
 }
 
 // Connect to server and select databse.
-mysql_connect("localhost", "root", "password") or header("Location: ../mysql_error.html");
-mysql_select_db("cyclefitness") or header("Location: ../mysql_error.html");
-
+database_connect();
 $result = mysql_query("SELECT * FROM purchases WHERE id='".$id."';");
 
 if (mysql_num_rows($result) === 0){

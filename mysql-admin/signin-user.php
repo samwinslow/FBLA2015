@@ -1,4 +1,6 @@
 <?php
+
+include('../generator.php');
 $thirty_days = time() + 60*60*24*30;
 
 if (isset($_REQUEST['email']) && $_REQUEST['email'] !== '') {
@@ -19,10 +21,7 @@ if ($email === 'admin@example.com' && $password === 'password'){
   header("Location: ../index.php");
 }
 
-// Connect to server and select databse.
-mysql_connect("localhost", "root", "password") or header("Location: ../mysql_error.html");
-mysql_select_db("cyclefitness") or header("Location: ../mysql_error.html");
-
+database_connect();
 $result = mysql_query("SELECT * FROM users WHERE email_address='".$email."' and password = '".$password."';");
 mysql_close();
 

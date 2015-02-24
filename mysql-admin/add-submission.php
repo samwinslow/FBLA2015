@@ -1,13 +1,13 @@
 <?php
 
+include('../generator.php');
 if (isset($_COOKIE['cyclefitness_email'])){
   $signedin = true;
   $signin_email = $_COOKIE['cyclefitness_email'];
   $signin_password = $_COOKIE['cyclefitness_password'];
 
   // Connect to server and select databse.
-  mysql_connect("localhost", "root", "password") or header("Location: ../mysql_error.html");
-  mysql_select_db("cyclefitness") or header("Location: ../mysql_error.html");
+  database_connect();
   $result = mysql_query("SELECT * FROM users WHERE email_address = '".$signin_email."' and password = '".$signin_password."';");
   mysql_close();
 
@@ -28,14 +28,15 @@ $date = date("Y-m-d H:i:s");
 $inquiry = $_REQUEST['inquiry'];
 
 if (isset($_REQUEST['text']) && $_REQUEST['text'] !== '') {
-  $text = mysql_real_escape_string($_REQUEST['text']);
+  $text = str_replace("'","&apos;",$_REQUEST['text']);
+  $text = str_replace("<","&lt;",$text);
+  $text = str_replace(">","&gt;",$text);
 } else {
   header("Location: ../contact.php?error=contact_no_info");
 }
 
 // Connect to server and select databse.
-mysql_connect("localhost", "root", "password") or header("Location: ../mysql_error.html"); 
-mysql_select_db("cyclefitness") or header("Location: ../mysql_error.html");
+database_connect();
 
 $result = mysql_query("INSERT INTO contact_submissions (`user_id`,`name`,`date`,`inquiry`,`text`) VALUES ($uid,'$name','$date','$inquiry','$text');");
 mysql_close();
