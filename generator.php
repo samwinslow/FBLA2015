@@ -245,7 +245,9 @@ function generate_header(){
 <?php
 }
 
-function generate_footer() { ?>
+function generate_footer() { 
+  global $page_error;
+?>
     <footer>
       <div class="col-md-2">
         <img class="logo" alt="Cycle Fitness" src="res/img/logos/logo-white.png" title="Cycle Fitness" style="-webkit-filter: invert(1);">
@@ -302,6 +304,15 @@ function generate_footer() { ?>
     <script src="res/js/vendor/bootstrap.min.js"></script>
     <script src="res/js/vendor/jquery.easing.min.js"></script>
     <script src="res/js/main.js"></script>
+    
+    <?php if (isset($page_error) && (preg_match("/^login/", $page_error) || preg_match("/^register/", $page_error))){ ?>
+      <script type="text/javascript">
+        $(function (){
+          $('#signinModal').modal('show');
+        });
+      </script>
+    <?php } ?>
+    
   </body>
   </html>
 <?php } ?>
