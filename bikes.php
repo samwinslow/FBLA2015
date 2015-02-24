@@ -77,17 +77,26 @@
   <div class="fullwidth-wrapper bikes">
     <div class="row bike-row">
       <?php
-      // Generate list of all users
-      database_connect();
-      $result = mysql_query("SELECT * FROM bikes;");
-      mysql_close();
-
-      $bikes = array();
       
+      if (isset($_GET['page']) && $_GET['page'] != '') {
+        $page_number = $_GET['page'];
+      } else {
+        $page_number = 1;
+      }
+      
+      $lim_start = 20 * ($page_number - 1);
+      $lim_end = $lim_start + 20;
+      
+      // Generate list of all bikes
+      database_connect();
+      $result = mysql_query("SELECT * FROM bikes LIMIT ".$lim_start.", ".$lim_end.";");
+      mysql_close();
+      
+      $bikes = array();
       while ($row = mysql_fetch_array($result)) {
         array_push($bikes, $row);
       }
-      if (mysql_num_rows($result) > 0){
+      if (mysql_num_rows($result) > 0) {
         foreach ($bikes as $index) { ?>
           <div class="col-md-3 text-center bike" data-bike-id="<?php echo $index['id']; ?>">
             <img src="<?php echo $index['image_url']; ?>">
