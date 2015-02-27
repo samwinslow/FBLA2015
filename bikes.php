@@ -98,7 +98,7 @@
         <li class="spacer"></li>
         <li <?=($bike_type=='')?'class="active"':'' ?>><a href="bikes.php?page=1&gender=<?php echo $bike_gender; ?>&type=">All</a></li>
         <li <?=($bike_type=='cyclecross')?'class="active"':'' ?>><a href="bikes.php?page=1&gender=<?php echo $bike_gender; ?>&type=cyclecross">Cyclecross</a></li>
-        <li <?=($bike_type=='mountain')?'class="active"':'' ?>><a href="bikes.php?page=1&gender=<?php echo $bike_gender; ?>&type=cyclecross">Mountain</a></li>
+        <li <?=($bike_type=='mountain')?'class="active"':'' ?>><a href="bikes.php?page=1&gender=<?php echo $bike_gender; ?>&type=mountain">Mountain</a></li>
         <li <?=($bike_type=='road')?'class="active"':'' ?>><a href="bikes.php?page=1&gender=<?php echo $bike_gender; ?>&type=road">Road</a></li>
         <li <?=($bike_type=='folding')?'class="active"':'' ?>><a href="bikes.php?page=1&gender=<?php echo $bike_gender; ?>&type=folding">Folding</a></li>
         <li <?=($bike_type=='electric_assist')?'class="active"':'' ?>><a href="bikes.php?page=1&gender=<?php echo $bike_gender; ?>&type=electric_assist">Electric Assist</a></li>
