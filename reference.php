@@ -15,47 +15,149 @@
       <p>All of our images were filtered by Google to be labeled for reuse with modification.</p>
       <br>
       <p>
-        http://clevercycles.com/wp/wp-content/uploads/2012/10/8099007915_369dffe613_k.jpg
-
-        http://womensquest.com/blog/wp-content/uploads/2012/09/DSC_4216.jpg
-
-        http://www.oaglawfirm.com/images/cyclist-attorney-mcallen-tx.jpg
-
-        http://s7d4.scene7.com/is/image/TrekBicycleProducts/Asset_260744?wid=1440&hei=1080&fit=fit,1&fmt=png-alpha&qlt=30,1&op_usm=0,0,0,0&iccEmbed=0
-
-        http://s7d4.scene7.com/is/image/TrekBicycleProducts/50107?wid=1490&hei=1080&fit=fit,1&fmt=png-alpha&qlt=80,1&op_usm=0,0,0,0&iccEmbed=0
-
-        http://au.oakley.com/images/static/brochures/jawbone/cyclist.png
-
-        http://i.huffpost.com/gen/1178519/thumbs/o-MOUNTAIN-BIKE-facebook.jpg
-
-        http://i.imgur.com/FmQtGop.png
-
-        http://2009.feltracing.com/09/images/catalog/xl/9009.png
-
-        http://bicyclingnatives.com/wp-content/uploads/2014/02/DB_Adam_Phelan_COLOUR.jpg
-
-        http://cyclepath.ca/shop/images/tri-bike.png
-
-        http://1kogu.com/wordpress/wp-content/uploads/2012/04/50101.png
-
-        http://www.renocyclingandfitness.com/TDE_CMS/database/userfiles/image/20126_5%20orange.png
-
-        http://2009.feltracing.com/09/images/catalog/xl/8904.png
-
-        http://www.wafflesandsteel.com/wp-content/uploads/2010/07/IMG_1766.jpg
-
-        http://drp0dbtwbw65p.cloudfront.net/wp-content/uploads/2014/02/IMG_3557.jpg?ad97cf
-
-        http://www.madegood.org/gallery/bikes/lubricate-moving-bike-parts/2.jpg
-
-        http://roadcyclinguk.com/wp-content/uploads/old_images/news/images/tune_cranks_hi.jpg
-
-        http://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Rear_Derailleur.JPG/300px-Rear_Derailleur.JPG
-
-        http://www.blogcdn.com/www.engadget.com/media/2011/11/dsc0619-1321310282.jpg
-
-        http://4.bp.blogspot.com/-COTu-5gJm7k/TequfPk32aI/AAAAAAAAAhs/fregfO9F0LM/s1600/cycle.jpg
+		http://clevercycles.com/wp/wp-content/uploads/2012/10/8099007915_369dffe613_k.jpg
+	
+		http://womensquest.com/blog/wp-content/uploads/2012/09/DSC_4216.jpg
+		
+		http://www.oaglawfirm.com/images/cyclist-attorney-mcallen-tx.jpg
+		
+		http://s7d4.scene7.com/is/image/TrekBicycleProducts/Asset_260744?wid=1440&hei=1080&fit=fit,1&fmt=png-alpha&qlt=30,1&op_usm=0,0,0,0&iccEmbed=0
+		
+		http://s7d4.scene7.com/is/image/TrekBicycleProducts/50107?wid=1490&hei=1080&fit=fit,1&fmt=png-alpha&qlt=80,1&op_usm=0,0,0,0&iccEmbed=0
+		
+		http://au.oakley.com/images/static/brochures/jawbone/cyclist.png
+		
+		http://i.huffpost.com/gen/1178519/thumbs/o-MOUNTAIN-BIKE-facebook.jpg
+		
+		http://i.imgur.com/FmQtGop.png
+		
+		http://2009.feltracing.com/09/images/catalog/xl/9009.png
+		
+		http://bicyclingnatives.com/wp-content/uploads/2014/02/DB_Adam_Phelan_COLOUR.jpg
+		
+		http://cyclepath.ca/shop/images/tri-bike.png
+		
+		http://1kogu.com/wordpress/wp-content/uploads/2012/04/50101.png
+		
+		http://www.renocyclingandfitness.com/TDE_CMS/database/userfiles/image/20126_5%20orange.png
+		
+		http://2009.feltracing.com/09/images/catalog/xl/8904.png
+		
+		http://www.wafflesandsteel.com/wp-content/uploads/2010/07/IMG_1766.jpg
+		
+		http://drp0dbtwbw65p.cloudfront.net/wp-content/uploads/2014/02/IMG_3557.jpg?ad97cf
+		
+		http://www.madegood.org/gallery/bikes/lubricate-moving-bike-parts/2.jpg
+		
+		http://roadcyclinguk.com/wp-content/uploads/old_images/news/images/tune_cranks_hi.jpg
+		
+		http://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Rear_Derailleur.JPG/300px-Rear_Derailleur.JPG
+		
+		http://www.blogcdn.com/www.engadget.com/media/2011/11/dsc0619-1321310282.jpg
+		
+		http://4.bp.blogspot.com/-COTu-5gJm7k/TequfPk32aI/AAAAAAAAAhs/fregfO9F0LM/s1600/cycle.jpg
+		
+		https://unsplash.imgix.net/1/irish-hands.jpg?q=75&fm=jpg&s=0b8bb73125fe1ec4828d0048550ae2bd
+		
+		http://upload.wikimedia.org/wikipedia/commons/9/9b/Flats_Road_and_fields_in_Groveland.jpg
+		
+		http://upload.wikimedia.org/wikipedia/commons/9/98/Bicycle_courier_552.JPG
+		
+		http://s7d4.scene7.com/is/image/TrekBicycleProducts/Asset_146883?wid=1490&hei=1080&fit=fit,1&fmt=png-alpha&qlt=80,1&op_usm=0,0,0,0&iccEmbed=0
+		
+		http://rundiva.typepad.com/.a/6a010536c802e2970b011570759a42970b-pi
+		
+		http://s7d4.scene7.com/is/image/TrekBicycleProducts/Asset_146896?wid=1490&hei=1080&fit=fit,1&fmt=png-alpha&qlt=80,1&op_usm=0,0,0,0&iccEmbed=0
+		
+		http://www.hawkstricycle.com/merchant/2640/images/site/C14_700M_CDX_D6_BLU_1.png
+		
+		https://www.canyon.com/roadbikes/series/i/2014/inflite-al-01-perspective.png
+		
+		http://www.focus-bikes.com/typo3temp/pics/fo15_mares_ax_2_0_9f31dd334d.png
+		
+		http://www.primera-sports.com/system/cache/focus-2015-mares-ax-1-0-cyclocross-bike_productImages_23374-1-24475_800_800_False.png
+		
+		http://www.primera-sports.com/system/cache/focus-2015-mares-cx-2-0-cyclocross-bike_productImages_23376-1-24477_800_800_False.png
+		
+		http://2009.feltracing.com/09/images/catalog/xl/8907.png
+		
+		http://www.thebikeworks.com/wp-content/uploads/2014/05/Domane4.png
+		
+		http://students.expression.edu/coltoncrumsblog/files/2013/12/road-bike-1.png
+		
+		http://lh5.ggpht.com/_ptdFYjN6H48/TASqrgNWUQI/AAAAAAAAACQ/cNeg_7TlysA/s9000/Helios%2B780.png
+		
+		http://www.cycling360media.com/wp-content/uploads/2011/04/guru-2011_evolo-r_side_transparent1.png
+		
+		http://www.renocyclingandfitness.com/TDE_CMS/database/userfiles/image/20126_5%20orange.png
+		
+		http://1kogu.com/wordpress/wp-content/uploads/2012/04/50101.png
+		
+		http://people.cis.ksu.edu/~jacrabb/images/tarmac.gif
+		
+		http://www.mauiroadbikerentals.com/images/cannondaleroadbike.png
+		
+		http://2009.feltracing.com/09/images/catalog/xl/9024.png
+		
+		http://2009.feltracing.com/09/images/catalog/xl/9009.png
+		
+		http://p.vitalmtb.com/photos/products/2987/photos/1720/s780_0000212.png.jpg?1300680502
+		
+		http://www.corfumountainbikes.com/Bike-Rental_files/BIGcorfu_mountain_bikes_cross_razor_1.png.png
+		
+		http://cdn4.coresites.mpora.com/bikemagic_new/wp-content/uploads/2012/02/221697_14671_png_zoom_1.jpg
+		
+		http://nisekocycles.com/wp-content/uploads/2012/07/Picture-9.png
+		
+		http://dfp2hfrf3mn0u.cloudfront.net/221/221801_14760_png_zoom_1.jpg
+		
+		http://1.bp.blogspot.com/-6U72pEvtxJM/UaC-UgENDNI/AAAAAAAAAKU/95HEaH2By_s/s1600/89707.png
+		
+		http://s7d4.scene7.com/is/image/TrekBicycleProducts/Asset_260810?wid=1440&hei=1080&fit=fit,1&fmt=png-alpha&qlt=30,1&op_usm=0,0,0,0&iccEmbed=0
+		
+		http://electricbikereport.com/wp-content/uploads/2015/02/chatham-bike-540x305.png
+		
+		http://bikeelectric.ie/wp-content/uploads/2013/09/kh_agattu_c8_hs_impulse_dia_01_d00be19d87.png
+		
+		http://www.metaefficient.com/wp-content/uploads/2011/01/schwinn_tailwind.png
+		
+		http://www.usefulbikes.info/sites/default/files/urban-arrow_1.png
+		
+		http://www.electricbikeguru.com/wp-content/uploads/2012/03/Schwinn-Searcher-e8.png
+		
+		http://s7d4.scene7.com/is/image/TrekBicycleProducts/18694?wid=1490&hei=1080&fit=fit,1&fmt=png-alpha&qlt=80,1&op_usm=0,0,0,0&iccEmbed=0
+		
+		http://bicycleheavengeneva.com/wp-content/uploads/2012/10/Cannondale-Quick-SL2.png
+		
+		http://www.primera-sports.com/system/cache/specialized-2014-crosstrail-comp-disc-hybrid-bike_productImages_11642-1-19643_800_800_False.png
+		
+		http://bicycleheavengeneva.com/wp-content/uploads/2012/10/Cannondale-Adventure-2.png
+		
+		http://www.bikepittsburgh.com/wp-content/uploads/2009/05/Verve3_21041.png
+		
+		http://cdn.shopify.com/s/files/1/0359/7265/products/g13_NOM1_wht_24_1024x1024.png?v=1393874785
+		
+		http://bicycleheavengeneva.com/wp-content/uploads/2012/10/Cannondale-Quick-CX3.png
+		
+		http://www.thecrazyloon.com/wp-content/uploads/2013/03/Verve-Silver.png
+		
+		https://polygoneeimages.s3.amazonaws.com/images/2277/razor_sport.png
+		
+		http://img1.findthebest.com/sites/default/files/953/media/images/2012_GT_Mach_One_Pro_20_199288.png
+		
+		http://img1.findthebest.com/sites/default/files/953/media/images/2012_GT_Bump_199328.png
+		
+		http://img1.findthebest.com/sites/default/files/953/media/images/_553389_i0.png
+		
+		http://img1.findthebest.com/sites/default/files/953/media/images/_553389_i0.png
+		
+		http://www.dema.bike/sites/demabicycles/data/images/BC_2015/bmx_dema_whip-green_2015.png
+		
+		http://s7d4.scene7.com/is/image/TrekBicycleProducts/90793?wid=1490&hei=1080&fit=fit,1&fmt=png-alpha&qlt=80,1&op_usm=0,0,0,0&iccEmbed=0
+		
+		http://img1.findthebest.com/sites/default/files/953/media/images/_553419_i0.png
+		
+		http://img1.findthebest.com/sites/default/files/953/media/images/2012_GT_Power_Series_24_198510.png
       </p>
     </div>
     <div class="col-md-6">
@@ -63,9 +165,7 @@
       <p>No templates were used for the main website. This website is fully designed and coded by Andrew Shen and Samuel Winslow. Other resources we used are listed below.</p>
       <br>
       <p>
-        <a href="">Twitter Bootstrap Framework</a>
-        <br>
-        <a href="">Google Pagespeed Module</a>
+        <a href="http://getbootstrap.com/">Custom Build of Twitter Bootstrap Framework</a>
       </p>
     </div>
   </div>
